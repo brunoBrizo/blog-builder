@@ -1,0 +1,35 @@
+node_modules
+.pnpm-store
+
+# Nx
+.nx/cache
+.nx/workspace-data
+
+# Build outputs
+dist
+tmp
+out-tsc
+coverage
+
+# Next.js
+.next
+next-env.d.ts
+
+# OS/editor
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Playwright
+playwright-report
+test-results
+
+vitest.config.*.timestamp*

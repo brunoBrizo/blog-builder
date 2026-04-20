@@ -1,0 +1,17 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+    --bb-color-bg: oklch(100% 0 0);
+    --bb-color-fg: oklch(20% 0 0);
+    --bb-radius-sm: 0.25rem;
+    --bb-radius-md: 0.5rem;
+    --bb-radius-lg: 1rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bb-color-bg: oklch(14% 0 0);
+      --bb-color-fg: oklch(96% 0 0);
+    }
+  }
+}

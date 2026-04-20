@@ -1,0 +1,28 @@
+---
+description: Rules regarding TypeScript imports, barrel files, and module boundaries.
+globs: **/*.ts, **/*.tsx, **/*.js, **/*.jsx
+---
+
+# Nx Module Boundaries & Imports
+
+1.  **Barrel Files (`index.ts`):**
+
+    - Every library MUST have a single entry point: `src/index.ts`.
+    - **Never** import deeply into a library.
+    - ✅ Correct: `import { Button } from '@my-org/shared/ui';`
+    - ❌ Incorrect: `import { Button } from '../../libs/shared/ui/src/lib/button';`
+
+2.  **Dependency constraints:**
+
+    - `util` cannot depend on `feature` or `data-access`.
+    - `ui` cannot depend on `feature` or `data-access`.
+    - `data-access` cannot depend on `feature`.
+    - `feature` can depend on everything.
+
+3.  **Relative Imports:**
+
+    - Use relative imports (`./child-component`) **ONLY** within the same library.
+    - Use path aliases (`@my-org/domain/lib`) for crossing library boundaries.
+
+4.  **Circular Dependencies:**
+    - Strictly forbidden. If you encounter a circular dependency, suggest extracting common logic into a new `util` or `data-access` library.

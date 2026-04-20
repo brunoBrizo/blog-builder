@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "description": "Filesystem-backed MCP server (existing)",
+      "enabled": true,
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem"]
+    },
+    "supabase-inventory": {
+      "type": "http",
+      "enabled": true,
+      "url": "http://localhost:54321/mcp"
+    },
+    "supabase-tenants": {
+      "type": "http",
+      "enabled": true,
+      "url": "http://localhost:54331/mcp"
+    }
+  }
+}

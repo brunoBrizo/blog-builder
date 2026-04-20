@@ -1,0 +1,24 @@
+---
+description: React-specific guidelines within an Nx workspace.
+globs: **/*.tsx, **/*.ts, **/next.config.*, apps/**/package.json
+---
+
+# Nx React Patterns
+
+1.  **Next.js apps (`@nx/next` executor):**
+
+    - In the app’s [`package.json`](package.json), **`react` and `react-dom` must be pinned** to match the workspace root (same semver strings as root [`package.json`](package.json)). **`"*"` breaks `nx build`** with Nx’s semver check on `react-dom`. Keep the two fields in sync when upgrading React workspace-wide. Full rationale: [`AGENTS.md`](AGENTS.md) → JavaScript dependency policy.
+
+2.  **Component Generation:**
+
+    - Use `yarn nx g @nx/react:component` to ensure tests and stories are created.
+    - Prefer functional components with hooks.
+
+3.  **State Management:**
+
+    - For `data-access` libraries, prefer TanStack Query (React Query).
+    - Keep state logic out of `ui` libraries.
+
+4.  **Testing:**
+    - Colocate tests: `component.spec.tsx` next to `component.tsx`.
+    - Use Vitest (default in modern Nx) over Jest unless specified otherwise.

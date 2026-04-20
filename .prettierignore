@@ -1,0 +1,28 @@
+# Build outputs
+/dist
+/coverage
+/tmp
+/out-tsc
+
+# Nx
+/.nx/cache
+/.nx/workspace-data
+
+# Next.js
+**/.next
+
+# Dependencies
+/node_modules
+pnpm-lock.yaml
+
+# Cursor config
+.cursor/skills/**
+.cursor/rules/**
+.cursor/agents/**
+.cursor/plans/**
+
+# Husky generated
+.husky/_/**
+
+# Misc
+*.min.*

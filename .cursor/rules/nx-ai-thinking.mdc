@@ -1,0 +1,23 @@
+---
+description: Instructions on how to think and reason about changes in this Nx workspace.
+globs: **/*
+---
+
+# AI Reasoning for Nx v22
+
+1.  **Analyze before Acting:**
+
+    - Before writing code, run `yarn nx graph` (or visualize the structure) to understand where the new code fits.
+    - Identify which specific library the change belongs to.
+
+2.  **Refactor vs. Create:**
+
+    - If a file is getting too large, suggest splitting it into a new library, not just a new folder.
+    - Ask: "Is this logic reusable?" If yes, move to `shared/util` or `shared/ui`.
+
+3.  **Dependency Check:**
+
+    - After generating code, verify that you haven't introduced a constraint violation (e.g., importing a feature into a UI library).
+
+4.  **Ecosystem Awareness:**
+    - Be aware that Nx utilizes SWC, Vite, and native tools for speed. Do not suggest adding Webpack configurations unless the project specifically uses `@nx/webpack`.

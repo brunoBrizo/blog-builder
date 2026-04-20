@@ -1,0 +1,36 @@
+---
+description: Critical rules for interacting with the Nx v22 CLI, configuration, and project inference.
+globs: nx.json, project.json, **/*.json, package.json
+---
+
+# Nx v22 Core Workspace Rules
+
+1.  **Project Inference (Project Crystal):**
+
+    - Nx v22 relies heavily on inference plugins (`@nx/vite`, `@nx/jest`, `@nx/eslint`).
+    - **Do NOT** expect a `project.json` to exist for every project. Many targets are inferred directly from `package.json` scripts or config files (e.g., `vite.config.ts`).
+    - If you need to check available targets, do not read `project.json`. Instead, run `yarn nx show project <project-name> --web`.
+
+2.  **Generator Usage:**
+
+    - **ALWAYS** use generators to create files. Never manually create libraries or apps.
+    - Use `yarn nx g @nx/<plugin>:lib` or `yarn nx g @nx/<plugin>:app`.
+    - Prefer `--dry-run` when proposing complex structural changes.
+
+3.  **Configuration:**
+
+    - `nx.json` is for global defaults and cache settings. Do not add individual project configurations here.
+    - Avoid modifying `tsconfig.base.json` paths manually. Let the Nx generator handle path mapping.
+
+4.  **Package Management:**
+
+    - Determine the package manager (`pnpm`, `npm`, or `yarn`) by checking the lockfile.
+    - **Single version policy:** add and pin third-party versions in the **workspace root** `package.json` only. In workspace packages (`apps/*`, `nestjs/*`, `shared/*`, etc.), reference the same packages with `"*"` (and `@mirza-systems/*` with `"*"`) unless there is a documented exception.
+    - **Next.js + `@nx/next` exception:** In Next app `package.json` files, pin **`react` and `react-dom`** to the **exact versions** from the root [`package.json`](package.json). Do not use `"*"` for those two—`@nx/next`’s build executor validates `react-dom` with semver and fails on wildcards (`unable to validate - (*)`). Bump them whenever the root React versions change. See [`AGENTS.md`](AGENTS.md) (JavaScript dependency policy).
+    - **Dependency checks:** the root [`eslint.config.mjs`](eslint.config.mjs) applies `@nx/dependency-checks` to all projects that extend it (including packages with no local `eslint.config.mjs`). Run `yarn nx run <project>:lint` after dependency or import changes.
+    - Prefer fixing `@nx/dependency-checks` failures by aligning `package.json` with the root manifest (not by weakening the rule), except for documented options in `eslint.dependency-checks.mjs` (e.g. `checkObsoleteDependencies` for bundler build graphs).
+
+5.  **Task Execution:**
+    - Use `yarn nx run <project>:<target>` or `yarn nx <target> <project>`.
+    - Use `yarn nx run-many -t <target>` for bulk operations.
+    - Never run `node script.js` directly if an Nx target exists.

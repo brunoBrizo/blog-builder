@@ -1,0 +1,32 @@
+---
+description: Rules for organizing code into Apps and Libs, and enforcing library types.
+globs: libs/**/*, apps/**/*
+---
+
+# Nx Architecture & Library Structure
+
+1.  **The 80/20 Rule:**
+
+    - **80%** of logic lives in `libs/`.
+    - **20%** of logic lives in `apps/`.
+    - Apps are thin containers that wire together features from libraries.
+
+2.  **Library Types (Strict Adherence):**
+    When creating or refactoring code, categorize libraries into these specific types:
+
+    - `feature`: Smart UI, business logic, route containers.
+    - `ui`: Dumb/Presentational components (reusable).
+    - `data-access`: State management, API services, GQL queries.
+    - `utils`: Pure functions, helpers, form validators.
+    - `shell`: The entry point for an app (routing configuration).
+
+3.  **Directory Structure:**
+
+    - Group libraries by domain (scope).
+    - Pattern: `libs/<domain>/<type>-<name>`
+    - Example: `libs/orders/feature-cart`, `libs/shared/ui-buttons`.
+
+4.  **Naming Conventions:**
+    - Library names must be kebab-case.
+    - Component classes must be PascalCase.
+    - File names must match the class name (e.g., `OrderListComponent` -> `order-list.component.ts`).

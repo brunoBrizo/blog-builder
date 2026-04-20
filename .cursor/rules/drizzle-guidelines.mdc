@@ -1,0 +1,121 @@
+---
+alwaysApply: false
+---
+
+Drizzle ORM Development Guidelines
+You are a senior TypeScript engineer with expertise in Drizzle ORM, Postgres, Supabase, NestJS, and clean backend architecture.
+
+Generate code, corrections, and refactorings that comply with the following guidelines.
+
+Project context
+
+- Database: Supabase Postgres (single source of truth).
+- Driver: `postgres` (postgres.js). Create exactly one pooled client per process and reuse it.
+- Schema lives in `libs/db/src/schema/*.ts` and is re-exported from `libs/db/src/schema/index.ts`.
+- Migrations are generated with `drizzle-kit generate` and stored under `libs/db/drizzle/`. They are committed to the repo.
+- The typed Drizzle client is exported from `libs/db` and consumed by `apps/api` (NestJS) via dependency injection. Never import the raw driver outside `libs/db`.
+- No Prisma. No other ORM. No raw `pg` client outside `libs/db`.
+
+Schema design
+
+- Use `pgTable` with domain-driven, plural, snake_case table names (`articles`, `article_translations`, `generation_jobs`).
+- Use snake_case for column names and enum members; let Drizzle's inferred TS types surface camelCase to consumers only when it improves ergonomics — prefer keeping DB and TS names aligned.
+- Every table must have:
+  - A primary key (`uuid` with `defaultRandom()` unless there is a reason to use `bigserial`).
+  - `created_at` and `updated_at` columns (`timestamp with time zone`, `defaultNow()`, `notNull()`).
+  - A `deleted_at` nullable timestamp when the entity requires soft delete.
+- Use `timestamp('...', { withTimezone: true, mode: 'date' })`. Never store local time.
+- Use Postgres-native types where they exist: `uuid`, `jsonb`, `text` (not `varchar`), `boolean`, `integer`, `numeric`, `tsvector`.
+- Declare explicit foreign keys with `references(() => other.id, { onDelete: '...' })`. Always choose an `onDelete` behavior consciously.
+- Model many-to-many relationships with an explicit join table; never rely on implicit junctions.
+- Declare indexes in the schema via `index()` / `uniqueIndex()`. Name them explicitly (`articles_slug_locale_idx`). Add a composite index for every known access pattern.
+- Declare check constraints with `check()` when an invariant must be enforced at the DB level (length, enum-like strings, positive numbers).
+- Use Drizzle enums (`pgEnum`) for fixed value sets. Use snake_case for enum members.
+- Keep schema files small and cohesive: one table (plus its relations and indexes) per file.
+- Always export both the table and its `InferSelectModel` / `InferInsertModel` types from the same file, and re-export them from `libs/db`.
+- Define `relations(...)` blocks next to the tables so the query builder's relational API is available.
+
+Migrations
+
+- Generate migrations with `pnpm drizzle-kit generate` after every schema change. Review the generated SQL before committing.
+- Never hand-edit a committed migration. If the generated SQL is wrong, fix the schema, regenerate, and commit both changes together.
+- Migration names must be descriptive (`0003_add_article_translations.sql`). The default `drizzle-kit` numbering is the source of truth — do not renumber.
+- Supabase RLS policies, `pg_cron` jobs, and Postgres-only features (triggers, `tsvector` generated columns, `pg_trgm` indexes) live as raw SQL migrations in the same `drizzle/` folder, interleaved with generated ones, and are applied in order.
+- Apply migrations with `drizzle-kit migrate` in CI/CD before the app boots. Never run ad-hoc `drizzle-kit push` against production.
+- Keep migrations idempotent where possible (`CREATE TABLE IF NOT EXISTS`, `CREATE INDEX IF NOT EXISTS`) for recovery safety.
+- Every migration must be forward-only; write a new migration to revert, never delete one.
+
+Client usage
+
+- Instantiate the Drizzle client once per process:
+  - `const client = postgres(env.DATABASE_URL, { prepare: false, max: poolSize })`
+  - `export const db = drizzle(client, { schema })`
+- In NestJS, expose `db` via a `DrizzleModule` that provides a `DRIZZLE` token. Inject it into services; never `import { db }` directly into a controller.
+- Always use the typed query builder (`db.select()`, `db.insert()`, `db.update()`, `db.delete()`) or the relational API (`db.query.articles.findMany(...)`). Do not bypass Drizzle with `client.unsafe(...)` except for narrowly scoped Postgres-only SQL, and document why.
+- Use `sql` template literals for dynamic SQL fragments (e.g., full-text search `to_tsquery`, `ts_rank`). Always parameterize — never string-concatenate user input.
+- Select only the columns you need (`.select({ id: articles.id, slug: articles.slug })`). Avoid `SELECT *` in hot paths.
+- Use `.with()` (CTEs) and `.leftJoin()` / `.innerJoin()` instead of N+1 loops. The relational API (`with: { translations: true }`) is preferred for simple graphs.
+- Use `db.transaction(async (tx) => { ... })` for any multi-statement write. Pass `tx` through — never reuse the outer `db` inside a transaction callback.
+- Pagination: cursor-based by `created_at + id` when ordering is time-based; `limit` + `offset` only for admin screens with bounded result sets.
+
+Supabase specifics
+
+- Row Level Security is enabled on every table. Service-role connections (from `apps/api`) bypass RLS — treat the API as the RLS trust boundary and validate every input.
+- When the admin dashboard eventually talks to Supabase directly from the browser, it must use the anon key and rely on RLS policies defined as SQL migrations.
+- Full-text search uses a Postgres `tsvector` column (generated or maintained by trigger) and a GIN index. Query it via Drizzle's `sql` helper, never via a client-side LIKE scan.
+- Never run `pg_cron` jobs that mutate schema — schema changes must go through migrations and CI.
+
+Validation
+
+- Every write path receives data validated by Zod (`libs/shared-types`) before it reaches Drizzle. Do not let DTOs flow directly into `.insert()`.
+- Use Drizzle's `InferInsertModel<typeof table>` as the target type when mapping a validated DTO to an insert payload, so the compiler catches drift.
+- Do not derive request/response DTOs from Drizzle types directly — keep the DTO layer in `libs/shared-types` as the public contract.
+
+Error handling
+
+- Catch Postgres errors by `error.code` (from `postgres.js`): `23505` unique violation, `23503` FK violation, `23514` check violation, `40001` serialization failure. Map each to a domain error, not a raw HTTP 500.
+- Wrap retry-eligible transient errors (`40001`, connection resets) with `p-retry`.
+- Always log the failing SQL operation (table, op) plus the mapped error — never the raw query string with parameter values (PII risk).
+
+Performance
+
+- Add a covering index for every `WHERE` / `ORDER BY` that runs on a hot path. Confirm with `EXPLAIN ANALYZE` during review.
+- Use `db.query.*.findMany({ with: {...} })` (relational API) to avoid N+1. When the graph is non-trivial, write one explicit join.
+- Use `LIMIT` everywhere — no unbounded list endpoints.
+- Profile cold-start: the Drizzle + postgres.js client must initialize in under 100 ms on Fly.io `shared-cpu-1x`. If a migration introduces expensive startup work, move it out of the request path.
+
+Testing
+
+- Unit tests mock the Drizzle client at the service boundary (inject a fake that satisfies the service's minimal interface) — do not mock Drizzle's internal builder.
+- Integration tests run against a disposable Postgres (Testcontainers Postgres or a dedicated Supabase branch). Run migrations at test setup with `drizzle-kit migrate`.
+- Each integration test wraps its work in a transaction that is rolled back on teardown, keeping the DB clean between cases.
+- Cover: happy path, unique-violation, FK-violation, soft-delete visibility, pagination edges, and RLS-denied access for any admin-scoped table.
+
+Security
+
+- `DATABASE_URL` and Supabase keys are provided by environment only (Vercel / Fly.io secrets). Never commit them, never log them.
+- All user input is validated (Zod) and parameterized (Drizzle / `sql` template). No string concatenation into SQL, ever.
+- Do not expose the raw `db` instance through any HTTP handler, tRPC procedure, or server action. Always go through a service/repository.
+- Sensitive columns (email, IP, raw Perplexity output) must never be returned to the public frontend — enforced by explicit `.select({...})` projections.
+
+Code organization
+
+- `libs/db/src/schema/` — one file per aggregate root (`articles.ts`, `categories.ts`, etc.).
+- `libs/db/src/client.ts` — the single Drizzle client factory.
+- `libs/db/src/index.ts` — public exports (`db`, schema, inferred types).
+- `libs/db/drizzle/` — generated SQL migrations + hand-written RLS/policy SQL, version-controlled.
+- `apps/api/src/**/repositories/*.ts` — every non-trivial query lives in a repository class that takes the Drizzle client via DI. Services orchestrate repositories; controllers never touch the DB directly.
+- No Drizzle imports in `apps/web`. The public site reads data via `apps/api` or via server-side fetch + ISR, never via direct DB access.
+
+Code quality
+
+- Follow SOLID; prefer small, focused repositories over one god repository per table.
+- Keep schema declarations, queries, and business logic in separate files.
+- No copy-pasted queries — if a query is used in two places, extract it into a repository method.
+- Every public repository method has an explicit return type (inferred or declared).
+
+Development workflow
+
+- Any schema change requires: (1) update `libs/db/src/schema/*.ts`, (2) `pnpm drizzle-kit generate`, (3) review generated SQL, (4) update repositories and types, (5) add/adjust integration tests, (6) commit schema + migration + code together.
+- Keep `drizzle-kit` and `drizzle-orm` versions pinned and upgraded in lockstep; review the changelog for breaking changes before bumping.
+- Use `drizzle-studio` locally to inspect data; never connect it to production.
