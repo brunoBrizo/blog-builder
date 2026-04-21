@@ -26,7 +26,7 @@ Out of scope:
 
 ## Backend work
 
-- `ConfigModule` loads a Zod-validated config from environment: `DATABASE_URL`, `PERPLEXITY_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `RESEND_API_KEY`, `CRON_SHARED_SECRET`, `REVALIDATE_SHARED_SECRET`, `SENTRY_DSN`, `LOG_LEVEL`, `NODE_ENV`, `PORT`. Boot fails loud if any required value is missing.
+- `ConfigModule` loads a Zod-validated config from environment: `DATABASE_URL`, `PERPLEXITY_API_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY` (server-side secret, `sb_secret_…`), `RESEND_API_KEY`, `CRON_SHARED_SECRET`, `REVALIDATE_SHARED_SECRET`, `SENTRY_DSN`, `LOG_LEVEL`, `NODE_ENV`, `PORT`. Boot fails loud if any required value is missing.
 - Global `ValidationPipe` wired to Zod (via `zod-validation-pipe` or equivalent) so every controller input is validated against `libs/shared-types`.
 - Global `HttpExceptionFilter` produces a consistent JSON error contract (`{ error: { code, message, details? } }`) and never leaks stack traces.
 - Pino logger with request id, duration, status, and Sentry breadcrumb correlation.
@@ -35,8 +35,8 @@ Out of scope:
 - `RevalidateAuthGuard` — validates the shared-secret header used by `apps/web` when requesting on-demand ISR revalidation.
 - `ThrottlerModule` configured with tiered limits: public reads relaxed, public writes tight, admin routes their own bucket.
 - Sentry initialized via `@sentry/nestjs` with PII scrubbing on.
-- `/health` (liveness), `/ready` (DB reachable), `/version` (git sha + release tag) endpoints.
-- Dockerfile (multi-stage) and `fly.toml` configured for `shared-cpu-1x`, `auto_stop_machines = "stop"`, 1 min machine, primary region close to Supabase. Release command runs `drizzle-kit migrate`.
+- `/api/health` (liveness), `/api/ready` (DB reachable), `/api/version` (git sha + release tag) endpoints (global prefix `api`).
+- Dockerfile (multi-stage) and `fly.toml` configured for `shared-cpu-1x`, `auto_stop_machines = "stop"`, scale-to-zero (`min_machines_running = 0`), primary region close to Supabase. Release command runs `tsx libs/db/scripts/migrate.ts` (see repo `fly.toml` / `docs/api-fly-deploy.md`).
 - Secrets set via `fly secrets set` — never committed.
 
 ## Frontend work
@@ -46,7 +46,7 @@ Out of scope:
 
 ## Acceptance criteria
 
-- API boots locally against Supabase dev and serves `/health`, `/ready`, `/version`.
+- API boots locally against Supabase dev and serves `/api/health`, `/api/ready`, `/api/version`.
 - An integration test proves that a request without the shared-secret header to a guarded route returns 401.
 - Deploy to Fly.io succeeds via `fly deploy`; first request after idle warms the machine in under 3 s.
 - Sentry receives a test exception in staging.

@@ -1,0 +1,16 @@
+node_modules
+dist
+.nx
+coverage
+.git
+**/.env
+**/.env.*
+!.env.example
+**/*.md
+!README.md
+.turbo
+.vercel
+.cursor
+**/__screenshots__
+**/playwright-report
+**/.playwright

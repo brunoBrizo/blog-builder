@@ -1,26 +1,30 @@
 import { DrizzleModule } from '@blog-builder/db';
 import { Module } from '@nestjs/common';
 
+import { AppConfigModule } from '../core/config/app-config.module';
+import { AppConfigService } from '../core/config/app-config.service';
+import { CoreModule } from '../core/core.module';
+import { ApiObservabilityModule } from '../core/observability/api-observability.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { HealthController } from './health.controller';
-
-const databaseUrl = process.env['DATABASE_URL'];
-
-if (!databaseUrl) {
-  throw new Error(
-    'DATABASE_URL is required. Copy .env.example to .env and fill in the Supabase connection string.',
-  );
-}
+import { RevalidateController } from './revalidate.controller';
+import { TestEndpointsController } from './test-endpoints.controller';
+import { TestEndpointsGuard } from './test-endpoints.guard';
 
 @Module({
   imports: [
-    DrizzleModule.forRoot({
-      url: databaseUrl,
-      max: Number(process.env['DATABASE_POOL_MAX'] ?? 10),
+    CoreModule,
+    DrizzleModule.forRootAsync({
+      imports: [AppConfigModule],
+      inject: [AppConfigService],
+      useFactory: (cfg: AppConfigService) => ({
+        url: cfg.databaseUrl,
+        max: cfg.databasePoolMax,
+      }),
     }),
+    ApiObservabilityModule,
   ],
-  controllers: [AppController, HealthController],
-  providers: [AppService],
+  controllers: [AppController, TestEndpointsController, RevalidateController],
+  providers: [AppService, TestEndpointsGuard],
 })
 export class AppModule {}

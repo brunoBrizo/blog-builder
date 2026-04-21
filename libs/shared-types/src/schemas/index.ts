@@ -8,3 +8,4 @@ export * from './generation-jobs';
 export * from './newsletter';
 export * from './contact-messages';
 export * from './admin-users';
+export * from './revalidate';

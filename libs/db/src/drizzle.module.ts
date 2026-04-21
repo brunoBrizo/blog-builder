@@ -4,6 +4,7 @@ import {
   Logger,
   Module,
   type DynamicModule,
+  type FactoryProvider,
   type OnModuleDestroy,
   type Provider,
 } from '@nestjs/common';
@@ -60,6 +61,44 @@ export class DrizzleModule implements OnModuleDestroy {
 
     return {
       module: DrizzleModule,
+      providers,
+      exports: [DRIZZLE, POSTGRES_JS_CLIENT],
+    };
+  }
+
+  static forRootAsync(options: {
+    imports?: DynamicModule['imports'];
+    inject?: FactoryProvider['inject'];
+    /** Injected deps match `inject`; typed as `any[]` for Nest factory assignability. */
+    useFactory: (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Nest useFactory must accept injected provider instances
+      ...args: any[]
+    ) => DrizzleModuleOptions | Promise<DrizzleModuleOptions>;
+  }): DynamicModule {
+    const providers: Provider[] = [
+      {
+        provide: POSTGRES_JS_CLIENT,
+        inject: options.inject ?? [],
+        useFactory: async (...args: unknown[]) => {
+          const opts = await options.useFactory(...args);
+          return postgres(opts.url, {
+            max: opts.max ?? 10,
+            prepare: opts.prepare ?? false,
+            ssl: opts.url.includes('localhost') ? false : 'require',
+          });
+        },
+      },
+      {
+        provide: DRIZZLE,
+        inject: [POSTGRES_JS_CLIENT],
+        useFactory: (sql: ReturnType<typeof postgres>): Database =>
+          drizzle(sql, { schema, casing: 'snake_case' }),
+      },
+    ];
+
+    return {
+      module: DrizzleModule,
+      imports: options.imports ?? [],
       providers,
       exports: [DRIZZLE, POSTGRES_JS_CLIENT],
     };

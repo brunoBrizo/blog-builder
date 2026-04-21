@@ -1,0 +1,11 @@
+/** Stable API error codes for clients (HTTP status implied separately). */
+export enum ErrorCode {
+  BAD_REQUEST = 'BAD_REQUEST',
+  UNAUTHORIZED = 'UNAUTHORIZED',
+  FORBIDDEN = 'FORBIDDEN',
+  NOT_FOUND = 'NOT_FOUND',
+  CONFLICT = 'CONFLICT',
+  TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS',
+  INTERNAL = 'INTERNAL',
+  SERVICE_UNAVAILABLE = 'SERVICE_UNAVAILABLE',
+}
