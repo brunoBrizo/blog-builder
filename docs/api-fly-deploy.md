@@ -15,9 +15,13 @@ Set at least:
 - `PERPLEXITY_API_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `RESEND_API_KEY`
 - `CRON_SHARED_SECRET`, `REVALIDATE_SHARED_SECRET`
 - `CORS_ORIGIN_WEB` — production web origin (e.g. `https://your-app.vercel.app`). Required when `NODE_ENV=production`.
+- **Inngest (required in production)** — `INNGEST_EVENT_KEY`, `INNGEST_SIGNING_KEY`. Optional: `INNGEST_SERVE_PATH` (default `/api/inngest`). The API rejects unsigned `POST` requests to the serve path with **401** when the signing key is set.
+- **Article generation** — optional overrides: `GENERATION_PER_RUN_TOKEN_BUDGET`, `GENERATION_DAILY_USD_CEILING`, `GENERATION_KILL_SWITCH`, `GENERATION_DEFAULT_AUTHOR_ID`, `PERPLEXITY_TIMEOUT_MS`, `PERPLEXITY_USD_PER_MTOKENS_PROMPT`, `PERPLEXITY_USD_PER_MTOKENS_COMPLETION` (see `apps/api/src/core/config/env.schema.ts`).
 - Optional: `SENTRY_DSN`, `SENTRY_TRACES_SAMPLE_RATE`
 - Optional: `CRON_IP_ALLOWLIST` — comma-separated CIDRs; empty disables IP checks for cron routes.
 - Optional: `TRUST_PROXY=true` on Fly so `Fly-Client-IP` / `X-Forwarded-For` work with the cron allowlist.
+
+Operations: replay, memoized steps, kill switch — [Inngest article pipeline runbook](./inngest-article-pipeline.md).
 
 Example:
 
@@ -31,7 +35,9 @@ fly secrets set \
   RESEND_API_KEY="..." \
   CRON_SHARED_SECRET="..." \
   REVALIDATE_SHARED_SECRET="..." \
-  CORS_ORIGIN_WEB="https://..."
+  CORS_ORIGIN_WEB="https://..." \
+  INNGEST_EVENT_KEY="..." \
+  INNGEST_SIGNING_KEY="..."
 ```
 
 ## Release command

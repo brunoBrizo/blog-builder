@@ -5,6 +5,7 @@ import { Logger } from 'nestjs-pino';
 
 import { NestFactory } from '@nestjs/core';
 import type { NestExpressApplication } from '@nestjs/platform-express';
+import express from 'express';
 
 import { AppConfigService } from './core/config/app-config.service';
 import {
@@ -12,6 +13,7 @@ import {
   parseEnv,
 } from './core/config/env.schema';
 import { applySecurityMiddleware } from './core/security/apply-security';
+import { INNGEST_EXPRESS_MIDDLEWARE } from './generation/generation.tokens';
 import { AppModule } from './app/app.module';
 
 function initSentry(): void {
@@ -42,6 +44,7 @@ async function bootstrap(): Promise<void> {
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     bufferLogs: true,
+    rawBody: true,
   });
 
   const cfg = app.get(AppConfigService);
@@ -55,6 +58,15 @@ async function bootstrap(): Promise<void> {
 
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
+
+  const expressApp = app.getHttpAdapter().getInstance();
+  // Path-local JSON parser: Inngest must run before Nest's router (otherwise `/api/inngest`
+  // 404s) and `req.body` must be populated (see inngest/express docs).
+  expressApp.use(
+    cfg.inngestServePath,
+    express.json({ limit: '1mb' }),
+    app.get(INNGEST_EXPRESS_MIDDLEWARE),
+  );
   app.enableShutdownHooks();
 
   const port = cfg.port;

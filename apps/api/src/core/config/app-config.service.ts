@@ -122,6 +122,58 @@ export class AppConfigService {
     return this.config.get('ENABLE_TEST_ENDPOINTS', { infer: true }) ?? false;
   }
 
+  get inngestEventKey(): string {
+    return this.config.get('INNGEST_EVENT_KEY', { infer: true }) ?? '';
+  }
+
+  get inngestSigningKey(): string {
+    return this.config.get('INNGEST_SIGNING_KEY', { infer: true }) ?? '';
+  }
+
+  get inngestServePath(): string {
+    return this.config.get('INNGEST_SERVE_PATH', { infer: true });
+  }
+
+  get generationPerRunTokenBudget(): number {
+    return this.config.get('GENERATION_PER_RUN_TOKEN_BUDGET', { infer: true });
+  }
+
+  get generationDailyUsdCeiling(): number {
+    return this.config.get('GENERATION_DAILY_USD_CEILING', { infer: true });
+  }
+
+  get generationKillSwitch(): boolean {
+    return this.config.get('GENERATION_KILL_SWITCH', { infer: true }) ?? false;
+  }
+
+  get generationDefaultAuthorId(): string {
+    return this.config.get('GENERATION_DEFAULT_AUTHOR_ID', { infer: true });
+  }
+
+  get perplexityTimeoutMs(): number {
+    return this.config.get('PERPLEXITY_TIMEOUT_MS', { infer: true });
+  }
+
+  get perplexityUsdPerMtokensPrompt(): number {
+    return this.config.get('PERPLEXITY_USD_PER_MTOKENS_PROMPT', {
+      infer: true,
+    });
+  }
+
+  get perplexityUsdPerMtokensCompletion(): number {
+    return this.config.get('PERPLEXITY_USD_PER_MTOKENS_COMPLETION', {
+      infer: true,
+    });
+  }
+
+  /** True when Inngest Cloud keys are missing (development / test). */
+  get inngestKeysOptional(): boolean {
+    return (
+      this.nodeEnv !== 'production' &&
+      (this.inngestEventKey.length === 0 || this.inngestSigningKey.length === 0)
+    );
+  }
+
   /** Supabase project host for CORS connect-src (derived from SUPABASE_URL). */
   supabaseCorsOrigin(): string {
     try {

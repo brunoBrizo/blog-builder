@@ -65,6 +65,40 @@ export const envSchema = z
       .enum(['true', 'false', '1', '0'])
       .optional()
       .transform((v) => v === 'true' || v === '1'),
+
+    /** Inngest Cloud (required in production). */
+    INNGEST_EVENT_KEY: z.string().optional().default(''),
+    INNGEST_SIGNING_KEY: z.string().optional().default(''),
+    INNGEST_SERVE_PATH: z.string().startsWith('/').default('/api/inngest'),
+
+    /** Per-run token ceiling (prompt + completion) before aborting with NonRetriableError. */
+    GENERATION_PER_RUN_TOKEN_BUDGET: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(500_000),
+    /** Max USD spend across completed jobs for the current UTC calendar day. */
+    GENERATION_DAILY_USD_CEILING: z.coerce.number().nonnegative().default(500),
+    GENERATION_KILL_SWITCH: z
+      .enum(['true', 'false', '1', '0'])
+      .optional()
+      .transform((v) => v === 'true' || v === '1'),
+
+    /**
+     * Author FK for generated articles. Defaults to seed author from `pnpm db:seed`.
+     */
+    GENERATION_DEFAULT_AUTHOR_ID: z
+      .string()
+      .uuid()
+      .default('b1111111-1111-4111-8111-111111111111'),
+
+    PERPLEXITY_TIMEOUT_MS: z.coerce.number().int().positive().default(120_000),
+    /** USD per 1M tokens (rough blended rate for cost estimates). */
+    PERPLEXITY_USD_PER_MTOKENS_PROMPT: z.coerce.number().positive().default(3),
+    PERPLEXITY_USD_PER_MTOKENS_COMPLETION: z.coerce
+      .number()
+      .positive()
+      .default(15),
   })
   .superRefine((data, ctx) => {
     if (data.NODE_ENV === 'production' && !data.CORS_ORIGIN_WEB) {
@@ -73,6 +107,22 @@ export const envSchema = z
         message: 'CORS_ORIGIN_WEB is required when NODE_ENV=production',
         path: ['CORS_ORIGIN_WEB'],
       });
+    }
+    if (data.NODE_ENV === 'production') {
+      if (!data.INNGEST_EVENT_KEY || data.INNGEST_EVENT_KEY.length === 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'INNGEST_EVENT_KEY is required when NODE_ENV=production',
+          path: ['INNGEST_EVENT_KEY'],
+        });
+      }
+      if (!data.INNGEST_SIGNING_KEY || data.INNGEST_SIGNING_KEY.length === 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'INNGEST_SIGNING_KEY is required when NODE_ENV=production',
+          path: ['INNGEST_SIGNING_KEY'],
+        });
+      }
     }
   });
 

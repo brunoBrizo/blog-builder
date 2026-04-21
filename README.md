@@ -60,6 +60,7 @@ Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`, 
 
 ## More context
 
+- `docs/help-guides/` — local setup, env, database, Inngest, manual generation testing
 - `docs/tech-stack.md` — full tech stack
 - `docs/seo-geo.md` — SEO + GEO policy
 - `docs/accessibility.md` — WCAG 2.2 AA plan
