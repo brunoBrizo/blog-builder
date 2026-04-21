@@ -1,0 +1,50 @@
+{
+  "common": {
+    "siteName": "Blog Builder",
+    "themeLight": "Use light theme",
+    "themeDark": "Use dark theme",
+    "home": "Home",
+    "blog": "Blog",
+    "admin": "Admin"
+  },
+  "layout": {
+    "skipToContent": "Skip to content",
+    "header": {
+      "navAria": "Primary",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    },
+    "footer": {
+      "copyright": "© {year} Blog Builder. All rights reserved.",
+      "legal": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "socialAria": "Social links",
+      "newsletterCompliance": "You can unsubscribe at any time. We use List-Unsubscribe headers on marketing mail."
+    },
+    "newsletter": {
+      "stickyTitle": "Stay in the loop",
+      "stickyDescription": "Newsletter signup arrives in a later release.",
+      "dismiss": "Dismiss newsletter prompt",
+      "emailPlaceholder": "you@example.com",
+      "cta": "Notify me"
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist or was moved.",
+      "homeLink": "Back to home"
+    },
+    "500": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Please try again.",
+      "retry": "Try again",
+      "homeLink": "Back to home"
+    }
+  },
+  "demo": {
+    "title": "UI primitives (development)",
+    "back": "Back to home"
+  }
+}

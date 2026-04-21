@@ -1,25 +1,35 @@
-import type { Metadata, Viewport } from 'next';
+import { getLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
+
+import { fontMono, fontSans } from './fonts';
 import './global.css';
 
-export const metadata: Metadata = {
-  title: {
-    default: 'Blog Builder',
-    template: '%s · Blog Builder',
-  },
-  description: 'AI & tech blog foundation.',
-};
+import { cookies } from 'next/headers';
 
-export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  width: 'device-width',
-  initialScale: 1,
-};
+import { isAppLocale, localeToHtmlLang } from '@/i18n/locales';
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const localeRaw = await getLocale();
+  const locale = isAppLocale(localeRaw) ? localeRaw : 'en';
+  const htmlLang = localeToHtmlLang(locale);
+
+  const cookieStore = await cookies();
+  const theme = cookieStore.get('bb_theme')?.value;
+  const themeClass =
+    theme === 'dark' ? 'theme-dark' : theme === 'light' ? 'theme-light' : '';
+
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html
+      lang={htmlLang}
+      dir="ltr"
+      className={`${fontSans.variable} ${fontMono.variable} ${themeClass}`.trim()}
+      suppressHydrationWarning
+    >
+      <body className="min-h-dvh antialiased">{children}</body>
     </html>
   );
 }

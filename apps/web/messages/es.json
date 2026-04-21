@@ -1,0 +1,50 @@
+{
+  "common": {
+    "siteName": "Blog Builder",
+    "themeLight": "Usar tema claro",
+    "themeDark": "Usar tema oscuro",
+    "home": "Inicio",
+    "blog": "Blog",
+    "admin": "Admin"
+  },
+  "layout": {
+    "skipToContent": "Saltar al contenido",
+    "header": {
+      "navAria": "Principal",
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú"
+    },
+    "footer": {
+      "copyright": "© {year} Blog Builder. Todos los derechos reservados.",
+      "legal": "Legal",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "socialAria": "Redes sociales",
+      "newsletterCompliance": "Puedes darte de baja en cualquier momento. Usamos cabeceras List-Unsubscribe en el correo de marketing."
+    },
+    "newsletter": {
+      "stickyTitle": "Mantente al día",
+      "stickyDescription": "El registro al boletín llegará en una versión posterior.",
+      "dismiss": "Cerrar aviso del boletín",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "cta": "Avísame"
+    }
+  },
+  "errors": {
+    "404": {
+      "title": "Página no encontrada",
+      "description": "La página que buscas no existe o se movió.",
+      "homeLink": "Volver al inicio"
+    },
+    "500": {
+      "title": "Algo salió mal",
+      "description": "Ocurrió un error inesperado. Inténtalo de nuevo.",
+      "retry": "Reintentar",
+      "homeLink": "Volver al inicio"
+    }
+  },
+  "demo": {
+    "title": "Primitivos de UI (desarrollo)",
+    "back": "Volver al inicio"
+  }
+}

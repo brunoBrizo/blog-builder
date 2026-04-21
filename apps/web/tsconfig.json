@@ -2,6 +2,16 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@blog-builder/shared-types": ["../../libs/shared-types/src/index.ts"],
+      "@blog-builder/seo": ["../../libs/seo/src/index.ts"],
+      "@blog-builder/db": ["../../libs/db/src/index.ts"],
+      "@blog-builder/prompts": ["../../libs/prompts/src/index.ts"],
+      "@blog-builder/ui": ["../../libs/ui/src/index.ts"],
+      "@blog-builder/ui/theme.css": ["../../libs/ui/src/theme.css"]
+    },
 
     "strict": true,
     "noEmit": true,

@@ -10,7 +10,11 @@ if (process.argv.includes('build')) {
 }
 
 const { composePlugins, withNx } = require('@nx/next');
+const createNextIntlPlugin = require('next-intl/plugin');
 const path = require('path');
+
+/** Relative path required for next-intl with Turbopack (no absolute paths). */
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -24,8 +28,16 @@ const nextConfig = {
   turbopack: {
     root: path.join(__dirname, '..', '..'),
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
+  },
 };
 
-const plugins = [withNx];
-
-module.exports = composePlugins(...plugins)(nextConfig);
+module.exports = composePlugins(withNx, withNextIntl)(nextConfig);

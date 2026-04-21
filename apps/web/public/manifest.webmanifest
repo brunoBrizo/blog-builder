@@ -1,0 +1,8 @@
+{
+  "name": "Blog Builder",
+  "short_name": "Blog Builder",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa"
+}

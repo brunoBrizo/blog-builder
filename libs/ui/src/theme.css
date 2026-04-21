@@ -1,17 +1,100 @@
 @layer theme {
   :root {
     color-scheme: light dark;
-    --bb-color-bg: oklch(100% 0 0);
-    --bb-color-fg: oklch(20% 0 0);
+
+    --bb-space-1: 0.25rem;
+    --bb-space-2: 0.5rem;
+    --bb-space-3: 0.75rem;
+    --bb-space-4: 1rem;
+    --bb-space-6: 1.5rem;
+    --bb-space-8: 2rem;
+    --bb-space-12: 3rem;
+
     --bb-radius-sm: 0.25rem;
     --bb-radius-md: 0.5rem;
-    --bb-radius-lg: 1rem;
+    --bb-radius-lg: 0.75rem;
+    --bb-radius-xl: 1rem;
+
+    --bb-color-bg: oklch(99% 0 0);
+    --bb-color-fg: oklch(18% 0 0);
+    --bb-color-muted: oklch(45% 0 0);
+    --bb-color-border: oklch(88% 0 0);
+    --bb-color-surface: oklch(96% 0 0);
+    --bb-color-surface-elevated: oklch(100% 0 0);
+    --bb-color-primary: oklch(45% 0.18 264);
+    --bb-color-primary-fg: oklch(99% 0 0);
+    --bb-color-destructive: oklch(52% 0.2 25);
+    --bb-color-destructive-fg: oklch(99% 0 0);
+    --bb-color-ring: oklch(45% 0.18 264);
+    --bb-color-input: oklch(88% 0 0);
   }
 
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bb-color-bg: oklch(14% 0 0);
+    :root:not(.theme-light) {
+      --bb-color-bg: oklch(16% 0 0);
       --bb-color-fg: oklch(96% 0 0);
+      --bb-color-muted: oklch(72% 0 0);
+      --bb-color-border: oklch(30% 0 0);
+      --bb-color-surface: oklch(20% 0 0);
+      --bb-color-surface-elevated: oklch(22% 0 0);
+      --bb-color-primary: oklch(72% 0.16 264);
+      --bb-color-primary-fg: oklch(16% 0 0);
+      --bb-color-destructive: oklch(62% 0.18 25);
+      --bb-color-destructive-fg: oklch(16% 0 0);
+      --bb-color-ring: oklch(72% 0.16 264);
+      --bb-color-input: oklch(30% 0 0);
     }
   }
+
+  .theme-light {
+    color-scheme: light;
+    --bb-color-bg: oklch(99% 0 0);
+    --bb-color-fg: oklch(18% 0 0);
+    --bb-color-muted: oklch(45% 0 0);
+    --bb-color-border: oklch(88% 0 0);
+    --bb-color-surface: oklch(96% 0 0);
+    --bb-color-surface-elevated: oklch(100% 0 0);
+    --bb-color-primary: oklch(45% 0.18 264);
+    --bb-color-primary-fg: oklch(99% 0 0);
+    --bb-color-destructive: oklch(52% 0.2 25);
+    --bb-color-destructive-fg: oklch(99% 0 0);
+    --bb-color-ring: oklch(45% 0.18 264);
+    --bb-color-input: oklch(88% 0 0);
+  }
+
+  .theme-dark {
+    color-scheme: dark;
+    --bb-color-bg: oklch(16% 0 0);
+    --bb-color-fg: oklch(96% 0 0);
+    --bb-color-muted: oklch(72% 0 0);
+    --bb-color-border: oklch(30% 0 0);
+    --bb-color-surface: oklch(20% 0 0);
+    --bb-color-surface-elevated: oklch(22% 0 0);
+    --bb-color-primary: oklch(72% 0.16 264);
+    --bb-color-primary-fg: oklch(16% 0 0);
+    --bb-color-destructive: oklch(62% 0.18 25);
+    --bb-color-destructive-fg: oklch(16% 0 0);
+    --bb-color-ring: oklch(72% 0.16 264);
+    --bb-color-input: oklch(30% 0 0);
+  }
+}
+
+@theme {
+  --color-background: var(--bb-color-bg);
+  --color-foreground: var(--bb-color-fg);
+  --color-muted-foreground: var(--bb-color-muted);
+  --color-border: var(--bb-color-border);
+  --color-surface: var(--bb-color-surface);
+  --color-surface-elevated: var(--bb-color-surface-elevated);
+  --color-primary: var(--bb-color-primary);
+  --color-primary-foreground: var(--bb-color-primary-fg);
+  --color-destructive: var(--bb-color-destructive);
+  --color-destructive-foreground: var(--bb-color-destructive-fg);
+  --color-ring: var(--bb-color-ring);
+  --color-input: var(--bb-color-input);
+
+  --radius-sm: var(--bb-radius-sm);
+  --radius-md: var(--bb-radius-md);
+  --radius-lg: var(--bb-radius-lg);
+  --radius-xl: var(--bb-radius-xl);
 }
