@@ -8,11 +8,39 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p libs/db/tsconfig.lib.json"
+      },
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
     "test": {
       "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "coverage/libs/db"
+      }
+    },
+    "test:integration": {
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "config": "libs/db/vite.config.integration.mts",
+        "reportsDirectory": "coverage/libs/db-integration"
+      }
+    },
+    "db:generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm db:generate"
+      }
+    },
+    "db:migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm db:migrate"
       }
     }
   }

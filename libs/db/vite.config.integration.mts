@@ -4,20 +4,19 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/libs/db',
+  cacheDir: '../../node_modules/.vite/libs/db-integration',
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   test: {
-    name: 'db',
+    name: 'db-integration',
     watch: false,
     globals: true,
     environment: 'node',
-    passWithNoTests: true,
-    exclude: ['**/tests/integration/**'],
-    include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    globalSetup: ['./tests/integration/global-setup.ts'],
+    include: ['tests/integration/**/*.spec.ts'],
+    fileParallelism: false,
+    sequence: { concurrent: false },
+    testTimeout: 120_000,
+    hookTimeout: 120_000,
     reporters: ['default'],
-    coverage: {
-      reportsDirectory: '../../coverage/libs/db',
-      provider: 'v8' as const,
-    },
   },
 }));
