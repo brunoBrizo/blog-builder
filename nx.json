@@ -106,5 +106,6 @@
     }
   },
   "useInferencePlugins": false,
-  "defaultProject": "web"
+  "defaultProject": "web",
+  "analytics": false
 }

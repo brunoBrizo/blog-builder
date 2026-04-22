@@ -1,0 +1,379 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Definitive Guide to Building RAG Applications in 2025 - Synthetix</title>
+    <meta name="description" content="A comprehensive tutorial on architecting Retrieval-Augmented Generation pipelines. Learn how to optimize chunking strategies and evaluate vector database performance.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Smooth scrolling for Table of Contents */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar for code blocks */
+        .custom-scrollbar::-webkit-scrollbar { height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #52525b; }
+    </style>
+</head>
+<body class="bg-white text-zinc-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-zinc-100 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between gap-4">
+                <div class="flex items-center gap-8">
+                    <!-- Logo -->
+                    <a href="/" class="text-lg font-medium tracking-tighter uppercase text-zinc-900 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+                        Synthetix
+                    </a>
+                    
+                    <!-- Desktop Nav -->
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a href="#" class="text-sm text-zinc-500 hover:text-indigo-600 transition-colors">AI Tools</a>
+                        <a href="#" class="text-sm text-zinc-500 hover:text-indigo-600 transition-colors">Development</a>
+                        <a href="#" class="text-sm text-indigo-600 transition-colors relative after:absolute after:-bottom-[21px] after:left-0 after:w-full after:h-[1px] after:bg-indigo-600">Guides</a>
+                        <a href="#" class="text-sm text-zinc-500 hover:text-indigo-600 transition-colors">Articles</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Search -->
+                    <div class="relative hidden sm:block w-48">
+                        <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+                            <iconify-icon icon="solar:magnifer-linear" class="text-zinc-400" style="stroke-width: 1.5;"></iconify-icon>
+                        </div>
+                        <input type="text" placeholder="Search..." class="w-full rounded-md border border-zinc-200 bg-zinc-50 py-1.5 pl-8 pr-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-400/20 transition-all">
+                    </div>
+                    
+                    <!-- Language Switcher -->
+                    <button class="flex items-center gap-1.5 text-zinc-500 hover:text-indigo-600 transition-colors text-sm px-2 py-1 rounded-md hover:bg-indigo-50/50">
+                        <iconify-icon icon="solar:global-linear" style="stroke-width: 1.5;"></iconify-icon>
+                        <span>EN</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-zinc-500 hover:text-indigo-600 p-1 transition-colors">
+                        <iconify-icon icon="solar:hamburger-menu-linear" style="stroke-width: 1.5;"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs text-zinc-500 mb-8">
+            <a href="/" class="hover:text-indigo-600 transition-colors">Home</a>
+            <iconify-icon icon="solar:alt-arrow-right-linear" style="stroke-width: 1.5;"></iconify-icon>
+            <a href="#" class="hover:text-indigo-600 transition-colors">Guides &amp; Tutorials</a>
+            <iconify-icon icon="solar:alt-arrow-right-linear" style="stroke-width: 1.5;"></iconify-icon>
+            <span class="text-zinc-900 truncate max-w-[200px] sm:max-w-xs">Building RAG Applications</span>
+        </nav>
+
+        <!-- Leaderboard Ad Placeholder -->
+        <div class="w-full bg-zinc-50/50 border border-zinc-200 border-dashed rounded-lg p-2 flex flex-col items-center justify-center min-h-[90px] mb-10 hidden sm:flex">
+            <span class="text-xs text-zinc-400 uppercase tracking-widest font-medium">Advertisement</span>
+            <span class="text-xs text-zinc-300 mt-1">Google AdSense - 728x90</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            <!-- Article Content (Left Column) -->
+            <article class="lg:col-span-8 flex flex-col min-w-0">
+                
+                <!-- Article Header -->
+                <header class="mb-10">
+                    <div class="flex items-center gap-2 mb-5">
+                        <span class="text-xs font-medium text-violet-600 px-2 py-0.5 rounded bg-violet-50 border border-violet-100/50">Guides &amp; Tutorials</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-900 mb-6 leading-tight">
+                        The Definitive Guide to Building RAG Applications in 2025
+                    </h1>
+                    
+                    <p class="text-lg text-zinc-500 mb-8 leading-relaxed">
+                        A comprehensive tutorial on architecting Retrieval-Augmented Generation pipelines. Learn how to optimize chunking strategies, select the right embedding models, and evaluate vector database performance.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-between gap-4 py-5 border-y border-zinc-100">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=48&amp;h=48&amp;q=80" alt="Marcus Dev" class="w-10 h-10 rounded-full grayscale opacity-90">
+                            <div>
+                                <div class="text-sm font-medium text-zinc-900">Marcus Dev</div>
+                                <div class="flex items-center gap-2 text-xs text-zinc-500 mt-0.5">
+                                    <span>Oct 24, 2025</span>
+                                    <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
+                                    <span>12 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Share Buttons -->
+                        <div class="flex items-center gap-2">
+                            <button class="w-8 h-8 flex items-center justify-center rounded-md border border-zinc-200 text-zinc-500 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-colors" aria-label="Share on Twitter">
+                                <iconify-icon icon="solar:twitter-linear" style="stroke-width: 1.5;"></iconify-icon>
+                            </button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-md border border-zinc-200 text-zinc-500 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-colors" aria-label="Share on LinkedIn">
+                                <iconify-icon icon="solar:link-circle-linear" style="stroke-width: 1.5;"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                <figure class="mb-10">
+                    <div class="aspect-[16/9] w-full bg-zinc-100 rounded-xl overflow-hidden border border-zinc-200/50">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" alt="Abstract data flow representing RAG architecture" class="object-cover w-full h-full">
+                    </div>
+                    <figcaption class="text-xs text-center text-zinc-500 mt-3">
+                        Visualizing the data retrieval and embedding generation process in a modern LLM architecture.
+                    </figcaption>
+                </figure>
+
+                <!-- Article Body -->
+                <div class="prose prose-zinc max-w-none text-base text-zinc-600 leading-relaxed space-y-6">
+                    <p>
+                        Large Language Models (LLMs) are incredibly powerful, but they suffer from a fundamental limitation: their knowledge is frozen at the time of training. To build applications that can reason over proprietary or real-time data, we need <strong>Retrieval-Augmented Generation (RAG)</strong>.
+                    </p>
+                    
+                    <p>
+                        In this guide, we'll walk through the modern stack for building production-ready RAG pipelines, bypassing the common pitfalls developers face when moving from prototypes to scaled applications.
+                    </p>
+
+                    <h2 id="core-architecture" class="text-2xl font-medium tracking-tight text-zinc-900 mt-12 mb-5 scroll-mt-20">1. Core Architecture Overview</h2>
+                    
+                    <p>
+                        A typical RAG system consists of two primary pipelines working in tandem: the ingestion pipeline and the retrieval/generation pipeline. Understanding the separation of concerns here is vital for scalability.
+                    </p>
+
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li><strong class="text-zinc-900 font-medium">Ingestion:</strong> Document parsing, chunking, embedding generation, and vector indexing.</li>
+                        <li><strong class="text-zinc-900 font-medium">Retrieval:</strong> Query processing, semantic search, re-ranking, and context window assembly.</li>
+                        <li><strong class="text-zinc-900 font-medium">Generation:</strong> Prompt formatting and LLM inference.</li>
+                    </ul>
+
+                    <blockquote class="border-l-2 border-indigo-600 pl-4 py-3 pr-4 bg-indigo-50/30 rounded-r-lg my-8 text-zinc-700 italic">
+                        "The quality of your RAG output is strictly bounded by the quality of your retrieval. An LLM cannot generate accurate answers from irrelevant context."
+                    </blockquote>
+
+                    <!-- In-content Ad Placeholder -->
+                    <div class="w-full bg-zinc-50/50 border border-zinc-200 border-dashed rounded-lg p-4 flex flex-col items-center justify-center my-10 min-h-[100px]">
+                        <span class="text-xs text-zinc-400 uppercase tracking-widest font-medium">Advertisement</span>
+                        <span class="text-xs text-zinc-300 mt-1">Google AdSense - Responsive Content Ad</span>
+                    </div>
+
+                    <h2 id="chunking-strategies" class="text-2xl font-medium tracking-tight text-zinc-900 mt-12 mb-5 scroll-mt-20">2. Advanced Chunking Strategies</h2>
+
+                    <p>
+                        Naive fixed-size chunking (e.g., splitting every 500 characters) often destroys semantic boundaries. Instead, modern systems utilize semantic or document-aware chunking.
+                    </p>
+
+                    <h3 class="text-xl font-medium tracking-tight text-zinc-900 mt-8 mb-4">Implementation with LangChain</h3>
+
+                    <p>
+                        Here's how to implement a recursive character text splitter that respects natural paragraph boundaries before falling back to word boundaries.
+                    </p>
+
+                    <!-- Code Block -->
+                    <div class="my-6 rounded-lg overflow-hidden border border-zinc-800 bg-[#18181b]">
+                        <div class="flex items-center justify-between px-4 py-2 bg-zinc-900 border-b border-zinc-800">
+                            <span class="text-xs font-medium text-zinc-400">python</span>
+                            <button class="text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1 text-xs">
+                                <iconify-icon icon="solar:copy-linear"></iconify-icon>
+                                Copy
+                            </button>
+                        </div>
+                        <div class="p-4 overflow-x-auto custom-scrollbar">
+<pre class="font-mono text-sm leading-relaxed text-zinc-300"><code><span class="text-indigo-400">from</span> langchain.text_splitter <span class="text-indigo-400">import</span> RecursiveCharacterTextSplitter
+
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=<span class="text-emerald-400">1000</span>,
+    chunk_overlap=<span class="text-emerald-400">200</span>,
+    length_function=<span class="text-indigo-400">len</span>,
+    separators=[<span class="text-amber-300">"\n\n"</span>, <span class="text-amber-300">"\n"</span>, <span class="text-amber-300">" "</span>, <span class="text-amber-300">""</span>]
+)
+
+chunks = text_splitter.split_text(document_content)
+<span class="text-zinc-500"># Analyze chunk distribution before embedding</span>
+<span class="text-indigo-400">print</span>(<span class="text-amber-300">f"Generated {len(chunks)} semantic chunks."</span>)</code></pre>
+                        </div>
+                    </div>
+
+                    <h2 id="evaluating-retrieval" class="text-2xl font-medium tracking-tight text-zinc-900 mt-12 mb-5 scroll-mt-20">3. Evaluating Retrieval Performance</h2>
+                    
+                    <p>
+                        Don't guess if your RAG pipeline is working. Use frameworks like Ragas or TruLens to quantify performance across three metrics:
+                    </p>
+
+                    <ol class="list-decimal pl-5 space-y-2 mb-6">
+                        <li><strong class="text-zinc-900 font-medium">Context Precision:</strong> Is the retrieved context relevant to the query?</li>
+                        <li><strong class="text-zinc-900 font-medium">Context Recall:</strong> Did we retrieve all the necessary information to answer the query?</li>
+                        <li><strong class="text-zinc-900 font-medium">Faithfulness:</strong> Is the LLM's answer directly derived from the provided context (avoiding hallucination)?</li>
+                    </ol>
+
+                    <p>
+                        By setting up automated evaluation pipelines during CI/CD, you can confidently swap out embedding models (like moving from OpenAI's `text-embedding-ada-002` to `text-embedding-3-small`) and measure the exact impact on your application's accuracy.
+                    </p>
+                </div>
+
+                <!-- Article Footer / Tags -->
+                <div class="mt-12 pt-8 border-t border-zinc-100">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-xs font-medium text-zinc-500 mr-2">Topics:</span>
+                        <a href="#" class="px-2.5 py-1 text-xs text-zinc-600 bg-zinc-100 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Python</a>
+                        <a href="#" class="px-2.5 py-1 text-xs text-zinc-600 bg-zinc-100 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors">LLMs</a>
+                        <a href="#" class="px-2.5 py-1 text-xs text-zinc-600 bg-zinc-100 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Vector Databases</a>
+                        <a href="#" class="px-2.5 py-1 text-xs text-zinc-600 bg-zinc-100 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Architecture</a>
+                    </div>
+                </div>
+
+                <!-- E-E-A-T Author Box (Expanded for article page) -->
+                <div class="mt-10 bg-gradient-to-br from-zinc-50 to-white border border-zinc-200 rounded-xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row gap-5 items-start">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=120&amp;h=120&amp;q=80" alt="Marcus Dev" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full grayscale border border-zinc-200/50 shrink-0">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <h3 class="text-lg font-medium text-zinc-900 tracking-tight">Written by Marcus Dev</h3>
+                                <iconify-icon icon="solar:check-circle-bold" class="text-indigo-600" style="stroke-width: 1.5;"></iconify-icon>
+                            </div>
+                            <p class="text-sm text-indigo-600 mb-3">Senior AI Engineer &amp; Full-Stack Developer</p>
+                            <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                                Marcus has spent the last 5 years building scalable machine learning pipelines and is an active contributor to open-source AI frameworks. He specializes in natural language processing and distributed systems.
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="text-zinc-400 hover:text-indigo-600 transition-colors" aria-label="Twitter Profile">
+                                    <iconify-icon icon="solar:twitter-linear" class="text-lg" style="stroke-width: 1.5;"></iconify-icon>
+                                </a>
+                                <a href="#" class="text-zinc-400 hover:text-indigo-600 transition-colors" aria-label="GitHub Profile">
+                                    <iconify-icon icon="solar:code-circle-linear" class="text-lg" style="stroke-width: 1.5;"></iconify-icon>
+                                </a>
+                                <a href="#" class="text-zinc-400 hover:text-indigo-600 transition-colors" aria-label="Personal Website">
+                                    <iconify-icon icon="solar:global-linear" class="text-lg" style="stroke-width: 1.5;"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Articles Navigation -->
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="#" class="group p-5 border border-zinc-200 rounded-xl hover:border-indigo-200 hover:bg-indigo-50/30 transition-all flex flex-col justify-between">
+                        <span class="text-xs text-zinc-500 mb-2 flex items-center gap-1">
+                            <iconify-icon icon="solar:arrow-left-linear"></iconify-icon> Previous
+                        </span>
+                        <span class="text-sm font-medium text-zinc-900 group-hover:text-indigo-600 transition-colors leading-snug">
+                            Understanding Embeddings: The Math Behind the Magic
+                        </span>
+                    </a>
+                    <a href="#" class="group p-5 border border-zinc-200 rounded-xl hover:border-indigo-200 hover:bg-indigo-50/30 transition-all flex flex-col justify-between text-right">
+                        <span class="text-xs text-zinc-500 mb-2 flex items-center justify-end gap-1">
+                            Next <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                        </span>
+                        <span class="text-sm font-medium text-zinc-900 group-hover:text-indigo-600 transition-colors leading-snug">
+                            Top 5 Open-Source Vector Databases Evaluated
+                        </span>
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- Sidebar (Right Column) -->
+            <aside class="lg:col-span-4">
+                <div class="sticky top-24 space-y-8">
+                    
+                    <!-- Table of Contents -->
+                    <div class="bg-zinc-50/50 rounded-xl p-5 border border-zinc-100 hidden lg:block">
+                        <h3 class="text-sm font-medium text-zinc-900 mb-4 uppercase tracking-wider px-1">In this article</h3>
+                        <nav class="flex flex-col gap-2.5 relative">
+                            <!-- Active indicator line -->
+                            <div class="absolute left-[3px] top-2 bottom-2 w-px bg-zinc-200"></div>
+                            <div class="absolute left-[3px] top-2 h-6 w-px bg-indigo-600 transition-all duration-300"></div>
+                            
+                            <a href="#core-architecture" class="text-sm text-indigo-600 font-medium pl-4 relative z-10 hover:text-indigo-600 transition-colors">
+                                1. Core Architecture Overview
+                            </a>
+                            <a href="#chunking-strategies" class="text-sm text-zinc-500 pl-4 relative z-10 hover:text-indigo-600 transition-colors">
+                                2. Advanced Chunking Strategies
+                            </a>
+                            <a href="#evaluating-retrieval" class="text-sm text-zinc-500 pl-4 relative z-10 hover:text-indigo-600 transition-colors">
+                                3. Evaluating Retrieval Performance
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Sidebar Ad Placeholder -->
+                    <div class="w-full bg-zinc-50/50 border border-zinc-200 border-dashed rounded-lg p-4 flex flex-col items-center justify-center aspect-square min-h-[250px]">
+                        <span class="text-xs text-zinc-400 uppercase tracking-widest font-medium">Advertisement</span>
+                        <span class="text-xs text-zinc-300 mt-1">Google AdSense - 300x250</span>
+                    </div>
+
+                    <!-- Newsletter CTA -->
+                    <div class="bg-white rounded-xl p-6 border border-zinc-200 shadow-sm shadow-zinc-100/50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full blur-3xl -mr-16 -mt-16 opacity-60"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                                    <iconify-icon icon="solar:letter-linear" style="stroke-width: 1.5;"></iconify-icon>
+                                </div>
+                                <h3 class="text-base font-medium tracking-tight text-zinc-900">Weekly Digest</h3>
+                            </div>
+                            <p class="text-sm text-zinc-500 mb-5 leading-relaxed">
+                                Get the latest AI tutorials, tool reviews, and tech news delivered straight to your inbox. No spam.
+                            </p>
+                            <form class="flex flex-col gap-3">
+                                <input type="email" required="" placeholder="Enter your email" class="w-full px-3 py-2 text-sm border border-zinc-200 rounded-md focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400/20 transition-all placeholder:text-zinc-400 bg-zinc-50/50">
+                                <button type="submit" class="w-full bg-indigo-600 text-white text-sm font-medium py-2 rounded-md hover:bg-indigo-700 transition-colors shadow-sm shadow-indigo-600/20">
+                                    Subscribe
+                                </button>
+                            </form>
+                            <p class="text-[10px] text-zinc-400 mt-3 text-center">
+                                By subscribing, you agree to our Privacy Policy.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-100 bg-zinc-50/50 mt-12">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                
+                <div class="flex flex-col gap-2">
+                    <a href="/" class="text-base font-medium tracking-tighter uppercase text-zinc-900 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+                        Synthetix
+                    </a>
+                    <p class="text-xs text-zinc-500">
+                        © 2025 Synthetix AI &amp; Tech Blog. All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Mandatory Pages for AdSense -->
+                <nav class="flex flex-wrap gap-x-6 gap-y-2">
+                    <a href="#" class="text-xs text-zinc-500 hover:text-indigo-600 transition-colors">About</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-indigo-600 transition-colors">Contact</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-indigo-600 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-indigo-600 transition-colors">Terms &amp; Conditions</a>
+                    <a href="#" class="text-xs text-zinc-500 hover:text-indigo-600 transition-colors">Disclaimer</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>

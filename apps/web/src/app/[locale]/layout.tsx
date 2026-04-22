@@ -10,7 +10,6 @@ import type { ReactNode } from 'react';
 
 import { AnalyticsPlaceholder } from '@/components/analytics-placeholder';
 import { ConsentPlaceholder } from '@/components/consent-placeholder';
-import { NewsletterSticky } from '@/components/newsletter-sticky';
 import { RootJsonLd } from '@/components/root-json-ld';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -77,7 +76,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
         </main>
         <SiteFooter />
-        <NewsletterSticky />
         <AnalyticsPlaceholder />
         <ConsentPlaceholder />
         <RootJsonLd />

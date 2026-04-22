@@ -1,21 +1,20 @@
 import { getTranslations } from 'next-intl/server';
 
-import { Container } from '@blog-builder/ui';
-
 export default async function HomePage() {
   const t = await getTranslations('common');
 
   return (
-    <div className="py-16">
-      <Container>
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          {t('siteName')}
-        </h1>
-        <p className="mt-4 max-w-prose text-muted-foreground">
-          Home placeholder — content arrives in later features. Shell is ready
-          for i18n, theme, and SEO.
-        </p>
-      </Container>
-    </div>
+    <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
+      <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl mb-6">
+        {t('siteName')}
+      </h1>
+      <p className="mx-auto max-w-2xl text-lg text-zinc-500 mb-10">
+        Home placeholder — pending design. Check out the{' '}
+        <a href="/blog" className="text-indigo-600 hover:underline">
+          /blog
+        </a>{' '}
+        route to see the implemented UI mockups!
+      </p>
+    </main>
   );
 }

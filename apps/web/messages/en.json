@@ -1,9 +1,13 @@
 {
   "common": {
-    "siteName": "Blog Builder",
+    "siteName": "Synthetix",
     "themeLight": "Use light theme",
     "themeDark": "Use dark theme",
     "home": "Home",
+    "aiTools": "AI Tools",
+    "development": "Development",
+    "guides": "Guides",
+    "articles": "Articles",
     "blog": "Blog",
     "admin": "Admin"
   },
@@ -15,10 +19,13 @@
       "closeMenu": "Close menu"
     },
     "footer": {
-      "copyright": "© {year} Blog Builder. All rights reserved.",
+      "copyright": "© {year} Synthetix AI & Tech Blog. All rights reserved.",
       "legal": "Legal",
-      "privacy": "Privacy",
-      "terms": "Terms",
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "disclaimer": "Disclaimer",
       "socialAria": "Social links",
       "newsletterCompliance": "You can unsubscribe at any time. We use List-Unsubscribe headers on marketing mail."
     },
