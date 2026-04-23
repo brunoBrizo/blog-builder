@@ -1,0 +1,271 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "label": "http-exception.filter.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "http_exception_filter_statustocode",
+      "label": "statusToCode()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "http_exception_filter_zodissues",
+      "label": "zodIssues()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "http_exception_filter_httpexceptionfilter",
+      "label": "HttpExceptionFilter",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "http_exception_filter_httpexceptionfilter_catch",
+      "label": ".catch()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L49"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "zod",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "nestjs_zod",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "nestjs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_error_codes",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "http_exception_filter_statustocode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "http_exception_filter_zodissues",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_errors_http_exception_filter_ts",
+      "target": "http_exception_filter_httpexceptionfilter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "http_exception_filter_httpexceptionfilter",
+      "target": "http_exception_filter_httpexceptionfilter_catch",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "http_exception_filter_httpexceptionfilter_catch",
+      "target": "http_exception_filter_zodissues",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "http_exception_filter_httpexceptionfilter_catch",
+      "target": "http_exception_filter_statustocode",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L72",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "http_exception_filter_zodissues",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "switchToHttp",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "getResponse",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "getRequest",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "getZodError",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "String",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "getStatus",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "getResponse",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "isArray",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "join",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "captureException",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "error",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "captureException",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "error",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "String",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "captureException",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "captureException",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "String",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "json",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "http_exception_filter_httpexceptionfilter_catch",
+      "callee": "status",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/errors/http-exception.filter.ts",
+      "source_location": "L111"
+    }
+  ]
+}

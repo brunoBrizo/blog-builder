@@ -1,0 +1,59 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_db_tests_integration_rls_spec_ts",
+      "label": "rls.spec.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/tests/integration/rls.spec.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_tests_integration_rls_spec_ts",
+      "target": "node_crypto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/tests/integration/rls.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_tests_integration_rls_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_db_src_index",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/tests/integration/rls.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_tests_integration_rls_spec_ts",
+      "target": "drizzle_orm",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/tests/integration/rls.spec.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_tests_integration_rls_spec_ts",
+      "target": "postgres",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/tests/integration/rls.spec.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_tests_integration_rls_spec_ts",
+      "target": "vitest",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/tests/integration/rls.spec.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

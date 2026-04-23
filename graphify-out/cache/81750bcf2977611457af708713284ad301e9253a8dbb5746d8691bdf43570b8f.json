@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "f19",
+      "label": "CI/CD & Deployments",
+      "type": "document",
+      "source_file": "features/19-ci-cd-and-deployments.md",
+      "file_type": "document"
+    },
+    {
+      "id": "vercel",
+      "label": "Vercel web hosting",
+      "type": "concept",
+      "source_file": "features/19-ci-cd-and-deployments.md"
+    },
+    {
+      "id": "github_actions",
+      "label": "GitHub Actions CI/CD",
+      "type": "concept",
+      "source_file": "features/19-ci-cd-and-deployments.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

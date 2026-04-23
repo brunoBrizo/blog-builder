@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_admin_users_ts",
+      "label": "admin-users.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/schema/admin-users.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_admin_users_ts",
+      "target": "drizzle_orm",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/schema/admin-users.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_admin_users_ts",
+      "target": "pg_core",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/schema/admin-users.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_admin_users_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_shared",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/schema/admin-users.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_admin_users_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_db_src_schema_enums",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/schema/admin-users.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

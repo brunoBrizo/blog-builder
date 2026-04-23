@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "f03",
+      "label": "API Foundation",
+      "type": "document",
+      "source_file": "features/03-api-foundation.md",
+      "file_type": "document"
+    },
+    {
+      "id": "fly_io",
+      "label": "Fly.io API hosting",
+      "type": "concept",
+      "source_file": "features/03-api-foundation.md"
+    },
+    {
+      "id": "sentry",
+      "label": "Sentry error tracking",
+      "type": "concept",
+      "source_file": "features/03-api-foundation.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

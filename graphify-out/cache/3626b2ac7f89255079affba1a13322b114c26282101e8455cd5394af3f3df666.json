@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "f04",
+      "label": "Web Foundation",
+      "type": "document",
+      "source_file": "features/04-web-foundation.md",
+      "file_type": "document"
+    },
+    {
+      "id": "next_intl",
+      "label": "next-intl i18n",
+      "type": "concept",
+      "source_file": "features/04-web-foundation.md"
+    },
+    {
+      "id": "tailwind_v4",
+      "label": "Tailwind CSS v4",
+      "type": "concept",
+      "source_file": "features/04-web-foundation.md"
+    },
+    {
+      "id": "radix_ui",
+      "label": "Radix UI primitives",
+      "type": "concept",
+      "source_file": "features/04-web-foundation.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

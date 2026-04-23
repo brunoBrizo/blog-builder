@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "f02",
+      "label": "Database & Data Layer",
+      "type": "document",
+      "source_file": "features/02-database-and-data-layer.md",
+      "file_type": "document"
+    },
+    {
+      "id": "supabase_postgres",
+      "label": "Supabase Postgres",
+      "type": "concept",
+      "source_file": "features/02-database-and-data-layer.md"
+    },
+    {
+      "id": "drizzle_orm",
+      "label": "Drizzle ORM",
+      "type": "concept",
+      "source_file": "features/02-database-and-data-layer.md"
+    },
+    {
+      "id": "row_level_security",
+      "label": "Postgres Row Level Security",
+      "type": "concept",
+      "source_file": "features/02-database-and-data-layer.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,542 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News &amp; Breaking Updates - Synthetix</title>
+    <meta name="description" content="Discover the latest breaking developments, funding rounds, and technological breakthroughs in the artificial intelligence revolution.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+      .font-display {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .bg-grid-pattern {
+        background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+        background-size: 32px 32px;
+      }
+      .mask-radial-fade {
+        mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#FAFAFA] text-zinc-900 antialiased selection:bg-indigo-200 selection:text-indigo-900 overflow-x-hidden relative">
+    <!-- Subtle Background Grid -->
+    <div class="absolute inset-0 z-0 bg-grid-pattern mask-radial-fade h-[600px] pointer-events-none"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-zinc-900/95 backdrop-blur-md">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-14 items-center justify-between gap-4">
+          <div class="flex items-center gap-8">
+            <!-- Logo -->
+            <a href="/" class="font-display text-sm sm:text-base font-medium tracking-tighter uppercase text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm relative z-10 flex items-center gap-1.5">
+              <span class="size-2 rounded-full bg-indigo-500 shadow-[0_0_12px_rgba(99,102,241,0.8)]"></span>
+              SYNTHETIX
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6">
+              <a href="/" class="text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+                Home
+              </a>
+              <a href="/tutorials" class="text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+                Tutorials
+              </a>
+              <a href="/articles" class="text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+                Articles
+              </a>
+              <a href="/news" class="text-sm font-normal text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+                News
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <!-- Search -->
+            <div class="relative hidden sm:block w-56 group">
+              <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none transition-colors group-focus-within:text-white text-zinc-500">
+                <iconify-icon icon="solar:magnifier-linear" width="18" height="18"></iconify-icon>
+              </div>
+              <input type="text" aria-label="Search articles" placeholder="Search articles..." class="w-full rounded-md border border-zinc-700/80 bg-zinc-800/50 py-1.5 pl-8 pr-3 text-sm font-light text-white placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 transition-all shadow-sm">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="relative group hidden sm:block">
+              <button class="flex items-center gap-1 text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+                EN
+                <iconify-icon icon="solar:alt-arrow-down-linear" width="16" height="16"></iconify-icon>
+              </button>
+              <div class="absolute right-0 mt-2 w-24 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-zinc-900 border border-zinc-800 rounded-md shadow-sm py-1 z-50">
+                <a href="/en" class="block px-3 py-1.5 text-xs font-normal text-white bg-zinc-800">
+                  English
+                </a>
+                <a href="/es" class="block px-3 py-1.5 text-xs font-normal text-zinc-400 hover:bg-zinc-800/50 hover:text-white transition-colors">
+                  Español
+                </a>
+                <a href="/pt" class="block px-3 py-1.5 text-xs font-normal text-zinc-400 hover:bg-zinc-800/50 hover:text-white transition-colors">
+                  Português
+                </a>
+              </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button aria-label="Open menu" class="md:hidden text-zinc-400 hover:text-white hover:bg-zinc-800 p-1 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900">
+              <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
+      <!-- Page Header (Centered Academy Style) -->
+      <div class="flex flex-col items-center text-center mb-16 relative">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-200/80 text-zinc-600 text-xs font-medium mb-6 shadow-sm">
+          <iconify-icon icon="lucide:globe" width="14" height="14"></iconify-icon>
+          Synthetix AI Dispatch
+        </div>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl font-medium tracking-tight text-zinc-900 mb-6 leading-tight">
+          The Pulse of AI.
+        </h1>
+        <p class="text-base sm:text-lg font-light text-zinc-500 max-w-2xl leading-relaxed">
+          Breaking developments, funding rounds, and technological
+          breakthroughs. Your daily brief on the intelligence revolution.
+        </p>
+      </div>
+
+      <!-- Featured Cornerstone Tutorial (Bento Style Hero) -->
+      <article class="group relative flex flex-col lg:flex-row bg-white rounded-[2rem] border border-zinc-200/80 shadow-sm hover:shadow-md transition-all duration-500 mb-12 overflow-hidden">
+        <a href="/news/openai-gpt-5-announcement" class="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-[2rem]">
+          <span class="sr-only">Read breaking news</span>
+        </a>
+        <!-- Content Half -->
+        <div class="lg:w-[45%] p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1 relative z-20 bg-white">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-red-50 text-red-600 text-xs font-medium mb-6 w-fit border border-red-100/50">
+            <iconify-icon icon="lucide:zap" width="14" height="14"></iconify-icon>
+            Breaking News
+          </div>
+          <h2 class="font-display text-3xl lg:text-5xl font-medium tracking-tight text-zinc-900 mb-4 group-hover:text-red-600 transition-colors leading-tight">
+            OpenAI Unveils GPT-5: A New Era of Reasoning
+          </h2>
+          <p class="text-sm lg:text-lg font-light text-zinc-500 mb-8 leading-relaxed">
+            The next-generation model introduces unprecedented logical reasoning
+            capabilities, real-time multimodal processing, and a heavily
+            reinforced alignment protocol that sets a new industry standard.
+          </p>
+          <div class="mt-auto flex items-center justify-between pt-6 border-t border-zinc-100">
+            <div class="flex items-center gap-3 relative z-20">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=48&amp;h=48&amp;q=80" alt="Marcus Dev" class="w-8 h-8 rounded-full object-cover border border-zinc-200">
+              <div>
+                <p class="text-xs font-medium text-zinc-900">Marcus Dev</p>
+                <p class="text-xs font-light text-zinc-500">
+                  Chief AI Reporter
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-light text-zinc-400 bg-zinc-50 px-2.5 py-1 rounded-md border border-zinc-200/50">
+              <iconify-icon icon="lucide:clock" width="14" height="14"></iconify-icon>
+              2 hours ago
+            </div>
+          </div>
+        </div>
+        <!-- Image Half -->
+        <div class="lg:w-[55%] aspect-video lg:aspect-auto relative overflow-hidden order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-zinc-100">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" alt="AI Network" class="absolute inset-0 object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent lg:hidden"></div>
+        </div>
+      </article>
+
+      <!-- Leaderboard Ad Placeholder (Seamless) -->
+      <div class="w-full bg-zinc-100/50 backdrop-blur-sm border border-zinc-200/80 border-dashed rounded-2xl p-2 flex flex-col items-center justify-center min-h-[90px] mb-12 shadow-sm transition-colors hover:bg-zinc-100">
+        <span class="text-xs font-medium text-zinc-400 uppercase tracking-widest">
+          Advertisement
+        </span>
+        <span class="text-xs font-light text-zinc-400 mt-1">
+          Responsive Placement (728x90)
+        </span>
+      </div>
+
+      <!-- Filters & Ordering -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+        <h3 class="font-display text-2xl font-medium tracking-tight text-zinc-900">
+          Latest Stories
+        </h3>
+        <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto relative z-20">
+          <!-- Filter: Category -->
+          <div class="relative group min-w-[160px]">
+            <select class="appearance-none w-full bg-white border border-zinc-200/80 text-zinc-700 text-sm font-medium py-2 pl-3 pr-8 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-1 shadow-sm cursor-pointer hover:border-zinc-300 transition-colors">
+              <option>All Categories</option>
+              <option>Foundation Models</option>
+              <option>Startups &amp; Funding</option>
+              <option>Hardware</option>
+              <option>Policy</option>
+            </select>
+            <iconify-icon icon="lucide:chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" width="16"></iconify-icon>
+          </div>
+          <!-- Filter: Type -->
+          <div class="relative group min-w-[140px]">
+            <select class="appearance-none w-full bg-white border border-zinc-200/80 text-zinc-700 text-sm font-medium py-2 pl-3 pr-8 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-1 shadow-sm cursor-pointer hover:border-zinc-300 transition-colors">
+              <option>All Types</option>
+              <option>News</option>
+              <option>Deep Dives</option>
+              <option>Interviews</option>
+            </select>
+            <iconify-icon icon="lucide:chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" width="16"></iconify-icon>
+          </div>
+          <!-- Sort -->
+          <div class="relative group min-w-[150px]">
+            <select class="appearance-none w-full bg-white border border-zinc-200/80 text-zinc-700 text-sm font-medium py-2 pl-9 pr-8 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-1 shadow-sm cursor-pointer hover:border-zinc-300 transition-colors">
+              <option>Latest Updates</option>
+              <option>Most Read</option>
+              <option>Editor's Picks</option>
+            </select>
+            <iconify-icon icon="lucide:arrow-down-up" class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" width="16"></iconify-icon>
+            <iconify-icon icon="lucide:chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" width="16"></iconify-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6-Card Grid Layout for Masterclasses -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <article class="md:col-span-2 group relative flex flex-col-reverse md:flex-row bg-white rounded-[2rem] border border-zinc-200/80 shadow-sm hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-zinc-300 transition-all duration-500 ease-out overflow-hidden">
+          <a href="/news/apple-intelligence-rollout" class="absolute inset-0 z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-[2rem]">
+            <span class="sr-only">Read article</span>
+          </a>
+          <div class="flex flex-col flex-1 p-6 md:p-8 lg:p-10 bg-white relative z-20">
+            <div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-zinc-50 border border-zinc-200/50 text-zinc-500 text-xs font-medium w-fit mb-4">
+              <iconify-icon icon="lucide:clock" width="14" height="14"></iconify-icon>
+              3 hours ago
+            </div>
+            <h2 class="font-display text-2xl lg:text-3xl font-medium tracking-tight text-zinc-900 mb-3 group-hover:text-indigo-600 transition-colors leading-snug">
+              Apple Intelligence Begins Global Rollout: What You Need to Know
+            </h2>
+            <p class="text-sm md:text-base font-light text-zinc-500 mb-6 leading-relaxed">
+              Following months of beta testing, Apple is finally releasing its
+              deeply integrated AI features to iOS 18 users worldwide, bringing
+              local on-device processing to the masses.
+            </p>
+            <div class="mt-auto flex items-center justify-between pt-5 border-t border-zinc-100">
+              <div class="flex items-center gap-2.5 relative z-30">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="David K." class="w-8 h-8 rounded-full object-cover border border-zinc-200">
+                <span class="text-xs font-medium text-zinc-700">David K.</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-xs font-medium text-indigo-600 group-hover:gap-2.5 transition-all duration-300">
+                Read Full Story
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="relative w-full md:w-2/5 lg:w-1/3 aspect-[16/9] md:aspect-auto bg-zinc-900 overflow-hidden border-b md:border-b-0 md:border-l border-zinc-100">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" alt="Apple AI" class="absolute inset-0 object-cover w-full h-full opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+            <div class="absolute top-5 left-5 z-10">
+              <span class="px-3 py-1.5 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium shadow-sm flex items-center gap-1.5">
+                <iconify-icon icon="lucide:smartphone" width="16" height="16"></iconify-icon>
+                Consumer AI
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col bg-white rounded-[2rem] border border-zinc-200/80 shadow-sm hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-zinc-300 transition-all duration-500 ease-out overflow-hidden">
+          <a href="/news/mistral-large-3" class="absolute inset-0 z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-[2rem]">
+            <span class="sr-only">Read article</span>
+          </a>
+          <div class="relative w-full aspect-[16/10] bg-zinc-900 overflow-hidden border-b border-zinc-100">
+            <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Server" class="absolute inset-0 object-cover w-full h-full opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+            <div class="absolute top-5 left-5 z-10">
+              <span class="px-3 py-1.5 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium shadow-sm flex items-center gap-1.5">
+                <iconify-icon icon="lucide:server" width="16" height="16"></iconify-icon>
+                Open Source
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-5 right-5 flex items-center justify-between z-10">
+              <div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-zinc-900/60 backdrop-blur-sm border border-white/10 text-white text-xs font-medium shadow-sm">
+                <iconify-icon icon="lucide:clock" width="14" height="14"></iconify-icon>
+                5 hours ago
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col flex-1 p-6 bg-white relative z-20">
+            <h2 class="font-display text-xl font-medium tracking-tight text-zinc-900 mb-2 group-hover:text-emerald-600 transition-colors leading-snug">
+              Mistral Open-Sources Large 3 Model
+            </h2>
+            <p class="text-sm font-light text-zinc-500 mb-6 line-clamp-2 leading-relaxed">
+              The European AI champion drops its most powerful open-weight model
+              yet, matching GPT-4 class performance on most benchmarks.
+            </p>
+            <div class="mt-auto flex items-center justify-between pt-5 border-t border-zinc-100">
+              <div class="flex items-center gap-2.5 relative z-30">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Sarah J." class="w-8 h-8 rounded-full object-cover border border-zinc-200">
+                <span class="text-xs font-medium text-zinc-700">Sarah J.</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-xs font-medium text-emerald-600 group-hover:gap-2.5 transition-all duration-300">
+                Read Story
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="group relative flex flex-col bg-white rounded-[2rem] border border-zinc-200/80 shadow-sm hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-zinc-300 transition-all duration-500 ease-out overflow-hidden">
+          <a href="/news/eu-ai-act-updates" class="absolute inset-0 z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-[2rem]">
+            <span class="sr-only">Read article</span>
+          </a>
+          <div class="relative w-full aspect-[16/10] bg-zinc-900 overflow-hidden border-b border-zinc-100">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp" alt="Policy" class="absolute inset-0 object-cover w-full h-full opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+            <div class="absolute top-5 left-5 z-10">
+              <span class="px-3 py-1.5 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium shadow-sm flex items-center gap-1.5">
+                <iconify-icon icon="lucide:scale" width="16" height="16"></iconify-icon>
+                Regulation
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-5 right-5 flex items-center justify-between z-10">
+              <div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-zinc-900/60 backdrop-blur-sm border border-white/10 text-white text-xs font-medium shadow-sm">
+                <iconify-icon icon="lucide:clock" width="14" height="14"></iconify-icon>
+                8 hours ago
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col flex-1 p-6 bg-white relative z-20">
+            <h2 class="font-display text-xl font-medium tracking-tight text-zinc-900 mb-2 group-hover:text-amber-600 transition-colors leading-snug">
+              EU AI Act Enters Final Implementation Phase
+            </h2>
+            <p class="text-sm font-light text-zinc-500 mb-6 line-clamp-2 leading-relaxed">
+              Companies face new compliance deadlines as the European Union
+              finalizes technical standards for high-risk AI systems.
+            </p>
+            <div class="mt-auto flex items-center justify-between pt-5 border-t border-zinc-100">
+              <div class="flex items-center gap-2.5 relative z-30">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=48&amp;h=48&amp;q=80" alt="Marcus Dev" class="w-8 h-8 rounded-full object-cover border border-zinc-200">
+                <span class="text-xs font-medium text-zinc-700">
+                  Marcus Dev
+                </span>
+              </div>
+              <div class="flex items-center gap-1.5 text-xs font-medium text-amber-600 group-hover:gap-2.5 transition-all duration-300">
+                Read Story
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="md:col-span-2 group relative flex flex-col md:flex-row bg-white rounded-[2rem] border border-zinc-200/80 shadow-sm hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-zinc-300 transition-all duration-500 ease-out overflow-hidden">
+          <a href="/news/robotics-breakthrough" class="absolute inset-0 z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-[2rem]">
+            <span class="sr-only">Read article</span>
+          </a>
+          <div class="relative w-full md:w-2/5 lg:w-1/3 aspect-[16/9] md:aspect-auto bg-zinc-900 overflow-hidden border-b md:border-b-0 md:border-r border-zinc-100">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Robotics" class="absolute inset-0 object-cover w-full h-full opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+            <div class="absolute top-5 left-5 z-10">
+              <span class="px-3 py-1.5 rounded-lg bg-rose-500/90 backdrop-blur-md border border-rose-400/30 text-white text-xs font-medium shadow-sm flex items-center gap-1.5">
+                <iconify-icon icon="lucide:bot" width="16" height="16"></iconify-icon>
+                Robotics
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col flex-1 p-6 md:p-8 lg:p-10 bg-white relative z-20">
+            <div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-zinc-50 border border-zinc-200/50 text-zinc-500 text-xs font-medium w-fit mb-4">
+              <iconify-icon icon="lucide:clock" width="14" height="14"></iconify-icon>
+              12 hours ago
+            </div>
+            <h2 class="font-display text-2xl lg:text-3xl font-medium tracking-tight text-zinc-900 mb-3 group-hover:text-rose-600 transition-colors leading-snug">
+              Figure 02 Demonstrates Autonomous Manufacturing Capabilities
+            </h2>
+            <p class="text-sm md:text-base font-light text-zinc-500 mb-6 leading-relaxed">
+              In a massive leap for humanoid robotics, Figure's latest iteration
+              successfully performed complex, multi-step automotive assembly
+              tasks completely autonomously, powered by an end-to-end neural
+              network.
+            </p>
+            <div class="mt-auto flex items-center justify-between pt-5 border-t border-zinc-100">
+              <div class="flex items-center gap-2.5 relative z-30">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Elena R." class="w-8 h-8 rounded-full object-cover border border-zinc-200">
+                <span class="text-xs font-medium text-zinc-700">Elena R.</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-xs font-medium text-rose-600 group-hover:gap-2.5 transition-all duration-300">
+                Read Deep Dive
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex items-center justify-between py-4 mb-20 border-t border-zinc-200/80">
+        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+          <div>
+            <p class="text-sm font-light text-zinc-500">
+              Showing
+              <span class="font-medium text-zinc-900">1</span>
+              to
+              <span class="font-medium text-zinc-900">6</span>
+              of
+              <span class="font-medium text-zinc-900">128</span>
+              articles
+            </p>
+          </div>
+          <div>
+            <nav class="isolate inline-flex -space-x-px rounded-xl shadow-sm border border-zinc-200/80 bg-white" aria-label="Pagination">
+              <a href="#" class="relative inline-flex items-center rounded-l-xl px-3 py-2 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 transition-colors border-r border-zinc-200/80">
+                <span class="sr-only">Previous</span>
+                <iconify-icon icon="solar:alt-arrow-left-linear" width="18" height="18"></iconify-icon>
+              </a>
+              <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-zinc-900 px-4 py-2 text-sm font-medium text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900">
+                1
+              </a>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 transition-colors border-l border-zinc-200/80">
+                2
+              </a>
+              <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 focus:z-20 md:inline-flex border-l border-zinc-200/80 transition-colors">
+                3
+              </a>
+              <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-400 border-l border-zinc-200/80">
+                ...
+              </span>
+              <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 focus:z-20 border-l border-zinc-200/80 transition-colors">
+                7
+              </a>
+              <a href="#" class="relative inline-flex items-center rounded-r-xl px-3 py-2 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 transition-colors border-l border-zinc-200/80">
+                <span class="sr-only">Next</span>
+                <iconify-icon icon="solar:alt-arrow-right-linear" width="18" height="18"></iconify-icon>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <!-- Mobile Pagination -->
+        <div class="flex flex-1 justify-between sm:hidden">
+          <a href="#" class="relative inline-flex items-center rounded-xl border border-zinc-200/80 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 shadow-sm">
+            Previous
+          </a>
+          <a href="#" class="relative ml-3 inline-flex items-center rounded-xl border border-zinc-200/80 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 shadow-sm">
+            Next
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Section: Newsletter & Instructor -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Newsletter Bento Card -->
+        <div class="lg:col-span-8 bg-zinc-900 rounded-3xl p-6 md:p-8 border border-zinc-800 shadow-sm relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 group">
+          <div class="absolute -top-40 -left-40 w-80 h-80 bg-indigo-500 rounded-full blur-[80px] opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity duration-700"></div>
+          <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-violet-500 rounded-full blur-[80px] opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity duration-700"></div>
+
+          <div class="relative z-10 flex-1 text-center md:text-left">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white shadow-inner mb-4 md:mx-0 mx-auto">
+              <iconify-icon icon="lucide:newspaper" width="20" height="20"></iconify-icon>
+            </div>
+            <h3 class="font-display text-xl sm:text-2xl font-medium tracking-tight text-white mb-2">
+              The AI Daily Brief.
+            </h3>
+            <p class="text-sm font-light text-zinc-400 max-w-sm mx-auto md:mx-0 leading-relaxed">
+              Join 50,000+ founders and engineers receiving the essential AI
+              news every morning.
+            </p>
+          </div>
+
+          <div class="relative z-10 w-full md:w-[320px] shrink-0">
+            <form class="flex flex-col gap-2.5">
+              <div class="relative flex items-center bg-zinc-950/50 border border-zinc-800 rounded-xl overflow-hidden focus-within:border-indigo-500/50 focus-within:ring-1 focus-within:ring-indigo-500/50 transition-all shadow-inner">
+                <div class="pl-3.5 text-zinc-500 flex items-center pointer-events-none">
+                  <iconify-icon icon="solar:mailbox-linear" width="16" height="16"></iconify-icon>
+                </div>
+                <input type="email" required="" placeholder="name@company.com" aria-label="Email address" class="w-full px-3 py-3 text-sm font-light bg-transparent focus-visible:outline-none placeholder:text-zinc-600 text-white">
+              </div>
+              <button type="submit" class="w-full bg-white text-zinc-900 text-sm font-medium py-3 rounded-xl hover:bg-zinc-100 hover:scale-[0.98] active:scale-[0.96] transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 flex items-center justify-center gap-2">
+                Subscribe Now
+                <iconify-icon icon="solar:arrow-right-linear" width="16" height="16"></iconify-icon>
+              </button>
+            </form>
+            <p class="text-[11px] font-light text-zinc-500 mt-3 text-center md:text-left">
+              Zero spam. 1-click unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+
+        <!-- Lead Instructor Card -->
+        <div class="lg:col-span-4 bg-zinc-900 rounded-3xl p-6 md:p-8 border border-zinc-800 shadow-sm relative overflow-hidden flex flex-col justify-between group">
+          <div class="absolute -top-40 -right-40 w-80 h-80 bg-red-500 rounded-full blur-[80px] opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity duration-700"></div>
+          <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-500 rounded-full blur-[80px] opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity duration-700"></div>
+          <div class="relative z-10 mb-8">
+            <h3 class="text-xs font-medium text-zinc-400 uppercase tracking-widest mb-6">
+              Editor's Desk
+            </h3>
+            <div class="flex items-center gap-4 mb-4">
+              <div class="relative">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Marcus Dev" class="w-14 h-14 rounded-full object-cover border-2 border-zinc-800 bg-zinc-950">
+              </div>
+              <div>
+                <h4 class="font-display text-lg font-medium tracking-tight text-white">
+                  Marcus Dev
+                </h4>
+                <p class="text-xs font-medium text-orange-400">
+                  Editor-in-Chief
+                </p>
+              </div>
+            </div>
+            <p class="text-sm font-light text-zinc-400 leading-relaxed">
+              Curating the most impactful breakthroughs in artificial
+              intelligence, cutting through the hype to bring you the facts.
+            </p>
+          </div>
+          <a href="#" class="relative z-10 inline-flex items-center justify-center w-full px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-xl transition-colors border border-white/5 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900">
+            Read Editorial Guidelines
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 bg-zinc-900 relative z-10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div class="flex flex-col gap-2">
+            <a href="/" class="font-display text-sm font-medium tracking-tighter uppercase text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm flex items-center gap-1.5">
+              <span class="size-1.5 rounded-full bg-indigo-500"></span>
+              SYNTHETIX
+            </a>
+            <p class="text-sm font-light text-zinc-500">
+              © 2026 Synthetix AI &amp; Tech Blog. All rights reserved.
+            </p>
+          </div>
+
+          <nav class="flex flex-wrap gap-x-5 gap-y-2">
+            <a href="/about" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              About
+            </a>
+            <a href="/contact" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Contact
+            </a>
+            <a href="/privacy" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Privacy Policy
+            </a>
+            <a href="/terms" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Terms &amp; Conditions
+            </a>
+            <a href="/disclaimer" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Disclaimer
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  
+</body></html>

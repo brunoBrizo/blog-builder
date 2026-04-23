@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_app_dto_revalidate_path_dto_ts",
+      "label": "revalidate-path.dto.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/dto/revalidate-path.dto.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "revalidate_path_dto_revalidatepathdto",
+      "label": "RevalidatePathDto",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/dto/revalidate-path.dto.ts",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_dto_revalidate_path_dto_ts",
+      "target": "shared_types",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/dto/revalidate-path.dto.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_dto_revalidate_path_dto_ts",
+      "target": "nestjs_zod",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/dto/revalidate-path.dto.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_dto_revalidate_path_dto_ts",
+      "target": "revalidate_path_dto_revalidatepathdto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/dto/revalidate-path.dto.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

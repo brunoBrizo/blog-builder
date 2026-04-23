@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "f09",
+      "label": "In-site Search",
+      "type": "document",
+      "source_file": "features/09-in-site-search.md",
+      "file_type": "document"
+    },
+    {
+      "id": "postgres_fts",
+      "label": "Postgres full-text search",
+      "type": "concept",
+      "source_file": "features/09-in-site-search.md"
+    },
+    {
+      "id": "pg_trgm",
+      "label": "pg_trgm fuzzy matching",
+      "type": "concept",
+      "source_file": "features/09-in-site-search.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

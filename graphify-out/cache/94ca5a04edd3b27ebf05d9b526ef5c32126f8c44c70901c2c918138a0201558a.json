@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_input_input_variants_ts",
+      "label": "input.variants.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/input/input.variants.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_input_input_variants_ts",
+      "target": "class_variance_authority",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/input/input.variants.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

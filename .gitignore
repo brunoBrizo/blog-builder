@@ -33,3 +33,7 @@ playwright-report
 test-results
 
 vitest.config.*.timestamp*
+
+# Graphify — keep outputs shareable; skip machine-local bookkeeping
+graphify-out/manifest.json
+graphify-out/cost.json

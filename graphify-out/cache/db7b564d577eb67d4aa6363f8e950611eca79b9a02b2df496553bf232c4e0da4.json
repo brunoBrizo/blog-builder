@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "f01",
+      "label": "Foundation \u2014 Monorepo & Tooling",
+      "type": "document",
+      "source_file": "features/01-foundation-monorepo-tooling.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

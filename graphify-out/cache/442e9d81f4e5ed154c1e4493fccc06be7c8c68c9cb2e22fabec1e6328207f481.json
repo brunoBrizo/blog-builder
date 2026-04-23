@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_webpack_config_js",
+      "label": "webpack.config.js",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/webpack.config.js",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

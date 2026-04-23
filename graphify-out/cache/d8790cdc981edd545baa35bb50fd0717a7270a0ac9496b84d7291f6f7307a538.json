@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_index_d_ts",
+      "label": "index.d.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/index.d.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

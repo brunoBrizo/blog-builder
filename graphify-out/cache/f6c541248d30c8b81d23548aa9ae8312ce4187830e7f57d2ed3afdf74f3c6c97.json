@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {
+      "id": "doc_built_article_steps",
+      "label": "Article generation pipeline steps",
+      "type": "document",
+      "source_file": "docs/built-article-steps.md",
+      "file_type": "document"
+    },
+    {
+      "id": "sonar_pro",
+      "label": "Perplexity sonar-pro model",
+      "type": "concept",
+      "source_file": "docs/built-article-steps.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/local-first-run.md",
+      "label": "Local first run guide",
+      "source_file": "docs/help-guides/local-first-run.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

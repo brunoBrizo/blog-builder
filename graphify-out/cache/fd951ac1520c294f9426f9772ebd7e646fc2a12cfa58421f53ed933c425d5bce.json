@@ -1,0 +1,67 @@
+{
+  "nodes": [
+    {
+      "id": "readme",
+      "label": "Blog Builder README",
+      "type": "document",
+      "source_file": "README.md",
+      "file_type": "document"
+    },
+    {
+      "id": "nx_monorepo",
+      "label": "Nx monorepo",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "pnpm_workspace",
+      "label": "pnpm workspaces",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "apps_web",
+      "label": "apps/web Next.js frontend",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "apps_api",
+      "label": "apps/api NestJS API",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "libs_ui",
+      "label": "libs/ui component library",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "libs_shared_types",
+      "label": "libs/shared-types",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "libs_seo",
+      "label": "libs/seo SEO helpers",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "libs_db",
+      "label": "libs/db Drizzle schema and client",
+      "type": "concept",
+      "source_file": "README.md"
+    },
+    {
+      "id": "libs_prompts",
+      "label": "libs/prompts Perplexity prompt builders",
+      "type": "concept",
+      "source_file": "README.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

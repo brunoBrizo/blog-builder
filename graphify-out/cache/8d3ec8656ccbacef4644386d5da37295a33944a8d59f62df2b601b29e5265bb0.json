@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/inngest-setup-and-testing.md",
+      "label": "Inngest setup step-by-step",
+      "source_file": "docs/help-guides/inngest-setup-and-testing.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

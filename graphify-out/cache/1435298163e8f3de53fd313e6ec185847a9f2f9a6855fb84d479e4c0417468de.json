@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "f16",
+      "label": "Analytics, Consent & AdSense",
+      "type": "document",
+      "source_file": "features/16-analytics-consent-and-adsense.md",
+      "file_type": "document"
+    },
+    {
+      "id": "ga4",
+      "label": "Google Analytics 4",
+      "type": "concept",
+      "source_file": "features/16-analytics-consent-and-adsense.md"
+    },
+    {
+      "id": "adsense",
+      "label": "Google AdSense",
+      "type": "concept",
+      "source_file": "features/16-analytics-consent-and-adsense.md"
+    },
+    {
+      "id": "consent_mode_v2",
+      "label": "Google Consent Mode v2",
+      "type": "concept",
+      "source_file": "features/16-analytics-consent-and-adsense.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

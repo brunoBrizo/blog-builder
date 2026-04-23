@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_db_scripts_prerequisites_ts",
+      "label": "prerequisites.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "prerequisites_ensuremigrationprerequisites",
+      "label": "ensureMigrationPrerequisites()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "prerequisites_ensurepolicyroles",
+      "label": "ensurePolicyRoles()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_scripts_prerequisites_ts",
+      "target": "postgres",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_scripts_prerequisites_ts",
+      "target": "prerequisites_ensuremigrationprerequisites",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_scripts_prerequisites_ts",
+      "target": "prerequisites_ensurepolicyroles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "prerequisites_ensuremigrationprerequisites",
+      "callee": "sql",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "prerequisites_ensuremigrationprerequisites",
+      "callee": "sql",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "prerequisites_ensuremigrationprerequisites",
+      "callee": "sql",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "prerequisites_ensurepolicyroles",
+      "callee": "unsafe",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/scripts/prerequisites.ts",
+      "source_location": "L25"
+    }
+  ]
+}

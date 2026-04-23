@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "label": "test-endpoints.controller.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_endpoints_controller_testendpointscontroller",
+      "label": "TestEndpointsController",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "test_endpoints_controller_testendpointscontroller_cronok",
+      "label": ".cronOk()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "test_endpoints_controller_testendpointscontroller_ratelimitprobe",
+      "label": ".rateLimitProbe()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "test_endpoints_controller_testendpointscontroller_validatenewsletter",
+      "label": ".validateNewsletter()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_auth_decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_throttling_throttle_decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_guard",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_app_dto_newsletter_subscribe_dto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_controller_ts",
+      "target": "test_endpoints_controller_testendpointscontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_endpoints_controller_testendpointscontroller",
+      "target": "test_endpoints_controller_testendpointscontroller_cronok",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "test_endpoints_controller_testendpointscontroller",
+      "target": "test_endpoints_controller_testendpointscontroller_ratelimitprobe",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "test_endpoints_controller_testendpointscontroller",
+      "target": "test_endpoints_controller_testendpointscontroller_validatenewsletter",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,275 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "label": "main.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "main_initsentry",
+      "label": "initSentry()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "main_bootstrap",
+      "label": "bootstrap()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L42"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "config",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "nestjs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "nestjs_pino",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "core",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "platform_express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_env_schema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_tokens",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_app_app_module",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "main_initsentry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_main_ts",
+      "target": "main_bootstrap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "main_bootstrap",
+      "target": "main_initsentry",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "main_initsentry",
+      "callee": "parseEnv",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "main_initsentry",
+      "callee": "init",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "main_initsentry",
+      "callee": "effectiveSentryTracesSampleRate",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "main_initsentry",
+      "callee": "nestIntegration",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "await NestFactory.create",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "useLogger",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "applySecurityMiddleware",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "setGlobalPrefix",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "getInstance",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "getHttpAdapter",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "use",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "json",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "enableShutdownHooks",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "listen",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "main_bootstrap",
+      "callee": "log",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/main.ts",
+      "source_location": "L76"
+    }
+  ]
+}

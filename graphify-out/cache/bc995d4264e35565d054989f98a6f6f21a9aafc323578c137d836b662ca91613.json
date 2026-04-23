@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/README.md",
+      "label": "Help guides index",
+      "source_file": "docs/help-guides/README.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

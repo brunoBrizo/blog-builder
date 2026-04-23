@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "f11",
+      "label": "Mandatory AdSense Pages",
+      "type": "document",
+      "source_file": "features/11-mandatory-adsense-pages.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

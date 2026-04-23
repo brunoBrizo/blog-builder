@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/database-workflows.md",
+      "label": "Database workflows Drizzle Postgres",
+      "source_file": "docs/help-guides/database-workflows.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

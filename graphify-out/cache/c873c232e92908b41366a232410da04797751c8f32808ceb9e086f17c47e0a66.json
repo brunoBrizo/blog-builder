@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {
+      "id": "f15",
+      "label": "Admin Dashboard",
+      "type": "document",
+      "source_file": "features/15-admin-dashboard.md",
+      "file_type": "document"
+    },
+    {
+      "id": "supabase_auth_admin",
+      "label": "Supabase Auth for admin",
+      "type": "concept",
+      "source_file": "features/15-admin-dashboard.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:libs/seo/README.md",
+      "label": "libs/seo Nx library README",
+      "source_file": "libs/seo/README.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

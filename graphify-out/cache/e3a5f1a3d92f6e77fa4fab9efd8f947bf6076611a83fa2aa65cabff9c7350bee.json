@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_inngest_dev_keys_logger_ts",
+      "label": "inngest-dev-keys.logger.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "inngest_dev_keys_logger_inngestdevkeyslogger",
+      "label": "InngestDevKeysLogger",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "inngest_dev_keys_logger_inngestdevkeyslogger_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "inngest_dev_keys_logger_inngestdevkeyslogger_onmoduleinit",
+      "label": ".onModuleInit()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_inngest_dev_keys_logger_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_inngest_dev_keys_logger_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_inngest_dev_keys_logger_ts",
+      "target": "inngest_dev_keys_logger_inngestdevkeyslogger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "inngest_dev_keys_logger_inngestdevkeyslogger",
+      "target": "inngest_dev_keys_logger_inngestdevkeyslogger_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "inngest_dev_keys_logger_inngestdevkeyslogger",
+      "target": "inngest_dev_keys_logger_inngestdevkeyslogger_onmoduleinit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "inngest_dev_keys_logger_inngestdevkeyslogger_onmoduleinit",
+      "callee": "warn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/inngest-dev-keys.logger.ts",
+      "source_location": "L13"
+    }
+  ]
+}

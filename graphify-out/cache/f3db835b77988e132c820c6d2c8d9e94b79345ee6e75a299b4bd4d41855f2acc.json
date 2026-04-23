@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_drizzle_config_ts",
+      "label": "drizzle.config.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/drizzle.config.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_drizzle_config_ts",
+      "target": "config",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/drizzle.config.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_drizzle_config_ts",
+      "target": "drizzle_kit",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/drizzle.config.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

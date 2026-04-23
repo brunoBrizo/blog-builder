@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {
+      "id": "f12",
+      "label": "Newsletter Subscription & Weekly Digest",
+      "type": "document",
+      "source_file": "features/12-newsletter-subscription-and-digest.md",
+      "file_type": "document"
+    },
+    {
+      "id": "resend",
+      "label": "Resend transactional email",
+      "type": "concept",
+      "source_file": "features/12-newsletter-subscription-and-digest.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

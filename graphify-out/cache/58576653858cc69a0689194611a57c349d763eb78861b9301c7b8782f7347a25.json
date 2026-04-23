@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/article-generation-manual-testing.md",
+      "label": "Article generation manual testing",
+      "source_file": "docs/help-guides/article-generation-manual-testing.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:graphify-out/graph.html",
+      "label": "Graph visualization HTML export",
+      "source_file": "graphify-out/graph.html",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

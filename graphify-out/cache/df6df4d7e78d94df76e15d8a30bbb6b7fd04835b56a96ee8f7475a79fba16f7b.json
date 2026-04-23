@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/designs/home-page.html",
+      "label": "Home page design HTML",
+      "source_file": "docs/designs/home-page.html",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

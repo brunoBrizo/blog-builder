@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_env_schema_spec_ts",
+      "label": "env.schema.spec.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/env.schema.spec.ts",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_env_schema_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_env_schema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/env.schema.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

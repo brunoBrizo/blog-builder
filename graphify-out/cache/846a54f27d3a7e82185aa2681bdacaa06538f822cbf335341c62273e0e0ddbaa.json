@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "f05",
+      "label": "Perplexity Article Pipeline",
+      "type": "document",
+      "source_file": "features/05-perplexity-article-pipeline.md",
+      "file_type": "document"
+    },
+    {
+      "id": "inngest",
+      "label": "Inngest workflow orchestration",
+      "type": "concept",
+      "source_file": "features/05-perplexity-article-pipeline.md"
+    },
+    {
+      "id": "perplexity_api",
+      "label": "Perplexity API",
+      "type": "concept",
+      "source_file": "features/05-perplexity-article-pipeline.md"
+    },
+    {
+      "id": "article_generation_eight_steps",
+      "label": "Eight-step article generation pipeline",
+      "type": "concept",
+      "source_file": "features/05-perplexity-article-pipeline.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

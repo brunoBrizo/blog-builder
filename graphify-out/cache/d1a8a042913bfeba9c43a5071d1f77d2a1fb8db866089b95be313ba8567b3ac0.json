@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "label": "card.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "card_card",
+      "label": "Card()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "card_cardheader",
+      "label": "CardHeader()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "card_cardtitle",
+      "label": "CardTitle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L22"
+    },
+    {
+      "id": "card_carddescription",
+      "label": "CardDescription()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "card_cardcontent",
+      "label": "CardContent()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L49"
+    },
+    {
+      "id": "card_cardfooter",
+      "label": "CardFooter()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L56"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_utils_cn",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_variants",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "card_card",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "card_cardheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "card_cardtitle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "card_carddescription",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "card_cardcontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_card_card_tsx",
+      "target": "card_cardfooter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L56",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "card_card",
+      "callee": "cardVariants",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/card/card.tsx",
+      "source_location": "L10"
+    }
+  ]
+}

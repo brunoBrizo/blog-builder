@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_i18n_locales_ts",
+      "label": "locales.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/i18n/locales.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "locales_localetohtmllang",
+      "label": "localeToHtmlLang()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/i18n/locales.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "locales_isapplocale",
+      "label": "isAppLocale()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/i18n/locales.ts",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_i18n_locales_ts",
+      "target": "locales_localetohtmllang",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/i18n/locales.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_i18n_locales_ts",
+      "target": "locales_isapplocale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/i18n/locales.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "locales_isapplocale",
+      "callee": "includes",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/i18n/locales.ts",
+      "source_location": "L18"
+    }
+  ]
+}

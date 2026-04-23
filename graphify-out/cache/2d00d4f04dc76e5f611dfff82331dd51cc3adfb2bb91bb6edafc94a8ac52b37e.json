@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/cost-and-safety-knobs.md",
+      "label": "Cost and safety knobs generation",
+      "source_file": "docs/help-guides/cost-and-safety-knobs.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

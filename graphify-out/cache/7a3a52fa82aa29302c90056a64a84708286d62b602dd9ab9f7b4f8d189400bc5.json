@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/supabase-setup.md",
+      "label": "Supabase hybrid provisioning setup",
+      "source_file": "docs/supabase-setup.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

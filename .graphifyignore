@@ -1,0 +1,18 @@
+# Graphify exclusions (same syntax as .gitignore)
+# https://github.com/safishamsi/graphify
+
+node_modules/
+dist/
+.next/
+out-tsc/
+coverage/
+tmp/
+.pnpm-store/
+.nx/cache/
+playwright-report/
+test-results/
+
+# Generated / installed assistant instructions (avoid feeding instructions back into the graph)
+AGENTS.md
+CLAUDE.md
+GEMINI.md

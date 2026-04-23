@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_components_newsletter_sticky_tsx",
+      "label": "newsletter-sticky.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/newsletter-sticky.tsx",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_newsletter_sticky_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/newsletter-sticky.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_newsletter_sticky_tsx",
+      "target": "next_intl",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/newsletter-sticky.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_newsletter_sticky_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/newsletter-sticky.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_newsletter_sticky_tsx",
+      "target": "ui",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/newsletter-sticky.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

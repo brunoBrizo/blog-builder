@@ -1,0 +1,124 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "label": "build-metadata.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "build_metadata_buildmetadata",
+      "label": "buildMetadata()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "next",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_open_graph",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_twitter",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_canonical_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_hreflang",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_site_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_canonical_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_build_metadata_ts",
+      "target": "build_metadata_buildmetadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "build_metadata_buildmetadata",
+      "callee": "getSiteUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "build_metadata_buildmetadata",
+      "callee": "canonicalUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "build_metadata_buildmetadata",
+      "callee": "buildHreflangMap",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "build_metadata_buildmetadata",
+      "callee": "buildOpenGraph",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "build_metadata_buildmetadata",
+      "callee": "buildTwitter",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/build-metadata.ts",
+      "source_location": "L49"
+    }
+  ]
+}

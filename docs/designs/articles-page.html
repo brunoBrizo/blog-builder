@@ -1,0 +1,457 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorials &amp; Masterclasses - Synthetix</title>
+<meta name="description" content="Discover our latest deep-dives, tutorials, and reviews on AI tools, development frameworks, and tech trends.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.mask-radial-fade {
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+</head>
+<body class="bg-[#FAFAFA] text-zinc-900 antialiased selection:bg-indigo-200 selection:text-indigo-900 overflow-x-hidden relative">
+  
+  <!-- Subtle Background Grid -->
+  <div class="absolute inset-0 z-0 bg-grid-pattern mask-radial-fade h-[600px] pointer-events-none"></div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-zinc-900/95 backdrop-blur-md">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-14 items-center justify-between gap-4">
+        <div class="flex items-center gap-8">
+          <!-- Logo -->
+          <a href="/" class="font-display text-sm sm:text-base font-medium tracking-tighter uppercase text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm relative z-10 flex items-center gap-1.5">
+            <span class="size-2 rounded-full bg-indigo-500 shadow-[0_0_12px_rgba(99,102,241,0.8)]"></span>
+            SYNTHETIX
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="/" class="text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Home
+            </a>
+            <a href="/tutorials" class="text-sm font-normal text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Tutorials
+            </a>
+            <a href="/articles" class="text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              Articles
+            </a>
+            <a href="/news" class="text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              News
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <!-- Search -->
+          <div class="relative hidden sm:block w-56 group">
+            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none transition-colors group-focus-within:text-white text-zinc-500">
+              <iconify-icon icon="solar:magnifier-linear" width="18" height="18"></iconify-icon>
+            </div>
+            <input type="text" aria-label="Search articles" placeholder="Search articles..." class="w-full rounded-md border border-zinc-700/80 bg-zinc-800/50 py-1.5 pl-8 pr-3 text-sm font-light text-white placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 transition-all shadow-sm">
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="relative group hidden sm:block">
+            <button class="flex items-center gap-1 text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+              EN
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" height="16"></iconify-icon>
+            </button>
+            <div class="absolute right-0 mt-2 w-24 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-zinc-900 border border-zinc-800 rounded-md shadow-sm py-1 z-50">
+              <a href="/en" class="block px-3 py-1.5 text-xs font-normal text-white bg-zinc-800">
+                English
+              </a>
+              <a href="/es" class="block px-3 py-1.5 text-xs font-normal text-zinc-400 hover:bg-zinc-800/50 hover:text-white transition-colors">
+                Español
+              </a>
+              <a href="/pt" class="block px-3 py-1.5 text-xs font-normal text-zinc-400 hover:bg-zinc-800/50 hover:text-white transition-colors">
+                Português
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button aria-label="Open menu" class="md:hidden text-zinc-400 hover:text-white hover:bg-zinc-800 p-1 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900">
+            <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 pb-16 relative z-10">
+    <!-- Page Header -->
+    <div class="mb-10 relative">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100/80 text-indigo-600 text-xs font-medium mb-4 shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+        Explore the Archive
+      </div>
+      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-zinc-900 mb-4">
+        Tutorials
+      </h1>
+      <p class="text-base sm:text-lg font-light text-zinc-500 max-w-2xl leading-relaxed">
+        Deep dives, step-by-step masterclasses, and architectural teardowns on
+        modern development frameworks and AI integrations.
+      </p>
+    </div>
+
+    <!-- Leaderboard Ad Placeholder -->
+    <div class="w-full bg-white/50 backdrop-blur-sm border border-zinc-200/80 border-dashed rounded-xl p-2 flex flex-col items-center justify-center min-h-[90px] mb-12 shadow-sm transition-colors hover:bg-white/80">
+      <span class="text-xs font-medium text-zinc-400 uppercase tracking-widest">
+        Advertisement
+      </span>
+      <span class="text-xs font-light text-zinc-400 mt-1">
+        Responsive Banner Placement (728x90)
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+      <!-- Articles Feed (Left Column) -->
+      <div class="lg:col-span-8 flex flex-col gap-2">
+        
+        <!-- Cornerstone Tutorial -->
+        <article class="group relative flex flex-col sm:flex-row gap-5 sm:gap-6 p-4 -mx-4 rounded-2xl hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-transparent hover:border-zinc-200/60 transition-all duration-300 ease-out">
+          <a href="/tutorials/complete-guide-to-rag" class="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-2xl">
+            <span class="sr-only">Read tutorial</span>
+          </a>
+          <div class="w-full sm:w-[32%] aspect-[16/10] bg-zinc-100 rounded-xl overflow-hidden relative shrink-0 border border-zinc-200/50 shadow-sm">
+            <div class="absolute top-2 left-2 z-20 flex items-center gap-1 px-2 py-0.5 rounded bg-white/95 backdrop-blur-md border border-zinc-200/80 shadow-sm">
+              <iconify-icon icon="solar:crown-star-linear" class="text-indigo-600" width="12" height="12"></iconify-icon>
+              <span class="text-xs font-medium tracking-wide uppercase text-zinc-800">
+                Cornerstone
+              </span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="RAG Architecture" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
+          </div>
+          <div class="flex flex-col justify-center sm:w-[68%]">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-indigo-600 mb-2">
+              <iconify-icon icon="solar:book-bookmark-linear" width="16" height="16"></iconify-icon>
+              Masterclass
+            </div>
+            <h2 class="font-display text-lg sm:text-xl font-medium tracking-tight text-zinc-900 mb-2 group-hover:text-indigo-600 transition-colors leading-snug">
+              The Definitive Guide to Building RAG Applications in 2026
+            </h2>
+            <p class="text-sm font-light text-zinc-500 mb-4 line-clamp-2 leading-relaxed">
+              A comprehensive tutorial on architecting Retrieval-Augmented
+              Generation pipelines. Learn how to optimize chunking strategies,
+              select the right embedding models, and evaluate vector databases.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=48&amp;h=48&amp;q=80" alt="Marcus Dev" class="w-5 h-5 rounded-full object-cover border border-zinc-200">
+                <span class="text-xs font-medium text-zinc-700">Marcus Dev</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span>Oct 24</span>
+                <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
+                <span>12 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-200/60 to-transparent my-2"></div>
+
+        <!-- Standard Tutorial 1 -->
+        <article class="group relative flex flex-col sm:flex-row gap-5 sm:gap-6 p-4 -mx-4 rounded-2xl hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-transparent hover:border-zinc-200/60 transition-all duration-300 ease-out">
+          <a href="/tutorials/react-server-components" class="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-2xl">
+            <span class="sr-only">Read tutorial</span>
+          </a>
+          <div class="w-full sm:w-[32%] aspect-[16/10] bg-zinc-100 rounded-xl overflow-hidden relative shrink-0 border border-zinc-200/50 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="React Code" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
+          </div>
+          <div class="flex flex-col justify-center sm:w-[68%]">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-violet-600 mb-2">
+              <iconify-icon icon="solar:play-circle-linear" width="16" height="16"></iconify-icon>
+              Walkthrough
+            </div>
+            <h2 class="font-display text-lg sm:text-xl font-medium tracking-tight text-zinc-900 mb-2 group-hover:text-violet-600 transition-colors leading-snug">
+              Mastering React Server Components
+            </h2>
+            <p class="text-sm font-light text-zinc-500 mb-4 line-clamp-2 leading-relaxed">
+              A complete guide to data fetching, suspense boundaries, and
+              streaming architecture in Next.js 15.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span class="text-zinc-600 font-medium">Elena R.</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span>Oct 22</span>
+                <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
+                <span>15 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-200/60 to-transparent my-2"></div>
+
+        <!-- Standard Tutorial 2 -->
+        <article class="group relative flex flex-col sm:flex-row gap-5 sm:gap-6 p-4 -mx-4 rounded-2xl hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-transparent hover:border-zinc-200/60 transition-all duration-300 ease-out">
+          <a href="/tutorials/local-llms-ollama" class="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-2xl">
+            <span class="sr-only">Read tutorial</span>
+          </a>
+          <div class="w-full sm:w-[32%] aspect-[16/10] bg-zinc-100 rounded-xl overflow-hidden relative shrink-0 border border-zinc-200/50 shadow-sm">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Server Infrastructure" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
+          </div>
+          <div class="flex flex-col justify-center sm:w-[68%]">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-emerald-600 mb-2">
+              <iconify-icon icon="solar:server-square-linear" width="16" height="16"></iconify-icon>
+              Architecture
+            </div>
+            <h2 class="font-display text-lg sm:text-xl font-medium tracking-tight text-zinc-900 mb-2 group-hover:text-emerald-600 transition-colors leading-snug">
+              Deploying Local LLMs with Ollama
+            </h2>
+            <p class="text-sm font-light text-zinc-500 mb-4 line-clamp-2 leading-relaxed">
+              Step-by-step instructions for running Llama 3 locally and
+              integrating it into your Node.js backend seamlessly.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span class="text-zinc-600 font-medium">David K.</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span>Oct 20</span>
+                <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
+                <span>10 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-200/60 to-transparent my-2"></div>
+
+        <!-- Standard Tutorial 3 -->
+        <article class="group relative flex flex-col sm:flex-row gap-5 sm:gap-6 p-4 -mx-4 rounded-2xl hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-transparent hover:border-zinc-200/60 transition-all duration-300 ease-out">
+          <a href="/tutorials/advanced-typescript" class="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-2xl">
+            <span class="sr-only">Read tutorial</span>
+          </a>
+          <div class="w-full sm:w-[32%] aspect-[16/10] bg-zinc-100 rounded-xl overflow-hidden relative shrink-0 border border-zinc-200/50 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="TypeScript Code" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
+          </div>
+          <div class="flex flex-col justify-center sm:w-[68%]">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-sky-600 mb-2">
+              <iconify-icon icon="solar:code-square-linear" width="16" height="16"></iconify-icon>
+              Development
+            </div>
+            <h2 class="font-display text-lg sm:text-xl font-medium tracking-tight text-zinc-900 mb-2 group-hover:text-sky-600 transition-colors leading-snug">
+              Advanced TypeScript Patterns in 2026
+            </h2>
+            <p class="text-sm font-light text-zinc-500 mb-4 line-clamp-2 leading-relaxed">
+              Elevate your codebase with advanced generics, utility types, and
+              strict error handling strategies for large-scale apps.
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+               <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span class="text-zinc-600 font-medium">Marcus Dev</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-light text-zinc-400">
+                <span>Oct 18</span>
+                <span class="w-1 h-1 rounded-full bg-zinc-300"></span>
+                <span>18 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pagination -->
+        <div class="flex items-center justify-between pt-8 mt-4 border-t border-zinc-200/60">
+          <button disabled="" class="px-4 py-2 text-sm font-medium text-zinc-400 border border-zinc-200/80 rounded-md cursor-not-allowed bg-zinc-50 shadow-sm">
+            Previous
+          </button>
+          <div class="flex items-center gap-1 text-sm font-medium text-zinc-500">
+            <span class="w-8 h-8 flex items-center justify-center bg-zinc-900 text-white rounded-md shadow-sm">
+              1
+            </span>
+            <a href="?page=2" class="w-8 h-8 flex items-center justify-center hover:bg-zinc-200 hover:text-zinc-900 rounded-md transition-colors">
+              2
+            </a>
+            <a href="?page=3" class="w-8 h-8 flex items-center justify-center hover:bg-zinc-200 hover:text-zinc-900 rounded-md transition-colors">
+              3
+            </a>
+            <span class="px-1 text-zinc-400">...</span>
+          </div>
+          <a href="?page=2" class="px-4 py-2 text-sm font-medium text-zinc-700 border border-zinc-200/80 rounded-md hover:bg-white hover:text-zinc-900 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400">
+            Next
+          </a>
+        </div>
+      </div>
+
+      <!-- Sidebar (Right Column) -->
+      <aside class="lg:col-span-4 space-y-8">
+        <div class="sticky top-24 space-y-8">
+          
+          <!-- E-E-A-T Author Box -->
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-zinc-200/80 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="flex items-start gap-4">
+              <div class="relative">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=facearea&amp;facepad=2&amp;w=80&amp;h=80&amp;q=80" alt="Marcus Dev" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm bg-zinc-100 relative z-10">
+                <div class="absolute inset-0 rounded-full bg-indigo-500 blur-md opacity-30 z-0 translate-y-1"></div>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-zinc-900">Marcus Dev</h3>
+                <p class="text-xs font-medium text-indigo-600 mb-2">
+                  Lead Educator
+                </p>
+                <p class="text-xs font-light text-zinc-500 leading-relaxed">
+                  Curating step-by-step masterclasses and architectural
+                  blueprints to help developers scale faster.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter CTA -->
+          <div class="bg-zinc-900 rounded-2xl p-6 relative overflow-hidden shadow-lg shadow-zinc-900/5 group border border-zinc-800">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500 rounded-full blur-[80px] opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-8 h-8 rounded-lg bg-white/5 text-indigo-300 flex items-center justify-center border border-white/10 shadow-inner">
+                  <iconify-icon icon="solar:letter-linear" width="16" height="16"></iconify-icon>
+                </div>
+                <h3 class="text-base font-medium tracking-tight text-white">
+                  Tutorial Updates
+                </h3>
+              </div>
+              <p class="text-sm font-light text-zinc-400 mb-5 leading-relaxed">
+                Get notified when we publish new masterclasses and
+                architectural deep dives. No spam.
+              </p>
+              <form class="flex flex-col gap-3">
+                <input type="email" required="" placeholder="Enter your email" aria-label="Email address" class="w-full px-3 py-2 text-sm font-light bg-zinc-950/50 border border-zinc-800 rounded-md focus-visible:outline-none focus-visible:border-indigo-500 transition-colors placeholder:text-zinc-600 text-white shadow-inner">
+                <button type="submit" class="w-full bg-white text-zinc-900 text-sm font-medium py-2 rounded-md hover:bg-zinc-100 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900">
+                  Subscribe
+                </button>
+              </form>
+              <p class="text-xs font-light text-zinc-500 mt-3 text-center">
+                1-click unsubscribe anytime.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sidebar Ad Placeholder -->
+          <div class="w-full bg-white/50 backdrop-blur-sm border border-zinc-200/80 border-dashed rounded-2xl p-4 flex flex-col items-center justify-center aspect-square min-h-[250px] shadow-sm transition-colors hover:bg-white/80">
+            <span class="text-xs font-medium text-zinc-400 uppercase tracking-widest">
+              Advertisement
+            </span>
+            <span class="text-xs font-light text-zinc-400 mt-1">
+              Sidebar Placement (300x250)
+            </span>
+          </div>
+
+          <!-- Categories -->
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-zinc-200/80 shadow-sm">
+            <h3 class="text-xs font-medium text-zinc-400 mb-4 uppercase tracking-widest">
+              Filter by Topic
+            </h3>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a href="#" class="group flex items-center justify-between text-sm font-light text-zinc-500 hover:text-zinc-900 px-2 py-2 rounded-md hover:bg-zinc-50 transition-colors">
+                  <span>React &amp; Next.js</span>
+                  <span class="text-xs font-medium bg-zinc-100 px-2 py-0.5 rounded-full text-zinc-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    14
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-center justify-between text-sm font-light text-zinc-500 hover:text-zinc-900 px-2 py-2 rounded-md hover:bg-zinc-50 transition-colors">
+                  <span>AI Integration</span>
+                  <span class="text-xs font-medium bg-zinc-100 px-2 py-0.5 rounded-full text-zinc-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    21
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-center justify-between text-sm font-light text-zinc-500 hover:text-zinc-900 px-2 py-2 rounded-md hover:bg-zinc-50 transition-colors">
+                  <span>System Architecture</span>
+                  <span class="text-xs font-medium bg-zinc-100 px-2 py-0.5 rounded-full text-zinc-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    8
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-center justify-between text-sm font-light text-zinc-500 hover:text-zinc-900 px-2 py-2 rounded-md hover:bg-zinc-50 transition-colors">
+                  <span>TypeScript Patterns</span>
+                  <span class="text-xs font-medium bg-zinc-100 px-2 py-0.5 rounded-full text-zinc-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    12
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-center justify-between text-sm font-light text-zinc-500 hover:text-zinc-900 px-2 py-2 rounded-md hover:bg-zinc-50 transition-colors">
+                  <span>DevOps &amp; Deployment</span>
+                  <span class="text-xs font-medium bg-zinc-100 px-2 py-0.5 rounded-full text-zinc-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    11
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800 bg-zinc-900 relative z-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="flex flex-col gap-2">
+          <a href="/" class="font-display text-sm font-medium tracking-tighter uppercase text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm flex items-center gap-1.5">
+            <span class="size-1.5 rounded-full bg-indigo-500"></span>
+            SYNTHETIX
+          </a>
+          <p class="text-sm font-light text-zinc-500">
+            © 2026 Synthetix AI &amp; Tech Blog. All rights reserved.
+          </p>
+        </div>
+
+        <nav class="flex flex-wrap gap-x-5 gap-y-2">
+          <a href="/about" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+            About
+          </a>
+          <a href="/contact" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+            Contact
+          </a>
+          <a href="/privacy" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+            Privacy Policy
+          </a>
+          <a href="/terms" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+            Terms &amp; Conditions
+          </a>
+          <a href="/disclaimer" class="text-xs font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm">
+            Disclaimer
+          </a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+</body></html>

@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "label": "api-logging.module.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_logging_module_apiloggingmodule",
+      "label": "ApiLoggingModule",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L55"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "target": "node_crypto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "target": "nestjs_pino",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_module",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_api_logging_module_ts",
+      "target": "api_logging_module_apiloggingmodule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/api-logging.module.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

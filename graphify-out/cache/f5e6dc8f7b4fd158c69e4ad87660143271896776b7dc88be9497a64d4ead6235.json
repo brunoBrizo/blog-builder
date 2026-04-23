@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "f18",
+      "label": "Observability & Monitoring",
+      "type": "document",
+      "source_file": "features/18-observability-and-monitoring.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

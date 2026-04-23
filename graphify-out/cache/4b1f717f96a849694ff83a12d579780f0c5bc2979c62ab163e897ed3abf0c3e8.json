@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/accessibility.md",
+      "label": "Accessibility WCAG 2.2 AA policy",
+      "source_file": "docs/accessibility.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

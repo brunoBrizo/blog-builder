@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_revalidate_auth_guard_ts",
+      "label": "revalidate-auth.guard.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "revalidate_auth_guard_revalidateauthguard",
+      "label": "RevalidateAuthGuard",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "revalidate_auth_guard_revalidateauthguard_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "revalidate_auth_guard_revalidateauthguard_canactivate",
+      "label": ".canActivate()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L15"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_revalidate_auth_guard_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_revalidate_auth_guard_ts",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_revalidate_auth_guard_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_shared_secret_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_revalidate_auth_guard_ts",
+      "target": "revalidate_auth_guard_revalidateauthguard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "revalidate_auth_guard_revalidateauthguard",
+      "target": "revalidate_auth_guard_revalidateauthguard_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "revalidate_auth_guard_revalidateauthguard",
+      "target": "revalidate_auth_guard_revalidateauthguard_canactivate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "revalidate_auth_guard_revalidateauthguard_canactivate",
+      "callee": "getRequest",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "revalidate_auth_guard_revalidateauthguard_canactivate",
+      "callee": "switchToHttp",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "revalidate_auth_guard_revalidateauthguard_canactivate",
+      "callee": "validateRevalidate",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/auth/revalidate-auth.guard.ts",
+      "source_location": "L17"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_errors_ts",
+      "label": "generation.errors.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "generation_errors_killswitcherror",
+      "label": "KillSwitchError",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "generation_errors_killswitcherror_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "generation_errors_budgetexceedederror",
+      "label": "BudgetExceededError",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "generation_errors_budgetexceedederror_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "generation_errors_perplexityvalidationerror",
+      "label": "PerplexityValidationError",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "generation_errors_perplexityvalidationerror_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_errors_ts",
+      "target": "generation_errors_killswitcherror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_errors_killswitcherror",
+      "target": "generation_errors_killswitcherror_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_errors_ts",
+      "target": "generation_errors_budgetexceedederror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_errors_budgetexceedederror",
+      "target": "generation_errors_budgetexceedederror_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_errors_ts",
+      "target": "generation_errors_perplexityvalidationerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_errors_perplexityvalidationerror",
+      "target": "generation_errors_perplexityvalidationerror_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "generation_errors_killswitcherror_constructor",
+      "callee": "super",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L6"
+    },
+    {
+      "caller_nid": "generation_errors_budgetexceedederror_constructor",
+      "callee": "super",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "generation_errors_perplexityvalidationerror_constructor",
+      "callee": "super",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.errors.ts",
+      "source_location": "L22"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "f20",
+      "label": "AdSense Submission Readiness",
+      "type": "document",
+      "source_file": "features/20-adsense-submission-readiness.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

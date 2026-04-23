@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "f08",
+      "label": "Homepage & Blog Navigation",
+      "type": "document",
+      "source_file": "features/08-homepage-and-blog-navigation.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

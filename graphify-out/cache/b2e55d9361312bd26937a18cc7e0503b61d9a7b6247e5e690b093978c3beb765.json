@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/help-guides/environment-variables.md",
+      "label": "Environment variables quick reference",
+      "source_file": "docs/help-guides/environment-variables.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

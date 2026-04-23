@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "f06",
+      "label": "Scheduled Article Generation",
+      "type": "document",
+      "source_file": "features/06-scheduled-article-generation.md",
+      "file_type": "document"
+    },
+    {
+      "id": "pg_cron",
+      "label": "Supabase pg_cron scheduler",
+      "type": "concept",
+      "source_file": "features/06-scheduled-article-generation.md"
+    },
+    {
+      "id": "isr_revalidation",
+      "label": "Next.js ISR on-demand revalidation",
+      "type": "concept",
+      "source_file": "features/06-scheduled-article-generation.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

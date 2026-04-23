@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:libs/shared-types/README.md",
+      "label": "libs/shared-types Nx library README",
+      "source_file": "libs/shared-types/README.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

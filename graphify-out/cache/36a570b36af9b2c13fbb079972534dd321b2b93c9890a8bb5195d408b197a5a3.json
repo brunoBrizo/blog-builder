@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/seo-geo.md",
+      "label": "SEO and Generative Engine Optimization",
+      "source_file": "docs/seo-geo.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

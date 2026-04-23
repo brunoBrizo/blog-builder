@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/tech-stack.md",
+      "label": "Tech Stack AI Tech Blog",
+      "source_file": "docs/tech-stack.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

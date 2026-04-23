@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_guard_ts",
+      "label": "test-endpoints.guard.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_endpoints_guard_testendpointsguard",
+      "label": "TestEndpointsGuard",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "test_endpoints_guard_testendpointsguard_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "test_endpoints_guard_testendpointsguard_canactivate",
+      "label": ".canActivate()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_guard_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_guard_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_test_endpoints_guard_ts",
+      "target": "test_endpoints_guard_testendpointsguard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "test_endpoints_guard_testendpointsguard",
+      "target": "test_endpoints_guard_testendpointsguard_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_endpoints_guard_testendpointsguard",
+      "target": "test_endpoints_guard_testendpointsguard_canactivate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/test-endpoints.guard.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:libs/ui/README.md",
+      "label": "libs/ui Nx library README",
+      "source_file": "libs/ui/README.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

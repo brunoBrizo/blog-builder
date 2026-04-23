@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/designs/article-page.html",
+      "label": "Article page design HTML",
+      "source_file": "docs/designs/article-page.html",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

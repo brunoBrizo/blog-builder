@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "label": "alert.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "alert_alert",
+      "label": "Alert()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "alert_alerttitle",
+      "label": "AlertTitle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L22"
+    },
+    {
+      "id": "alert_alertdescription",
+      "label": "AlertDescription()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_utils_cn",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_variants",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "class_variance_authority",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "alert_alert",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "alert_alerttitle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_ui_src_lib_alert_alert_tsx",
+      "target": "alert_alertdescription",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L37",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "alert_alert",
+      "callee": "alertVariants",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/ui/src/lib/alert/alert.tsx",
+      "source_location": "L16"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_postcss_config_js",
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/postcss.config.js",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

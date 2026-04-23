@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "label": "drizzle.module.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "drizzle_module_drizzlemodule",
+      "label": "DrizzleModule",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "drizzle_module_drizzlemodule_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "drizzle_module_drizzlemodule_forroot",
+      "label": ".forRoot()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L43"
+    },
+    {
+      "id": "drizzle_module_drizzlemodule_forrootasync",
+      "label": ".forRootAsync()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L69"
+    },
+    {
+      "id": "drizzle_module_drizzlemodule_onmoduledestroy",
+      "label": ".onModuleDestroy()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L107"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "target": "postgres_js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "target": "postgres",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_db_src_client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "target": "users_brunobrizolara_src_blog_builder_libs_db_src_schema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_db_src_drizzle_module_ts",
+      "target": "drizzle_module_drizzlemodule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "drizzle_module_drizzlemodule",
+      "target": "drizzle_module_drizzlemodule_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "drizzle_module_drizzlemodule",
+      "target": "drizzle_module_drizzlemodule_forroot",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "drizzle_module_drizzlemodule",
+      "target": "drizzle_module_drizzlemodule_forrootasync",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "drizzle_module_drizzlemodule",
+      "target": "drizzle_module_drizzlemodule_onmoduledestroy",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "drizzle_module_drizzlemodule_onmoduledestroy",
+      "callee": "end",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "drizzle_module_drizzlemodule_onmoduledestroy",
+      "callee": "warn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/db/src/drizzle.module.ts",
+      "source_location": "L111"
+    }
+  ]
+}

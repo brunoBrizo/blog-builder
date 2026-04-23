@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "features_readme",
+      "label": "Features build order index",
+      "type": "document",
+      "source_file": "features/README.md",
+      "file_type": "document"
+    },
+    {
+      "id": "docs_product_idea",
+      "label": "docs/product_idea.md (referenced)",
+      "type": "concept",
+      "source_file": "features/README.md"
+    },
+    {
+      "id": "docs_tech_stack",
+      "label": "docs/tech-stack.md (referenced)",
+      "type": "concept",
+      "source_file": "features/README.md"
+    },
+    {
+      "id": "docs_seo_geo",
+      "label": "docs/seo-geo.md (referenced)",
+      "type": "concept",
+      "source_file": "features/README.md"
+    },
+    {
+      "id": "docs_accessibility",
+      "label": "docs/accessibility.md (referenced)",
+      "type": "concept",
+      "source_file": "features/README.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

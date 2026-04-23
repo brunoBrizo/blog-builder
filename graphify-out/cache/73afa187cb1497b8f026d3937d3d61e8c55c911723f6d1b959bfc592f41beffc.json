@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/product_idea.md",
+      "label": "AI Tech Blog product requirements",
+      "source_file": "docs/product_idea.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

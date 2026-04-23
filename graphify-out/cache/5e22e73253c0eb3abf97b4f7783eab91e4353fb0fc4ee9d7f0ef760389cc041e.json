@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "label": "apply-security.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apply_security_isinngestpath",
+      "label": "isInngestPath()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "apply_security_applysecuritymiddleware",
+      "label": "applySecurityMiddleware()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "compression",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "cors",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "helmet",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "apply_security_isinngestpath",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_security_apply_security_ts",
+      "target": "apply_security_applysecuritymiddleware",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "apply_security_isinngestpath",
+      "callee": "startsWith",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "use",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "use",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "use",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "cors",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "filter",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "supabaseCorsOrigin",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "enableCors",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "use",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "apply_security_applysecuritymiddleware",
+      "callee": "compression",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/security/apply-security.ts",
+      "source_location": "L87"
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "label": "article-generation.pipeline.spec.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "article_generation_pipeline_spec_creatememoizingstep",
+      "label": "createMemoizingStep()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "article_generation_pipeline_spec_noopbudget",
+      "label": "noopBudget()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "article_generation_pipeline_spec_cappedrunbudget",
+      "label": "cappedRunBudget()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L61"
+    },
+    {
+      "id": "article_generation_pipeline_spec_killswitchclosed",
+      "label": "killSwitchClosed()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L74"
+    },
+    {
+      "id": "article_generation_pipeline_spec_killswitchopen",
+      "label": "killSwitchOpen()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "article_generation_pipeline_spec_createorchestrator",
+      "label": "createOrchestrator()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L86"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "testing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "inngest",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_orchestrator",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_errors",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_budget_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_perplexity_client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_testing_in_memory_generation_repository",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_testing_stub_perplexity_fixtures",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "article_generation_pipeline_spec_creatememoizingstep",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "article_generation_pipeline_spec_noopbudget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "article_generation_pipeline_spec_cappedrunbudget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "article_generation_pipeline_spec_killswitchclosed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "article_generation_pipeline_spec_killswitchopen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_pipeline_spec_ts",
+      "target": "article_generation_pipeline_spec_createorchestrator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "article_generation_pipeline_spec_noopbudget",
+      "callee": "mockResolvedValue",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_noopbudget",
+      "callee": "fn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_noopbudget",
+      "callee": "fn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_cappedrunbudget",
+      "callee": "mockResolvedValue",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_cappedrunbudget",
+      "callee": "fn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_killswitchopen",
+      "callee": "fn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_createorchestrator",
+      "callee": "compile",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_createorchestrator",
+      "callee": "createTestingModule",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "article_generation_pipeline_spec_createorchestrator",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.pipeline.spec.ts",
+      "source_location": "L105"
+    }
+  ]
+}

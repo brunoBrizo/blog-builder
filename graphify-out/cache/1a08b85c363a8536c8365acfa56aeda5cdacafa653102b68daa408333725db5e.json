@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {
+      "id": "f17",
+      "label": "Accessibility Implementation",
+      "type": "document",
+      "source_file": "features/17-accessibility-implementation.md",
+      "file_type": "document"
+    },
+    {
+      "id": "wcag_22_aa",
+      "label": "WCAG 2.2 AA conformance",
+      "type": "concept",
+      "source_file": "features/17-accessibility-implementation.md"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

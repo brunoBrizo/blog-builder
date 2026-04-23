@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "f10",
+      "label": "SEO & GEO Discoverability Files",
+      "type": "document",
+      "source_file": "features/10-seo-geo-discoverability-files.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

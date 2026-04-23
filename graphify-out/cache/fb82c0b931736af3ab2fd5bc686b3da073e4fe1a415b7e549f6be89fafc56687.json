@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service_ts",
+      "label": "kill-switch.service.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "kill_switch_service_killswitchservice",
+      "label": "KillSwitchService",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "kill_switch_service_killswitchservice_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "kill_switch_service_killswitchservice_assertopen",
+      "label": ".assertOpen()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_errors",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service_ts",
+      "target": "kill_switch_service_killswitchservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "kill_switch_service_killswitchservice",
+      "target": "kill_switch_service_killswitchservice_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "kill_switch_service_killswitchservice",
+      "target": "kill_switch_service_killswitchservice_assertopen",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/kill-switch.service.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

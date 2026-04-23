@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/inngest-article-pipeline.md",
+      "label": "Inngest article generation operations runbook",
+      "source_file": "docs/inngest-article-pipeline.md",
+      "file_type": "document"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_app_revalidate_controller_ts",
+      "label": "revalidate.controller.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "revalidate_controller_revalidatecontroller",
+      "label": "RevalidateController",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "revalidate_controller_revalidatecontroller_trigger",
+      "label": ".trigger()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_revalidate_controller_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_revalidate_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_auth_decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_revalidate_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_throttling_throttle_decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_revalidate_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_app_dto_revalidate_path_dto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_app_revalidate_controller_ts",
+      "target": "revalidate_controller_revalidatecontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "revalidate_controller_revalidatecontroller",
+      "target": "revalidate_controller_revalidatecontroller_trigger",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/app/revalidate.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,193 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "label": "article-generation.controller.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "article_generation_controller_articlegenerationcontroller",
+      "label": "ArticleGenerationController",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "article_generation_controller_articlegenerationcontroller_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "article_generation_controller_articlegenerationcontroller_generate",
+      "label": ".generate()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "label": ".monthlySpend()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L53"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "throttler",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "inngest",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_auth_cron_auth_guard",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_dto_post_internal_articles_generate_dto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_tokens",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_article_generation_controller_ts",
+      "target": "article_generation_controller_articlegenerationcontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "article_generation_controller_articlegenerationcontroller",
+      "target": "article_generation_controller_articlegenerationcontroller_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "article_generation_controller_articlegenerationcontroller",
+      "target": "article_generation_controller_articlegenerationcontroller_generate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "article_generation_controller_articlegenerationcontroller",
+      "target": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_generate",
+      "callee": "createJob",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_generate",
+      "callee": "send",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "callee": "monthlySpendUtc",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "callee": "getUTCFullYear",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "callee": "getUTCMonth",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "callee": "getUTCFullYear",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "article_generation_controller_articlegenerationcontroller_monthlyspend",
+      "callee": "getUTCMonth",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/article-generation.controller.ts",
+      "source_location": "L67"
+    }
+  ]
+}

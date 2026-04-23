@@ -1,0 +1,119 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_sentry_breadcrumb_interceptor_ts",
+      "label": "sentry-breadcrumb.interceptor.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor",
+      "label": "SentryHttpBreadcrumbInterceptor",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "label": ".intercept()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L13"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_sentry_breadcrumb_interceptor_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_sentry_breadcrumb_interceptor_ts",
+      "target": "nestjs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_sentry_breadcrumb_interceptor_ts",
+      "target": "rxjs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_sentry_breadcrumb_interceptor_ts",
+      "target": "operators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_logging_sentry_breadcrumb_interceptor_ts",
+      "target": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor",
+      "target": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "callee": "switchToHttp",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "callee": "getRequest",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "callee": "now",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "callee": "pipe",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "callee": "handle",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "sentry_breadcrumb_interceptor_sentryhttpbreadcrumbinterceptor_intercept",
+      "callee": "tap",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/logging/sentry-breadcrumb.interceptor.ts",
+      "source_location": "L18"
+    }
+  ]
+}
