@@ -1,11 +1,19 @@
 {
   "common": {
-    "siteName": "Blog Builder",
+    "siteName": "Synthetix",
     "themeLight": "Usar tema claro",
     "themeDark": "Usar tema oscuro",
     "home": "Inicio",
+    "aiTools": "Herramientas IA",
+    "development": "Desarrollo",
+    "guides": "Guías",
+    "tutorials": "Tutoriales",
+    "news": "Noticias IA",
+    "articles": "Artículos",
     "blog": "Blog",
-    "admin": "Admin"
+    "admin": "Admin",
+    "homeIntro": "Página de inicio provisional — diseño pendiente. Consulta la página de",
+    "homeOutro": " para la lista y los mockups de UI."
   },
   "layout": {
     "skipToContent": "Saltar al contenido",
@@ -15,10 +23,13 @@
       "closeMenu": "Cerrar menú"
     },
     "footer": {
-      "copyright": "© {year} Blog Builder. Todos los derechos reservados.",
+      "copyright": "© {year} Synthetix AI & Tech Blog. Todos los derechos reservados.",
       "legal": "Legal",
-      "privacy": "Privacidad",
-      "terms": "Términos",
+      "about": "Acerca de",
+      "contact": "Contacto",
+      "privacy": "Política de privacidad",
+      "terms": "Términos y condiciones",
+      "disclaimer": "Aviso legal",
       "socialAria": "Redes sociales",
       "newsletterCompliance": "Puedes darte de baja en cualquier momento. Usamos cabeceras List-Unsubscribe en el correo de marketing."
     },
@@ -46,5 +57,33 @@
   "demo": {
     "title": "Primitivos de UI (desarrollo)",
     "back": "Volver al inicio"
+  },
+  "placeholders": {
+    "aiNews": "Noticias IA",
+    "articleLabel": "Artículo",
+    "tutorial": "Tutorial",
+    "detailTitle": "Contenido: {slug}",
+    "detailDescription": "Marcador de posición — el contenido real y la capa de datos llegan en una versión posterior.",
+    "listDescription": "Marcador de posición — la lista y la conexión de datos llegan en una versión posterior.",
+    "articlesListBadge": "Explora el archivo",
+    "articlesListLead": "Análisis profundos, masterclasses paso a paso y desmontajes arquitectónicos sobre frameworks de desarrollo moderno e integraciones con IA.",
+    "tutorialsListTitle": "Tutoriales",
+    "articlesListTitle": "Artículos",
+    "newsListTitle": "Noticias IA",
+    "tutorialsHeading": "Tutoriales",
+    "articlesHeading": "Artículos",
+    "newsHeading": "Noticias IA",
+    "metadataArticle": "Artículo: {slug}",
+    "metadataNews": "Noticias IA: {slug}",
+    "metadataTutorial": "Tutorial: {slug}",
+    "aboutTitle": "Acerca de",
+    "aboutHeading": "Acerca de",
+    "aboutDescription": "Marcador de posición — el texto acerca de llega en una versión posterior.",
+    "disclaimerTitle": "Aviso legal",
+    "disclaimerHeading": "Aviso legal",
+    "disclaimerDescription": "Marcador de posición — el texto del aviso legal llega en una versión posterior.",
+    "privacyDialogTitle": "Política de privacidad",
+    "privacyDialogBody": "Resumen breve. El texto legal completo está en la página dedicada.",
+    "privacyViewFullPage": "Abrir página completa de privacidad"
   }
 }

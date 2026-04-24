@@ -11,44 +11,49 @@ export function NewsletterCard({ className }: NewsletterCardProps) {
   return (
     <div
       className={cn(
-        'bg-white rounded-2xl p-7 border border-zinc-100 shadow-sm shadow-zinc-100/30',
+        'bg-zinc-900 rounded-2xl p-6 relative overflow-hidden shadow-lg shadow-zinc-900/5 group border border-zinc-800',
         className,
       )}
     >
-      <div className="flex items-center gap-2.5 mb-5">
-        <Mail className="w-5 h-5 text-zinc-900" strokeWidth={1.5} />
-        <h3 className="text-[15px] font-medium tracking-tight text-zinc-900">
-          Weekly Tech Digest
-        </h3>
-      </div>
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500 rounded-full blur-[80px] opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
+      <div className="relative z-10">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="w-8 h-8 rounded-lg bg-white/5 text-indigo-300 flex items-center justify-center border border-white/10 shadow-inner">
+            <Mail className="w-4 h-4" strokeWidth={1.5} />
+          </div>
+          <h3 className="text-base font-medium tracking-tight text-white">
+            Tutorial Updates
+          </h3>
+        </div>
 
-      <p className="text-[14px] text-zinc-500 mb-6 leading-[1.6]">
-        Get the latest AI tutorials, tool reviews, and tech news straight to
-        your inbox.
-      </p>
+        <p className="text-sm font-light text-zinc-400 mb-5 leading-relaxed">
+          Get notified when we publish new masterclasses and architectural deep
+          dives. No spam.
+        </p>
 
-      <form
-        className="flex flex-col gap-3.5"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <input
-          type="email"
-          required
-          placeholder="name@example.com"
-          className="w-full px-4 py-2.5 text-[14px] border border-zinc-100 rounded-xl focus:outline-none focus:border-zinc-300 transition-all placeholder:text-zinc-300 bg-zinc-50/30"
-        />
-        <button
-          type="submit"
-          className="w-full bg-zinc-900 text-white text-[14px] font-medium py-3 rounded-xl hover:bg-black transition-colors"
+        <form
+          className="flex flex-col gap-3"
+          onSubmit={(e) => e.preventDefault()}
         >
-          Subscribe
-        </button>
-      </form>
+          <input
+            type="email"
+            required
+            aria-label="Email address"
+            placeholder="Enter your email"
+            className="w-full px-3 py-2 text-sm font-light bg-zinc-950/50 border border-zinc-800 rounded-md focus-visible:outline-none focus-visible:border-indigo-500 transition-colors placeholder:text-zinc-600 text-white shadow-inner"
+          />
+          <button
+            type="submit"
+            className="w-full bg-white text-zinc-900 text-sm font-medium py-2 rounded-md hover:bg-zinc-100 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+          >
+            Subscribe
+          </button>
+        </form>
 
-      <p className="text-[11px] text-zinc-400 mt-5 text-center leading-relaxed px-2">
-        1-click unsubscribe anytime. By subscribing, you agree to our Privacy
-        Policy.
-      </p>
+        <p className="text-xs font-light text-zinc-500 mt-3 text-center">
+          1-click unsubscribe anytime.
+        </p>
+      </div>
     </div>
   );
 }

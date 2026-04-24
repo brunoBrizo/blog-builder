@@ -1,7 +1,7 @@
 import { getLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
-import { fontMono, fontSans } from './fonts';
+import { fontMono, fontSans, fontDisplay } from './fonts';
 import './global.css';
 
 import { cookies } from 'next/headers';
@@ -26,10 +26,12 @@ export default async function RootLayout({
     <html
       lang={htmlLang}
       dir="ltr"
-      className={`${fontSans.variable} ${fontMono.variable} ${themeClass}`.trim()}
+      className={`${fontSans.variable} ${fontMono.variable} ${fontDisplay.variable} ${themeClass}`.trim()}
       suppressHydrationWarning
     >
-      <body className="min-h-dvh antialiased">{children}</body>
+      <body className="bg-[#FAFAFA] text-zinc-900 antialiased selection:bg-indigo-200 selection:text-indigo-900 overflow-x-hidden relative min-h-dvh">
+        {children}
+      </body>
     </html>
   );
 }

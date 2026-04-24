@@ -7,9 +7,13 @@
     "aiTools": "AI Tools",
     "development": "Development",
     "guides": "Guides",
+    "tutorials": "Tutorials",
+    "news": "AI News",
     "articles": "Articles",
     "blog": "Blog",
-    "admin": "Admin"
+    "admin": "Admin",
+    "homeIntro": "Home placeholder — pending design. See the",
+    "homeOutro": " page for the list and UI mockups."
   },
   "layout": {
     "skipToContent": "Skip to content",
@@ -53,5 +57,33 @@
   "demo": {
     "title": "UI primitives (development)",
     "back": "Back to home"
+  },
+  "placeholders": {
+    "aiNews": "AI News",
+    "articleLabel": "Article",
+    "tutorial": "Tutorial",
+    "detailTitle": "Content: {slug}",
+    "detailDescription": "Placeholder — real content and data layer ship in a later release.",
+    "listDescription": "Placeholder — list UI and data hookup ship in a later release.",
+    "articlesListBadge": "Explore the Archive",
+    "articlesListLead": "Deep dives, step-by-step masterclasses, and architectural teardowns on modern development frameworks and AI integrations.",
+    "tutorialsListTitle": "Tutorials",
+    "articlesListTitle": "Articles",
+    "newsListTitle": "AI News",
+    "tutorialsHeading": "Tutorials",
+    "articlesHeading": "Articles",
+    "newsHeading": "AI News",
+    "metadataArticle": "Article: {slug}",
+    "metadataNews": "AI News: {slug}",
+    "metadataTutorial": "Tutorial: {slug}",
+    "aboutTitle": "About",
+    "aboutHeading": "About",
+    "aboutDescription": "Placeholder — about copy ships in a later release.",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerHeading": "Disclaimer",
+    "disclaimerDescription": "Placeholder — disclaimer text ships in a later release.",
+    "privacyDialogTitle": "Privacy Policy",
+    "privacyDialogBody": "Short summary placeholder. Full legal text lives on the dedicated page.",
+    "privacyViewFullPage": "Open full privacy page"
   }
 }

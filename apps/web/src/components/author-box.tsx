@@ -37,23 +37,27 @@ export function AuthorBox({
     return (
       <div
         className={cn(
-          'bg-gradient-to-br from-indigo-50/50 via-white to-zinc-50 rounded-xl p-5 border border-indigo-100/50 shadow-sm shadow-indigo-100/20',
+          'bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-zinc-200/80 shadow-sm hover:shadow-md transition-shadow duration-300',
           className,
         )}
       >
         <div className="flex items-start gap-4">
-          <Image
-            src={author.avatarUrl}
-            alt={author.name}
-            width={48}
-            height={48}
-            className="rounded-full grayscale object-cover"
-          />
+          <div className="relative">
+            <Image
+              src={author.avatarUrl}
+              alt={author.name}
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm bg-zinc-100 relative z-10"
+            />
+            <div className="absolute inset-0 rounded-full bg-indigo-500 blur-md opacity-30 z-0 translate-y-1"></div>
+          </div>
           <div>
             <h3 className="text-sm font-medium text-zinc-900">{author.name}</h3>
-            <p className="text-xs text-indigo-600 mb-2">{author.role}</p>
-            <p className="text-xs text-zinc-500 leading-relaxed">
-              {/* Shortened bio for sidebar */}
+            <p className="text-xs font-medium text-indigo-600 mb-2">
+              {author.role}
+            </p>
+            <p className="text-xs font-light text-zinc-500 leading-relaxed">
               {author.bio.slice(0, 100)}...
             </p>
           </div>

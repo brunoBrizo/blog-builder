@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@blog-builder/ui';
 import type { Category } from '../mocks/categories';
 
@@ -7,15 +7,6 @@ interface SidebarCategoriesProps {
   className?: string;
 }
 
-const colorMap = {
-  violet: 'bg-violet-400',
-  emerald: 'bg-emerald-400',
-  blue: 'bg-blue-400',
-  rose: 'bg-rose-400',
-  amber: 'bg-amber-400',
-  zinc: 'bg-zinc-400',
-};
-
 export function SidebarCategories({
   categories,
   className,
@@ -23,30 +14,22 @@ export function SidebarCategories({
   return (
     <div
       className={cn(
-        'bg-white border border-zinc-100 rounded-2xl p-6',
+        'bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-zinc-200/80 shadow-sm',
         className,
       )}
     >
-      <h3 className="text-[11px] font-bold text-zinc-900 mb-6 uppercase tracking-[0.1em]">
-        Topics
+      <h3 className="text-xs font-medium text-zinc-400 mb-4 uppercase tracking-widest">
+        Filter by Topic
       </h3>
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-1">
         {categories.map((category) => (
           <li key={category.id}>
             <Link
-              href={`/blog/category/${category.slug}`}
-              className="group flex items-center justify-between text-[14px] text-zinc-500 hover:text-zinc-900 transition-colors"
+              href={`/articles?category=${encodeURIComponent(category.slug)}`}
+              className="group flex items-center justify-between text-sm font-light text-zinc-500 hover:text-zinc-900 px-2 py-2 rounded-md hover:bg-zinc-50 transition-colors"
             >
-              <div className="flex items-center gap-3">
-                <span
-                  className={cn(
-                    'w-1.5 h-1.5 rounded-full shrink-0',
-                    colorMap[category.color] || colorMap.zinc,
-                  )}
-                />
-                <span>{category.name}</span>
-              </div>
-              <span className="text-[13px] text-zinc-300 font-normal">
+              <span>{category.name}</span>
+              <span className="text-xs font-medium bg-zinc-100 px-2 py-0.5 rounded-full text-zinc-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
                 {category.count}
               </span>
             </Link>

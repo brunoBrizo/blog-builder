@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_articles_ts",
+      "label": "articles.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/articles.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "articles_getcategory",
+      "label": "getCategory()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/articles.ts",
+      "source_location": "L23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_articles_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_authors",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/articles.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_articles_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_categories",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/articles.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_articles_ts",
+      "target": "articles_getcategory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/articles.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "articles_getcategory",
+      "callee": "find",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/articles.ts",
+      "source_location": "L24"
+    }
+  ]
+}

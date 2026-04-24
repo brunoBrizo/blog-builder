@@ -9,6 +9,7 @@
   --font-mono:
     var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
+  --font-display: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
 }
 
 html {
@@ -38,5 +39,31 @@ body {
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #52525b;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .mask-radial-fade {
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      black 40%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      black 40%,
+      transparent 100%
+    );
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

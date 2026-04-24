@@ -1,11 +1,19 @@
 {
   "common": {
-    "siteName": "Blog Builder",
+    "siteName": "Synthetix",
     "themeLight": "Usar tema claro",
     "themeDark": "Usar tema escuro",
     "home": "Início",
+    "aiTools": "Ferramentas de IA",
+    "development": "Desenvolvimento",
+    "guides": "Guias",
+    "tutorials": "Tutoriais",
+    "news": "Notícias de IA",
+    "articles": "Artigos",
     "blog": "Blog",
-    "admin": "Admin"
+    "admin": "Admin",
+    "homeIntro": "Página inicial provisória — design pendente. Veja a página de",
+    "homeOutro": " para a listagem e os mockups de UI."
   },
   "layout": {
     "skipToContent": "Pular para o conteúdo",
@@ -15,10 +23,13 @@
       "closeMenu": "Fechar menu"
     },
     "footer": {
-      "copyright": "© {year} Blog Builder. Todos os direitos reservados.",
+      "copyright": "© {year} Synthetix AI & Tech Blog. Todos os direitos reservados.",
       "legal": "Jurídico",
-      "privacy": "Privacidade",
-      "terms": "Termos",
+      "about": "Sobre",
+      "contact": "Contato",
+      "privacy": "Política de privacidade",
+      "terms": "Termos e condições",
+      "disclaimer": "Isenção de responsabilidade",
       "socialAria": "Redes sociais",
       "newsletterCompliance": "Você pode cancelar a inscrição a qualquer momento. Usamos cabeçalhos List-Unsubscribe em e-mails de marketing."
     },
@@ -46,5 +57,33 @@
   "demo": {
     "title": "Primitivos de UI (desenvolvimento)",
     "back": "Voltar ao início"
+  },
+  "placeholders": {
+    "aiNews": "Notícias de IA",
+    "articleLabel": "Artigo",
+    "tutorial": "Tutorial",
+    "detailTitle": "Conteúdo: {slug}",
+    "detailDescription": "Placeholder — conteúdo real e camada de dados em versão futura.",
+    "listDescription": "Placeholder — listagem e dados em versão futura.",
+    "articlesListBadge": "Explore o acervo",
+    "articlesListLead": "Análises aprofundadas, masterclasses passo a passo e desmontagens de arquitetura sobre frameworks modernos e integrações com IA.",
+    "tutorialsListTitle": "Tutoriais",
+    "articlesListTitle": "Artigos",
+    "newsListTitle": "Notícias de IA",
+    "tutorialsHeading": "Tutoriais",
+    "articlesHeading": "Artigos",
+    "newsHeading": "Notícias de IA",
+    "metadataArticle": "Artigo: {slug}",
+    "metadataNews": "Notícias de IA: {slug}",
+    "metadataTutorial": "Tutorial: {slug}",
+    "aboutTitle": "Sobre",
+    "aboutHeading": "Sobre",
+    "aboutDescription": "Placeholder — texto sobre em versão futura.",
+    "disclaimerTitle": "Isenção de responsabilidade",
+    "disclaimerHeading": "Isenção de responsabilidade",
+    "disclaimerDescription": "Placeholder — texto de isenção em versão futura.",
+    "privacyDialogTitle": "Política de privacidade",
+    "privacyDialogBody": "Resumo curto. Texto legal completo na página dedicada.",
+    "privacyViewFullPage": "Abrir página completa de privacidade"
   }
 }

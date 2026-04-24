@@ -70,9 +70,10 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       <AppToastProvider>
+        <div className="absolute inset-0 z-0 bg-grid-pattern mask-radial-fade h-[600px] pointer-events-none"></div>
         <SkipToContent />
         <SiteHeader themeCookie={themeCookie} />
-        <main id="main" tabIndex={-1} className="outline-none">
+        <main id="main" tabIndex={-1} className="outline-none relative z-10">
           {children}
         </main>
         <SiteFooter />

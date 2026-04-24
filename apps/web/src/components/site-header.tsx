@@ -1,11 +1,10 @@
 'use client';
 
-import { Menu, Search, Globe } from 'lucide-react';
+import { Menu, Search, ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
 
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 
 import {
   Dialog,
@@ -15,9 +14,18 @@ import {
   DialogTrigger,
 } from '@blog-builder/ui';
 
+import { routes } from '@/lib/routes';
+
 import { ThemeToggle } from './theme-toggle';
 
 type ThemeCookie = 'light' | 'dark' | null;
+
+function navItemActive(pathname: string, href: string) {
+  if (href === routes.home) {
+    return pathname === '/';
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function SiteHeader({ themeCookie }: { themeCookie: ThemeCookie }) {
   const t = useTranslations('common');
@@ -26,39 +34,37 @@ export function SiteHeader({ themeCookie }: { themeCookie: ThemeCookie }) {
   const pathname = usePathname();
 
   const navItems = [
-    { label: t('aiTools'), href: '#' },
-    { label: t('development'), href: '#' },
-    { label: t('guides'), href: '/blog' },
-    { label: t('articles'), href: '#' },
+    { label: t('home'), href: routes.home },
+    { label: t('tutorials'), href: routes.tutorials },
+    { label: t('articles'), href: routes.articles },
+    { label: t('news'), href: routes.news },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-100 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-zinc-900/95 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="flex h-14 items-center justify-between gap-4">
           <div className="flex items-center gap-8">
-            {/* Logo */}
             <Link
               href="/"
-              className="text-lg font-medium tracking-tighter uppercase text-zinc-900 flex items-center gap-1.5"
+              className="font-display text-sm sm:text-base font-medium tracking-tighter uppercase text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm relative z-10 flex items-center gap-1.5"
             >
-              <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
-              {t('siteName')}
+              <span className="size-2 rounded-full bg-indigo-500 shadow-[0_0_12px_rgba(99,102,241,0.8)]"></span>
+              SYNTHETIX
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav
+              aria-label={th('navAria')}
+              className="hidden md:flex items-center gap-6"
+            >
               {navItems.map((item) => {
-                const isActive =
-                  pathname.startsWith(item.href) && item.href !== '#';
+                const isActive = navItemActive(pathname, item.href);
                 return (
                   <Link
-                    key={item.label}
+                    key={item.href}
                     href={item.href}
-                    className={`text-sm transition-colors relative ${
-                      isActive
-                        ? 'text-indigo-600 after:absolute after:-bottom-[21px] after:left-0 after:w-full after:h-[1px] after:bg-indigo-600'
-                        : 'text-zinc-500 hover:text-indigo-600'
+                    className={`text-sm font-normal transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm ${
+                      isActive ? 'text-white' : 'text-zinc-400 hover:text-white'
                     }`}
                   >
                     {item.label}
@@ -69,30 +75,37 @@ export function SiteHeader({ themeCookie }: { themeCookie: ThemeCookie }) {
           </div>
 
           <div className="flex items-center gap-4">
-            {/* Search */}
-            <div className="relative hidden sm:block w-48">
-              <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
-                <Search className="size-4 text-zinc-400" strokeWidth={1.5} />
+            <div className="relative hidden sm:block w-56 group">
+              <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none transition-colors group-focus-within:text-white text-zinc-500">
+                <Search className="size-4" strokeWidth={1.5} />
               </div>
               <input
                 type="text"
-                placeholder="Search..."
-                className="w-full rounded-md border border-zinc-200 bg-zinc-50 py-1.5 pl-8 pr-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-400/20 transition-all"
+                aria-label="Search articles"
+                placeholder="Search articles..."
+                className="w-full rounded-md border border-zinc-700/80 bg-zinc-800/50 py-1.5 pl-8 pr-3 text-sm font-light text-white placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 transition-all shadow-sm"
               />
             </div>
 
-            {/* Language Switcher */}
-            <button className="flex items-center gap-1.5 text-zinc-500 hover:text-indigo-600 transition-colors text-sm px-2 py-1 rounded-md hover:bg-indigo-50/50">
-              <Globe className="size-4" strokeWidth={1.5} />
-              <span>EN</span>
-            </button>
+            <div className="relative group hidden sm:block">
+              <button
+                type="button"
+                className="flex items-center gap-1 text-sm font-normal text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 rounded-sm"
+              >
+                EN
+                <ChevronDown className="size-4" strokeWidth={1.5} />
+              </button>
+            </div>
 
             <ThemeToggle initialCookie={themeCookie} />
 
-            {/* Mobile Menu Button */}
             <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
               <DialogTrigger asChild>
-                <button className="md:hidden text-zinc-500 hover:text-indigo-600 p-1 transition-colors">
+                <button
+                  type="button"
+                  aria-label="Open menu"
+                  className="md:hidden text-zinc-400 hover:text-white hover:bg-zinc-800 p-1 transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+                >
                   <Menu className="size-6" strokeWidth={1.5} />
                 </button>
               </DialogTrigger>
@@ -105,7 +118,7 @@ export function SiteHeader({ themeCookie }: { themeCookie: ThemeCookie }) {
                 <nav className="flex flex-col gap-4 py-4">
                   {navItems.map((item) => (
                     <Link
-                      key={item.label}
+                      key={item.href}
                       href={item.href}
                       className="text-base text-zinc-500 hover:text-indigo-600"
                       onClick={() => setMobileOpen(false)}

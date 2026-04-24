@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 
 import { ApiError, parseApiErrorBody } from './api-error';
 
-const ALLOWED_PREFIXES = ['/blog/', '/draft/'] as const;
+const ALLOWED_PREFIXES = ['/blog/', '/articles/', '/draft/'] as const;
 
 function assertAllowedPath(path: string): void {
   const normalized = path.startsWith('/') ? path : `/${path}`;

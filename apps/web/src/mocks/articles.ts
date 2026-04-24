@@ -15,7 +15,11 @@ export type Article = {
   variant: 'cornerstone' | 'standard';
 };
 
-const marcus = authors[0];
+const firstAuthor = authors[0];
+if (!firstAuthor) {
+  throw new Error('mocks/authors: need at least one author');
+}
+const marcus: Author = firstAuthor;
 const getCategory = (slug: string) =>
   categories.find((c) => c.slug === slug) as Category;
 

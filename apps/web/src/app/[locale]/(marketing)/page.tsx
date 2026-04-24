@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 
+import { Link } from '@/i18n/navigation';
+
 export default async function HomePage() {
   const t = await getTranslations('common');
 
@@ -9,11 +11,11 @@ export default async function HomePage() {
         {t('siteName')}
       </h1>
       <p className="mx-auto max-w-2xl text-lg text-zinc-500 mb-10">
-        Home placeholder — pending design. Check out the{' '}
-        <a href="/blog" className="text-indigo-600 hover:underline">
-          /blog
-        </a>{' '}
-        route to see the implemented UI mockups!
+        {t('homeIntro')}{' '}
+        <Link href="/articles" className="text-indigo-600 hover:underline">
+          {t('articles')}
+        </Link>
+        {t('homeOutro')}
       </p>
     </main>
   );

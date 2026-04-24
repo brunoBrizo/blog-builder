@@ -9,6 +9,8 @@ import { NewsletterCard } from '../../../../components/newsletter-card';
 import { AdPlaceholder } from '../../../../components/ad-placeholder';
 import { CodeBlock } from '../../../../components/code-block';
 
+import { notFound } from 'next/navigation';
+
 import { articles } from '../../../../mocks/articles';
 
 // In Next.js 15+ we need to use 'params' as a Promise
@@ -24,7 +26,10 @@ export default async function ArticlePage({
 
   // If not found, show the cornerstone article by default for preview purposes if slug doesn't match
   // This is just to satisfy the mockup when hitting arbitrary URLs
-  const activeArticle = article || articles[0];
+  const activeArticle = article ?? articles[0];
+  if (!activeArticle) {
+    notFound();
+  }
 
   const tocItems = [
     { id: 'core-architecture', title: 'Core Architecture Overview' },
