@@ -54,8 +54,11 @@ export const NameSchema = z.string().trim().min(1).max(200);
 /** Free-text body content (bio, description). */
 export const ShortTextSchema = z.string().trim().min(1).max(2000);
 
-/** `timestamptz` columns are read back as `Date` from postgres.js. */
-export const TimestampSchema = z.date();
+/**
+ * `timestamptz` columns are read back as `Date` from postgres.js.
+ * Coerced so ISO strings from JSON responses are also accepted.
+ */
+export const TimestampSchema = z.coerce.date();
 
 /** Same as {@link TimestampSchema} but accepts ISO strings and coerces. */
 export const CoercedTimestampSchema = z.coerce.date();

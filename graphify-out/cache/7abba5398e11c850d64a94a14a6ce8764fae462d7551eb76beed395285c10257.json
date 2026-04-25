@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_articles_articles_controller_ts",
+      "label": "articles.controller.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "articles_controller_articlescontroller",
+      "label": "ArticlesController",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "articles_controller_articlescontroller_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "articles_controller_articlescontroller_findone",
+      "label": ".findOne()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "articles_controller_articlescontroller_findmany",
+      "label": ".findMany()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L46"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_articles_articles_controller_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_articles_articles_controller_ts",
+      "target": "zod",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_articles_articles_controller_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_articles_articles_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_articles_articles_controller_ts",
+      "target": "articles_controller_articlescontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "articles_controller_articlescontroller",
+      "target": "articles_controller_articlescontroller_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "articles_controller_articlescontroller",
+      "target": "articles_controller_articlescontroller_findone",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "articles_controller_articlescontroller",
+      "target": "articles_controller_articlescontroller_findmany",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "articles_controller_articlescontroller_findone",
+      "callee": "safeParse",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findone",
+      "callee": "findPublishedBySlug",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "safeParse",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "min",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "max",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "Number",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "safeParse",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "parse",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "articles_controller_articlescontroller_findmany",
+      "callee": "listPublishedSummaries",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/articles/articles.controller.ts",
+      "source_location": "L70"
+    }
+  ]
+}

@@ -42,7 +42,8 @@ async function main() {
         fullName: 'Site Owner',
         email: 'owner@blog-builder.local',
         bio: 'Seed author for local development and smoke tests.',
-        photoUrl: 'https://placeholder.invalid/owner.jpg',
+        photoUrl:
+          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=120&h=120&q=80',
         expertise: ['Software', 'Technical writing'],
         sameAs: [
           'https://example.com/owner',
@@ -56,7 +57,8 @@ async function main() {
           fullName: 'Site Owner',
           email: 'owner@blog-builder.local',
           bio: 'Seed author for local development and smoke tests.',
-          photoUrl: 'https://placeholder.invalid/owner.jpg',
+          photoUrl:
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=120&h=120&q=80',
           expertise: ['Software', 'Technical writing'],
           sameAs: [
             'https://example.com/owner',
@@ -170,7 +172,8 @@ async function main() {
         defaultLocale: 'en',
         status: 'published',
         publishedAt,
-        coverImageUrl: 'https://placeholder.invalid/cover.jpg',
+        coverImageUrl:
+          'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
         wordCountTarget: 1200,
         wordCountActual: 800,
         tokenCostTotal: 0,

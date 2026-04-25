@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_lib_article_toc_ts",
+      "label": "article-toc.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-toc.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "article_toc_extracttocfromhtml",
+      "label": "extractTocFromHtml()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-toc.ts",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_lib_article_toc_ts",
+      "target": "article_toc_extracttocfromhtml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-toc.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "article_toc_extracttocfromhtml",
+      "callee": "matchAll",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-toc.ts",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "article_toc_extracttocfromhtml",
+      "callee": "push",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-toc.ts",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "article_toc_extracttocfromhtml",
+      "callee": "replace",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-toc.ts",
+      "source_location": "L13"
+    }
+  ]
+}

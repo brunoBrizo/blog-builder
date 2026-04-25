@@ -1,0 +1,283 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_dblocaletoseolocale",
+      "label": "dbLocaleToSeoLocale()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L23"
+    },
+    {
+      "id": "page_generatemetadata",
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "page_generatestaticparams",
+      "label": "generateStaticParams()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L86"
+    },
+    {
+      "id": "page_articlebyslugpage",
+      "label": "ArticleBySlugPage()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L107"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "next",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "navigation",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "seo",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "article_detail_view",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "articles",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "article_toc",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "article_citations",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "page_dblocaletoseolocale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "page_generatemetadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "page_generatestaticparams",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_articles_slug_page_tsx",
+      "target": "page_articlebyslugpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "page_generatemetadata",
+      "target": "page_dblocaletoseolocale",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L61",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "getArticleBySlug",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "buildMetadata",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "getSiteUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "canonicalUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "canonicalUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "toISOString",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "toISOString",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "page_generatestaticparams",
+      "callee": "listTopSlugs",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "page_generatestaticparams",
+      "callee": "push",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "getArticleBySlug",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "notFound",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "extractTocFromHtml",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "injectCitationLinks",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "getSiteUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "canonicalUrl",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "buildArticleJsonLd",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "toISOString",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "toISOString",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "buildBreadcrumbListJsonLd",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "buildFaqPageJsonLd",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L150"
+    },
+    {
+      "caller_nid": "page_articlebyslugpage",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/articles/[slug]/page.tsx",
+      "source_location": "L151"
+    }
+  ]
+}

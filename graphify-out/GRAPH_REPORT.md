@@ -2,7 +2,7 @@
 
 ## Corpus Check
 
-- 306 files · ~141,166 words
+- 306 files · ~143,845 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -69,12 +69,12 @@
 
 - `Database & Data Layer` --implements_in--> `libs/db Drizzle schema and client` [INFERRED]
   features/02-database-and-data-layer.md → README.md
-- `ArticleBySlugPage()` --calls--> `buildArticleJsonLd()` [INFERRED]
-  apps/web/src/app/[locale]/articles/[slug]/page.tsx → libs/seo/src/lib/json-ld/article.ts
-- `ArticleBySlugPage()` --calls--> `buildFaqPageJsonLd()` [INFERRED]
-  apps/web/src/app/[locale]/articles/[slug]/page.tsx → libs/seo/src/lib/json-ld/faq-page.ts
-- `ArticleBySlugPage()` --calls--> `buildBreadcrumbListJsonLd()` [INFERRED]
-  apps/web/src/app/[locale]/articles/[slug]/page.tsx → libs/seo/src/lib/json-ld/breadcrumb-list.ts
+- `buildArticleJsonLd()` --calls--> `ArticleBySlugPage()` [INFERRED]
+  libs/seo/src/lib/json-ld/article.ts → apps/web/src/app/[locale]/articles/[slug]/page.tsx
+- `buildFaqPageJsonLd()` --calls--> `ArticleBySlugPage()` [INFERRED]
+  libs/seo/src/lib/json-ld/faq-page.ts → apps/web/src/app/[locale]/articles/[slug]/page.tsx
+- `buildBreadcrumbListJsonLd()` --calls--> `ArticleBySlugPage()` [INFERRED]
+  libs/seo/src/lib/json-ld/breadcrumb-list.ts → apps/web/src/app/[locale]/articles/[slug]/page.tsx
 - `Foundation — Monorepo & Tooling` --establishes--> `Nx monorepo` [EXTRACTED]
   features/01-foundation-monorepo-tooling.md → README.md
 

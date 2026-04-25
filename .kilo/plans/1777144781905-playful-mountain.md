@@ -1,763 +1,447 @@
-# Plan: Feature 07 — Article Reading Experience
+# Testing Setup Guide: Features 01–07
 
 **Plan file:** `.kilo/plans/1777144781905-playful-mountain.md`  
-**Feature spec:** `features/07-article-reading-experience.md`  
+**Scope:** Everything required to locally test features 1 through 7 end-to-end.  
 **Created:** 2026-04-25  
-**Planner:** project-planner (repo-discovery + plan-writing)
+**Planner:** project-planner (repo-discovery + feature-spec survey)
 
 ---
 
-## Overview
+## TL;DR — What You Need
 
-Wire the public article page (`/[locale]/articles/[slug]`) to read from the real database instead of mock data. Deliver a public `ArticlesController` in `apps/api`, a web API client, adapted UI components, per-article JSON-LD, FAQ and citations sections, ISR caching, and full SEO metadata — while preserving the existing Tailwind design system and accessibility primitives.
+| Layer            | What                                              | Why                                       |
+| ---------------- | ------------------------------------------------- | ----------------------------------------- |
+| **Tools**        | Node.js (`.nvmrc`), pnpm ≥ 10                     | Build the monorepo                        |
+| **Database**     | Supabase Postgres project (dev)                   | All data lives here                       |
+| **Env**          | `.env` at repo root (copy from `.env.example`)    | API refuses to boot without required vars |
+| **Integrations** | Perplexity API key, Resend API key                | Article generation pipeline               |
+| **Scheduler**    | Inngest dev server (`npx inngest-cli@latest dev`) | Runs the 8-step generation pipeline       |
+| **Data**         | `pnpm db:migrate` + `pnpm db:seed`                | Schema + seed article for smoke tests     |
+| **Runtime**      | API (`:3001`) + Web (`:3000`) running together    | Feature 07 needs API to serve articles    |
 
-## Project type
+---
 
-Nx monorepo — NestJS API (`apps/api`) + Next.js 15 App Router frontend (`apps/web`), with shared libraries (`libs/db`, `libs/seo`, `libs/shared-types`, `libs/ui`).
+## Feature-by-Feature Testing Prerequisites
 
-## Codebase context
+### Feature 01 — Foundation (Monorepo & Tooling)
 
-### What exists
+**Already verified at build time.** No external services needed.
 
-- **Database & repository:** `libs/db` has Drizzle schema for `articles`, `article_translations`, `article_citations`, `authors`, `categories`, `tags`. `apps/api/src/articles/articles.repository.ts` already implements `findPublishedBySlug`, `findNeighborIds`, `findSummariesByIds`, `listPublishedSummaries`, `listTopSlugsByLocale`.
-- **Shared types:** `libs/shared-types/src/schemas/articles.ts` defines `PublicArticleSchema`, `PublicArticleSummarySchema`, `PublicArticleCitationSchema`, `PublicAuthorSchema`, `PublicCategorySchema`, `PublicTagSchema`.
-- **Web page + components:** `/[locale]/articles/[slug]/page.tsx` renders `ArticleDetailView` with child components (`ArticleHero`, `ArticleBody`, `AuthorBox`, `RelatedArticleNavigation`, `ArticleTopics`, `TableOfContents`, etc.). All currently import mock types from `apps/web/src/mocks/articles.ts` and `apps/web/src/mocks/authors.ts`.
-- **SEO lib:** `libs/seo` exports `buildMetadata`, `buildOpenGraph`, `buildTwitter`, `canonicalUrl`, `buildHreflangMap`, plus JSON-LD builders for `Organization` and `WebSite`.
-- **API client:** `apps/web/src/lib/api-client/api-fetch.ts` provides `apiFetch<T>` with error parsing.
-- **ISR revalidation:** `apps/api/src/app/revalidate.controller.ts` exposes `POST /api/revalidate`. `apps/web/src/app/api/revalidate/route.ts` handles `revalidatePath` + `revalidateTag`. `WebIsrRevalidationService.revalidateAfterPublish` calls the web revalidation endpoint after publish.
-- **Middleware:** `apps/web/src/middleware.ts` strips locale prefix into `x-pathname` header for canonical URL construction in RSCs.
+- `pnpm install` completes.
+- `pnpm nx run-many -t lint,test,build -p api,web,seo,shared-types,db` passes.
+- Pre-commit hook blocks bad commits.
 
-### What is missing
+**Test command:**
 
-- No public `ArticlesController` / `ArticlesService` in `apps/api`.
-- No web API client for articles (`apps/web/src/lib/api-client/articles.ts`).
-- `ArticleDetailView` and child components still bound to mock types (`Author`, `Article`, `ArticleBodyBlock[]`).
-- `ArticleBody` only accepts a block array; the DB stores `bodyHtml` string.
-- No `ArticleFaq` or `ArticleCitations` components.
-- No per-article JSON-LD builders (`Article`, `BreadcrumbList`, `FAQPage`).
-- `generateMetadata` on the article page is minimal (only title + description).
-- No `generateStaticParams`.
-- `WebIsrRevalidationService` revalidates `/blog/${slug}` but not `/articles/${slug}`.
-
-## Success criteria
-
-All acceptance criteria from the feature spec must pass:
-
-1. A published article renders at `/[locale]/articles/[slug]` with correct `lang`, hreflang alternates, and canonical.
-2. JSON-LD validates in Google's Rich Results test for `Article`, `BreadcrumbList`, and `FAQPage`.
-3. Lighthouse mobile on a real article: Performance ≥ 90, SEO = 100, Accessibility ≥ 95, Best Practices ≥ 95.
-4. `axe-core` reports zero critical/serious violations on the article template.
-5. LCP ≤ 2.5 s, CLS ≤ 0.1 on 4G mobile.
-6. Revalidation triggered by feature 06 updates the page within 5 seconds.
-7. `GET /articles/:locale/:slug` returns 404 for unpublished or missing articles.
-8. `GET /articles?locale=...` returns only published articles, newest first.
-
-## Tech stack
-
-- **Backend:** NestJS, Drizzle ORM, Zod (validation), Postgres
-- **Frontend:** Next.js 15 App Router (RSC), React 19, TypeScript, Tailwind CSS v4, next-intl, next/image
-- **Shared:** `libs/shared-types` (Zod schemas), `libs/seo` (metadata + JSON-LD builders)
-- **Caching:** Next.js ISR (`revalidate`), `Cache-Control` headers on API
-
-## File structure
-
-### New files
-
-```
-apps/api/src/articles/
-  articles.controller.ts
-  articles.service.ts
-  articles.module.ts
-
-apps/web/src/lib/api-client/
-  articles.ts
-
-apps/web/src/components/
-  article-faq.tsx
-  article-citations.tsx
-  article-html-body.tsx        # or ArticleBody html prop
-
-libs/seo/src/lib/json-ld/
-  article.ts
-  breadcrumb-list.ts
-  faq-page.ts
+```bash
+pnpm nx run-many -t lint,test,build --all
 ```
 
-### Modified files
+---
+
+### Feature 02 — Database & Data Layer
+
+**Requires:** Supabase Postgres (dev project).
+
+**Setup steps:**
+
+1. Create a Supabase project (free tier is fine for dev).
+2. Copy `DATABASE_URL` (pooled, port **6543**) and `DIRECT_DATABASE_URL` (direct, port **5432**) from Supabase → Settings → Database → Connection String.
+3. Set `SUPABASE_URL` and `SUPABASE_SECRET_KEY` (service role key, `sb_secret_…`).
+4. Run migrations and seed:
+   ```bash
+   pnpm db:migrate
+   pnpm db:seed
+   ```
+
+**Verify:**
+
+- `pnpm db:studio` opens Drizzle Studio; tables visible.
+- Seed creates 1 author (`Site Owner`), 3 categories (`Engineering`, `Design`, `Growth`), 1 published article (`welcome-smoke-test`) with 3 translations (`en`, `pt-BR`, `es`) and 3 citations.
+
+**Test command:**
+
+```bash
+pnpm db:studio
+# Or query directly:
+psql $DATABASE_URL -c "SELECT count(*) FROM articles;"  # should return 1
+```
+
+---
+
+### Feature 03 — API Foundation
+
+**Requires:** Feature 02 DB + env vars for API boot.
+
+**Minimal env for API boot:**
 
 ```
-apps/api/src/app/app.module.ts
-apps/api/src/generation/web-isr-revalidation.service.ts
-
-libs/shared-types/src/schemas/articles.ts
-libs/seo/src/index.ts
-
-apps/web/src/components/article-detail-view.tsx
-apps/web/src/components/article-body.tsx
-apps/web/src/components/article-hero.tsx
-apps/web/src/components/author-box.tsx
-apps/web/src/components/article-topics.tsx
-apps/web/src/components/related-article-navigation.tsx
-
-apps/web/src/app/[locale]/articles/[slug]/page.tsx
-apps/web/src/app/[locale]/blog/[slug]/page.tsx   # legacy redirect — verify still works
+NODE_ENV=development
+PORT=3001
+DATABASE_URL=<pooled Supabase URL>
+PERPLEXITY_API_KEY=pplx-xxx        (any non-empty string; not used until feature 05)
+SUPABASE_URL=https://<ref>.supabase.co
+SUPABASE_SECRET_KEY=sb_secret_xxx
+RESEND_API_KEY=re_xxx              (any non-empty string; not used until feature 12)
+CRON_SHARED_SECRET=dev-cron-secret
+REVALIDATE_SHARED_SECRET=dev-revalidate-secret
 ```
 
-## Task breakdown
+**Setup steps:**
 
-### Task 1 — Extend shared types for public article detail
-
-**task_id:** `07-types`  
-**agent:** backend-specialist  
-**priority:** P0  
-**dependencies:** none  
-**skills:** typescript-advanced-types
-
-**INPUT:** `libs/shared-types/src/schemas/articles.ts` with existing `PublicArticleSchema`.
-
-**OUTPUT:**
-
-- Add `PublicArticleNeighborSchema`:
-  ```ts
-  z.object({ slug: SlugSchema, title: z.string() });
-  ```
-- Add `PublicArticleDetailSchema` extending `PublicArticleSchema`:
-  ```ts
-  PublicArticleSchema.extend({
-    translations: z.array(z.object({ locale: LocaleSchema, slug: SlugSchema })),
-    neighbors: z.object({
-      previous: PublicArticleNeighborSchema.nullable(),
-      next: PublicArticleNeighborSchema.nullable(),
-    }),
-  });
-  ```
-- Add `PublicArticleListResponseSchema`:
-  ```ts
-  z.object({
-    items: z.array(PublicArticleSummarySchema),
-    nextCursor: z
-      .object({ publishedAt: TimestampSchema, id: UuidSchema })
-      .nullable(),
-  });
-  ```
-- Re-export from `libs/shared-types/src/index.ts` if needed (already wildcard export).
-
-**VERIFY:**
-
-- `npx tsc -p libs/shared-types/tsconfig.lib.json --noEmit` passes.
-- `nx run shared-types:lint` passes.
-
----
-
-### Task 2 — Update ISR revalidation to cover `/articles/` paths
-
-**task_id:** `07-revalidate-paths`  
-**agent:** backend-specialist  
-**priority:** P0  
-**dependencies:** none  
-**skills:** none
-
-**INPUT:** `apps/api/src/generation/web-isr-revalidation.service.ts`.
-
-**OUTPUT:**
-
-- In `revalidateAfterPublish`, after adding `/blog/${r.slug}`, also add `/${r.locale}/articles/${r.slug}` to the `paths` set.
-- Verify `revalidatePathAllowed` in `libs/shared-types/src/schemas/revalidate.ts` already matches `/articles/*` via the `/(?:en|pt-BR|es)/(?:blog|draft|articles)(?:\/|$)/` regex (prefix match). Confirm by testing: `/en/articles/foo` returns `true`.
-
-**VERIFY:**
-
-- Unit test or inline log verification that `revalidatePathAllowed('/en/articles/test-slug') === true`.
-- No TypeScript errors in `apps/api`.
-
----
-
-### Task 3 — Build API Articles module (Controller + Service)
-
-**task_id:** `07-api-module`  
-**agent:** backend-specialist  
-**priority:** P0  
-**dependencies:** `07-types`, `07-revalidate-paths`  
-**skills:** nestjs-best-practices, testing-patterns
-
-**INPUT:** Existing `ArticlesRepository` at `apps/api/src/articles/articles.repository.ts`.
-
-**OUTPUT:**
-
-1. **`ArticlesService`** (`apps/api/src/articles/articles.service.ts`):
-   - `findPublishedBySlug(locale, slug)`:
-     - Call `repo.findPublishedBySlug(locale, slug)`.
-     - Call `repo.findNeighborIds(row.articleId, row.categoryId, row.publishedAt)`.
-     - Call `repo.findSummariesByIds([neighborIds.previousId, neighborIds.nextId].filter(Boolean), locale)` to hydrate neighbor titles.
-     - Map raw row fields to `PublicArticleDetailSchema` shape (validate with Zod).
-     - Return `PublicArticleDetail`.
-   - `listPublishedSummaries(locale, limit, cursor?)`:
-     - Call `repo.listPublishedSummaries(locale, limit, cursor)`.
-     - Map rows to `PublicArticleSummarySchema[]`.
-     - Return `{ items, nextCursor }`.
-
-2. **`ArticlesController`** (`apps/api/src/articles/articles.controller.ts`):
-   - `@Controller('articles')`
-   - `@Get(':locale/:slug')` → `articlesService.findPublishedBySlug(locale, slug)`
-     - `@Header('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300')`
-     - Return 404 via `NotFoundException` for missing/unpublished.
-   - `@Get()` → `articlesService.listPublishedSummaries(locale, limit, cursor?)`
-     - Query params: `locale` (required), `limit` (default 20, max 100), `cursor` (optional JSON string `{ publishedAt, id }`).
-     - Parse `cursor` safely with Zod.
-     - `@Header('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300')`
-
-3. **`ArticlesModule`** (`apps/api/src/articles/articles.module.ts`):
-   - Register `ArticlesController`, `ArticlesService`, `ArticlesRepository`.
-   - Import `DrizzleModule` (if needed) or rely on existing provider.
-
-4. **Wire into `AppModule`:**
-   - Add `ArticlesModule` to `apps/api/src/app/app.module.ts` imports.
-
-**VERIFY:**
-
-- `nx run api:lint` passes.
-- `nx run api:test` passes (add controller + service unit tests; mock `ArticlesRepository`).
-- Start API locally: `GET /api/articles/en/complete-guide-to-rag` returns 404 when no data, or valid `PublicArticleDetail` when a published article exists.
-- `GET /api/articles?locale=en&limit=10` returns only published articles ordered by `publishedAt` desc.
-- Response headers include `cache-control: public, s-maxage=60, stale-while-revalidate=300`.
-
----
-
-### Task 4 — Build JSON-LD helpers in `libs/seo`
-
-**task_id:** `07-seo-jsonld`  
-**agent:** frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-types`  
-**skills:** none
-
-**INPUT:** Existing JSON-LD builders in `libs/seo/src/lib/json-ld/`.
-
-**OUTPUT:**
-
-1. **`libs/seo/src/lib/json-ld/article.ts`**:
-
-   ```ts
-   export type ArticleJsonLdInput = {
-     headline: string;
-     image: string[];
-     datePublished: string;
-     dateModified?: string;
-     author: { name: string; url?: string };
-     publisher: { name: string; logo?: string };
-     articleSection?: string;
-     inLanguage: string;
-     description?: string;
-     url: string;
-   };
-   export function buildArticleJsonLd(input: ArticleJsonLdInput): object { ... }
+1. Copy `.env.example` → `.env` and fill the above.
+2. Start API:
+   ```bash
+   pnpm nx serve api
    ```
 
-   Returns schema.org `Article` JSON-LD with `speakable` block (`cssSelector: ['.article-headline', '.article-body']`).
+**Verify:**
 
-2. **`libs/seo/src/lib/json-ld/breadcrumb-list.ts`**:
+- `GET http://localhost:3001/api/health` → `{ "status": "ok" }`
+- `GET http://localhost:3001/api/ready` → `{ "ready": true }` (requires DB reachable)
+- `GET http://localhost:3001/api/test/cron` without `x-cron-secret` → `401`
+- `POST http://localhost:3001/api/test/rate-limit` 3× → third returns `429`
+- `POST http://localhost:3001/api/revalidate` without secret → `401`
 
-   ```ts
-   export type BreadcrumbListJsonLdInput = {
-     items: { name: string; item: string }[];
-   };
-   export function buildBreadcrumbListJsonLd(input: BreadcrumbListJsonLdInput): object { ... }
-   ```
+**Test command:**
 
-   Returns schema.org `BreadcrumbList`.
-
-3. **`libs/seo/src/lib/json-ld/faq-page.ts`**:
-
-   ```ts
-   export type FaqPageJsonLdInput = {
-     questions: { name: string; acceptedAnswer: { text: string } }[];
-   };
-   export function buildFaqPageJsonLd(input: FaqPageJsonLdInput): object { ... }
-   ```
-
-   Returns schema.org `FAQPage`.
-
-4. **Export all three** from `libs/seo/src/index.ts`.
-
-**VERIFY:**
-
-- `nx run seo:lint` passes.
-- Add unit tests for each builder in `libs/seo/src/lib/json-ld/*.spec.ts`.
-- `nx run seo:test` passes.
-- Validate output with Google's Rich Results Test schema (manual spot-check).
+```bash
+# Health
+curl http://localhost:3001/api/health
+# Ready (needs DB)
+curl http://localhost:3001/api/ready
+# Auth guard
+curl http://localhost:3001/api/test/cron
+```
 
 ---
 
-### Task 5 — Build web API client for articles
+### Feature 04 — Web Foundation
 
-**task_id:** `07-web-client`  
-**agent:** frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-types`, `07-api-module`  
-**skills:** none
+**Requires:** Feature 01 (builds) + `NEXT_PUBLIC_API_BASE_URL` env var.
 
-**INPUT:** Existing `apiFetch` in `apps/web/src/lib/api-client/api-fetch.ts`.
+**Minimal env for web:**
 
-**OUTPUT:**
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+REVALIDATE_SHARED_SECRET=dev-revalidate-secret
+```
 
-1. **`apps/web/src/lib/api-client/articles.ts`**:
+**Setup steps:**
 
-   ```ts
-   import { apiFetch } from './api-fetch';
-   import { PublicArticleDetailSchema, PublicArticleListResponseSchema } from '@blog-builder/shared-types';
-   import type { PublicArticleDetail, PublicArticleListResponse } from '@blog-builder/shared-types';
-
-   export async function getArticleBySlug(
-     locale: string,
-     slug: string,
-   ): Promise<PublicArticleDetail | null> {
-     try {
-       const data = await apiFetch<unknown>({
-         path: `articles/${encodeURIComponent(locale)}/${encodeURIComponent(slug)}`,
-       });
-       return PublicArticleDetailSchema.parse(data);
-     } catch (err) {
-       if (err instanceof ApiError && err.status === 404) return null;
-       throw err;
-     }
-   }
-
-   export async function listArticleSummaries(
-     locale: string,
-     limit: number,
-     cursor?: { publishedAt: string; id: string },
-   ): Promise<PublicArticleListResponse> { ... }
+1. Ensure `.env` has the above.
+2. Start web:
+   ```bash
+   pnpm nx serve web
    ```
 
-2. **Static params helper** (same file or separate):
-   ```ts
-   export async function listTopSlugs(locale: string, limit: number): Promise<{ slug: string }[]> { ... }
-   ```
+**Verify:**
 
-**VERIFY:**
+- `http://localhost:3000/` renders with header, footer, correct `lang="en"`.
+- `http://localhost:3000/pt-br/` renders with `lang="pt-BR"`.
+- Language switcher preserves path.
+- Theme toggle persists across reload.
+- Lighthouse on home placeholder: Performance ≥ 90, SEO = 100.
 
-- `nx run web:lint` passes.
-- TypeScript compiles `apps/web` with no errors.
-- Manual test: call `getArticleBySlug('en', 'test')` against running API returns expected shape or `null` on 404.
+**Test command:**
+
+```bash
+pnpm nx serve web
+# In another terminal:
+curl -s http://localhost:3000/ | grep -o 'lang="[^"]*"'
+```
 
 ---
 
-### Task 6 — Build new article components (FAQ, Citations, HTML body)
+### Feature 05 — Perplexity Article Pipeline
 
-**task_id:** `07-new-components`  
-**agent:** frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-types`  
-**skills:** accessibility
+**Requires:** Feature 03 (API running) + **Perplexity API key** + **Inngest dev server**.
 
-**INPUT:** Feature spec requirements for FAQ, Citations, and `bodyHtml` rendering.
+**Additional env:**
 
-**OUTPUT:**
+```
+INNGEST_EVENT_KEY=            (empty in dev — OK)
+INNGEST_SIGNING_KEY=          (empty in dev — OK)
+INNGEST_SERVE_PATH=/api/inngest
+```
 
-1. **`ArticleFaq`** (`apps/web/src/components/article-faq.tsx`):
-   - Props: `{ faq: { question: string; answer: string }[] }`
-   - Render as plain Q&A list with `id` anchors (`faq-1`, `faq-2`, …) for deep-linking.
-   - Use semantic HTML (`dl` / `dt` / `dd` or `details`/`summary`).
-   - Wrap in `section` with `aria-labelledby`.
-   - Style with existing Tailwind tokens (no new design system). Match article body spacing.
+**Setup steps:**
 
-2. **`ArticleCitations`** (`apps/web/src/components/article-citations.tsx`):
-   - Props: `{ citations: PublicArticleCitation[] }`
-   - Render numbered list (`ol`) with `id="cite-N"` on each `li`.
-   - Each item: title (linked, `rel="noopener noreferrer"`, `target="_blank"`), publisher, snippet.
-   - If `title` is null, show domain from URL as fallback.
-
-3. **Adapt `ArticleBody`** (`apps/web/src/components/article-body.tsx`):
-   - Change props to:
-     ```ts
-     type ArticleBodyProps = {
-       blocks?: ArticleBodyBlock[];
-       html?: string;
-       className?: string;
-     };
-     ```
-   - If `html` is provided, render:
-     ```tsx
-     <div
-       className={cn(
-         'prose prose-zinc max-w-none text-base text-zinc-600 font-light leading-relaxed space-y-6',
-         className,
-       )}
-       dangerouslySetInnerHTML={{ __html: html }}
-     />
-     ```
-   - Keep existing block rendering as fallback when `blocks` is provided.
-   - This preserves backward compatibility with any remaining mock usage.
-
-4. **Server-side TOC extraction utility** (`apps/web/src/lib/article-toc.ts`):
-
-   ```ts
-   export function extractTocFromHtml(
-     html: string,
-   ): { id: string; title: string }[] {
-     const matches = [
-       ...html.matchAll(/<h2[^>]*id="([^"]*)"[^>]*>(.*?)<\/h2>/gi),
-     ];
-     return matches.map(([, id, rawTitle]) => ({
-       id,
-       title: rawTitle.replace(/<[^>]*>/g, ''),
-     }));
-   }
+1. Confirm `PERPLEXITY_API_KEY` is a **real, valid** Perplexity key (`pplx-…`).
+2. Start API (`pnpm nx serve api`).
+3. In a **second terminal**, start Inngest dev server:
+   ```bash
+   npx inngest-cli@latest dev
    ```
+4. In the Inngest Dev UI (http://127.0.0.1:8288), set sync URL to `http://localhost:3001/api/inngest`.
+5. Confirm `generate-article` function is registered in the UI.
 
-   - No extra dependency needed; regex is sufficient for controlled `bodyHtml` output.
+**Trigger a test run:**
 
-5. **Citation link injection utility** (`apps/web/src/lib/article-citations.ts`):
-   ```ts
-   export function injectCitationLinks(
-     html: string,
-     citationCount: number,
-   ): string {
-     return html.replace(/\[\s*(\d+)\s*\]/g, (match, num) => {
-       const n = parseInt(num, 10);
-       if (n >= 1 && n <= citationCount) {
-         return `<a href="#cite-${n}" class="text-indigo-600 hover:underline">${match}</a>`;
-       }
-       return match;
-     });
-   }
+```bash
+curl -sS -X POST "http://localhost:3001/api/internal/articles/generate" \
+  -H "Content-Type: application/json" \
+  -H "x-cron-secret: dev-cron-secret" \
+  -d '{"topicSeed":"Smoke test: testing the blog builder pipeline","locales":["en"],"autoPublish":true}'
+```
+
+**Expected:** `202 { "jobId": "<uuid>" }`. Inngest UI shows a run; API logs show Perplexity steps. After completion, a new `articles` row exists with `status = 'published'`.
+
+**Cost warning:** Each run costs real Perplexity tokens. Use short topics, limit locales, and set `GENERATION_PER_RUN_TOKEN_BUDGET` low (e.g., `50000`) in `.env`.
+
+**Verify:**
+
+- Job row created in `generation_jobs`.
+- Steps persisted in `generation_steps`.
+- Article + translation rows created.
+- Citations persisted in `article_citations`.
+
+**Test command:**
+
+```bash
+# Check monthly spend / kill switch
+curl -sS "http://localhost:3001/api/internal/articles/generation/monthly-spend" \
+  -H "x-cron-secret: dev-cron-secret"
+```
+
+---
+
+### Feature 06 — Scheduled Article Generation
+
+**Requires:** Feature 05 working + `pg_cron` enabled in Supabase + `WEB_PUBLIC_ORIGIN` set.
+
+**Additional env:**
+
+```
+WEB_PUBLIC_ORIGIN=http://localhost:3000
+GENERATION_DEFAULT_AUTHOR_ID=b1111111-1111-4111-8111-111111111111
+```
+
+**Setup steps:**
+
+1. Enable `pg_cron` extension in Supabase (Database → Extensions).
+2. The `pg_cron` job SQL migration should already be in `libs/db/drizzle/`. Apply it:
+   ```bash
+   pnpm db:migrate
    ```
-
-   - Applied server-side in the page component before passing `bodyHtml` to `ArticleBody`.
-
-**VERIFY:**
-
-- `nx run web:lint` passes.
-- Components render correctly in Storybook or local dev if available.
-- `axe-core` run on `ArticleFaq` and `ArticleCitations` templates reports zero critical/serious violations.
-
----
-
-### Task 7 — Adapt existing components to public types
-
-**task_id:** `07-adapt-components`  
-**agent:** frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-types`, `07-new-components`  
-**skills:** accessibility
-
-**INPUT:** Existing components bound to mock types.
-
-**OUTPUT:**
-Update type imports and prop usage. Do NOT change visual styling or layout.
-
-1. **`ArticleHero`**:
-   - Replace `import type { Author } from '../mocks/authors'` with `import type { PublicAuthor } from '@blog-builder/shared-types'`.
-   - Use `author.fullName` instead of `author.name`.
-   - Use `author.photoUrl` instead of `author.avatarUrl`.
-
-2. **`AuthorBox`**:
-   - Replace mock `Author` with `PublicAuthor`.
-   - Use `author.fullName`, `author.photoUrl`.
-   - For `role` (articleEeat variant): use `author.expertise[0] ?? ''`.
-   - For social links: iterate `author.sameAs` URLs. Detect Twitter/X by hostname (`twitter.com`, `x.com`), GitHub by `github.com`, fallback to generic globe icon. Render each as a link with `aria-label`.
-
-3. **`ArticleTopics`**:
-   - Replace `ArticleTopicTag` with `PublicTag`.
-   - Map `tag.name` to label. No `href` yet (feature 08). Render as static spans.
-
-4. **`RelatedArticleNavigation`**:
-   - Remove mock import; define local inline type `{ previous: { slug: string; title: string } | null; next: { slug: string; title: string } | null }`.
-   - Component logic stays identical.
-
-5. **`ArticleDetailView`**:
-   - Replace `import type { Article } from '../mocks/articles'` with `import type { PublicArticleDetail } from '@blog-builder/shared-types'`.
-   - Change props to:
-     ```ts
-     type ArticleDetailViewProps = {
-       article: PublicArticleDetail;
-       toc: { id: string; title: string }[];
-     };
-     ```
-   - Map fields:
-     - `title` → `title`
-     - `subtitle ?? tldr` → `subhead`
-     - `coverImageUrl` → `featuredImageUrl` (fallback placeholder if null)
-     - `category?.name` → category pill label
-     - `category` → breadcrumb parent label (`category.name`) and href (`/articles` for now)
-     - `readingTimeMinutes` → `readTimeMin`
-     - `publishedAt` → formatted date string (e.g., `new Date(publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })`)
-     - `author` → `AuthorBox` + `ArticleHero`
-     - `tags` → `ArticleTopics`
-     - `bodyHtml` → `ArticleBody` (via `html` prop) after citation injection
-     - `faq` → `ArticleFaq` (render only if `faq.length > 0`)
-     - `citations` → `ArticleCitations` (render only if `citations.length > 0`)
-     - `neighbors` → `RelatedArticleNavigation`
-     - `keyTakeaways` → render as a `<ul>` block before `ArticleBody` if non-empty
-   - Preserve layout grid (`lg:col-span-8` / `lg:col-span-4`) and ad placeholders.
-
-**VERIFY:**
-
-- `nx run web:lint` passes.
-- `nx run web:build` passes (catches type errors).
-- Visual regression: compare article page screenshot with mock version; layout must be pixel-equivalent (except new FAQ/citations sections).
-
----
-
-### Task 8 — Wire article page (RSC)
-
-**task_id:** `07-page-wire`  
-**agent:** frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-web-client`, `07-adapt-components`, `07-seo-jsonld`  
-**skills:** vercel-react-best-practices
-
-**INPUT:** `apps/web/src/app/[locale]/articles/[slug]/page.tsx`.
-
-**OUTPUT:**
-
-1. **Replace mock import** with `getArticleBySlug` from `apps/web/src/lib/api-client/articles.ts`.
-
-2. **`generateMetadata`**:
-
-   ```ts
-   export async function generateMetadata({
-     params,
-   }: Props): Promise<Metadata> {
-     const { locale, slug } = await params;
-     const article = await getArticleBySlug(locale, slug);
-     if (!article) return { title: 'Not found' };
-
-     const title = article.metaTitle || article.title;
-     const description = article.metaDescription || article.tldr;
-     const pathname = `/articles/${slug}`;
-     const ogLocale =
-       locale === 'pt-br' ? 'pt_BR' : locale === 'es' ? 'es_ES' : 'en_US';
-
-     const base = buildMetadata({
-       locale: locale as SeoLocale,
-       pathname,
-       title,
-       description,
-       siteName: 'Blog Builder',
-       ogLocale,
-       openGraphType: 'article',
-     });
-
-     return {
-       ...base,
-       openGraph: {
-         ...base.openGraph,
-         type: 'article',
-         publishedTime: article.publishedAt ?? undefined,
-         modifiedTime: article.publishedAt ?? undefined,
-         authors: [article.author.fullName],
-         section: article.category?.name ?? undefined,
-         tags: article.tags.map((t) => t.name),
-       },
-     };
-   }
+3. Verify cron job exists:
+   ```sql
+   SELECT * FROM cron.job;
    ```
+4. Ensure `WEB_PUBLIC_ORIGIN` matches the web app URL.
 
-3. **`generateStaticParams`**:
+**To test without waiting for cron schedule:** Manually trigger the internal endpoint (same as feature 05) but omit `topicSeed` — the API picks from the topic queue.
 
-   ```ts
-   export async function generateStaticParams() {
-     const locales = ['en', 'pt-br', 'es'];
-     const limit = 50; // top N per locale
-     const params: { locale: string; slug: string }[] = [];
-     for (const locale of locales) {
-       const slugs = await listTopSlugs(locale, limit);
-       for (const { slug } of slugs) {
-         params.push({ locale, slug });
-       }
-     }
-     return params;
-   }
-   ```
+```bash
+curl -sS -X POST "http://localhost:3001/api/internal/articles/generate" \
+  -H "Content-Type: application/json" \
+  -H "x-cron-secret: dev-cron-secret" \
+  -d '{"autoPublish":true}'
+```
 
-4. **Page component**:
+**Verify:**
 
-   ```ts
-   export const revalidate = 60;
+- On publish, ISR revalidation is triggered.
+- Web page at `http://localhost:3000/en/articles/<new-slug>` reflects the article within seconds.
+- `cron.job_run_details` shows successful executions.
 
-   export default async function ArticleBySlugPage({ params }: Props) {
-     const { locale, slug } = await params;
-     const article = await getArticleBySlug(locale, slug);
-     if (!article) notFound();
+**Test command:**
 
-     const toc = extractTocFromHtml(article.bodyHtml);
-     const bodyHtml = injectCitationLinks(article.bodyHtml, article.citations.length);
-
-     const jsonLdArticle = buildArticleJsonLd({ ... });
-     const jsonLdBreadcrumb = buildBreadcrumbListJsonLd({ ... });
-     const jsonLdFaq = article.faq.length > 0 ? buildFaqPageJsonLd({ ... }) : null;
-
-     return (
-       <>
-         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }} />
-         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }} />
-         {jsonLdFaq && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />}
-         <ArticleDetailView article={article} toc={toc} />
-       </>
-     );
-   }
-   ```
-
-5. **Legacy redirect page** (`apps/web/src/app/[locale]/blog/[slug]/page.tsx`):
-   - Verify it still redirects to `/[locale]/articles/[slug]` using `redirect()` from `next/navigation`.
-   - No mock dependency changes needed if it uses `redirect` only.
-
-**VERIFY:**
-
-- `nx run web:build` passes in production mode.
-- Page renders without runtime errors for a published article slug.
-- `notFound()` triggers for non-existent slugs (404 page).
-- `<meta property="og:type" content="article">` present.
-- `<link rel="canonical">` and hreflang alternates present.
-- JSON-LD scripts present in `<head>` (view page source).
-- `generateStaticParams` produces expected param array at build time.
+```bash
+# Query cron run history
+psql $DATABASE_URL -c "SELECT jobid, status, start_time, end_time FROM cron.job_run_details ORDER BY start_time DESC LIMIT 5;"
+```
 
 ---
 
-### Task 9 — Accessibility, performance, and SEO verification
+### Feature 07 — Article Reading Experience
 
-**task_id:** `07-a11y-perf`  
-**agent:** frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-page-wire`  
-**skills:** accessibility
+**Requires:** Feature 02 (seed data) OR Feature 05/06 (real generated articles) + Feature 03 (API) + Feature 04 (Web).
 
-**INPUT:** Fully wired article page.
+**Setup steps:**
 
-**OUTPUT:**
+1. Ensure API is running (`pnpm nx serve api`).
+2. Ensure web is running (`pnpm nx serve web`).
+3. Ensure `NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api` in `.env`.
 
-1. **Accessibility audit:**
-   - Run `axe-core` (via browser devtools or `@axe-core/react` test harness) on the article template.
-   - Ensure zero critical/serious violations.
-   - Check: focus-visible rings on interactive elements, `aria-label` on breadcrumbs, `nav aria-label="Table of contents"`, `SkipToContent` target `<main id="main">`.
+**Smoke test with seed data:**
 
-2. **Lighthouse audit (mobile):**
-   - Run Lighthouse on a real article page in production build (`nx run web:build:production` then `npx serve dist/apps/web`).
-   - Targets: Performance ≥ 90, SEO = 100, Accessibility ≥ 95, Best Practices ≥ 95.
-   - Ensure LCP ≤ 2.5 s, CLS ≤ 0.1.
-   - If Performance < 90, optimize: verify `next/image` is used for `ArticleFeaturedImage` and `ArticleHero` avatar; ensure hero image has `priority` prop; check font loading.
+```bash
+curl -sS "http://localhost:3001/api/articles/en/welcome-smoke-test"
+```
 
-3. **Rich Results Test:**
-   - Copy page source JSON-LD blocks into Google's Rich Results Test.
-   - Validate `Article`, `BreadcrumbList`, and `FAQPage` schemas.
+**Expected:** `200` with a `PublicArticleDetail` JSON payload including `translations`, `neighbors`, `citations`, `faq`.
 
-**VERIFY:**
+**View in browser:**
 
-- Document Lighthouse scores in a verification log.
-- Document axe-core results (zero critical/serious).
-- Document Rich Results Test pass/fail per schema.
+```
+http://localhost:3000/en/articles/welcome-smoke-test
+```
 
----
+**Verify:**
 
-### Task 10 — End-to-end revalidation test
+- Page renders without errors.
+- Title, subhead, author box, body HTML, FAQ, citations all visible.
+- `<title>` uses `metaTitle`.
+- `<meta name="description">` uses `metaDescription`.
+- Canonical link present.
+- Hreflang alternates present (check `<head>`).
+- JSON-LD scripts in page source (`view-source:`).
+- Table of Contents scroll-spies to H2 headings.
+- `notFound()` triggers for bad slugs (e.g., `/en/articles/nonexistent`).
 
-**task_id:** `07-revalidate-e2e`  
-**agent:** backend-specialist + frontend-specialist  
-**priority:** P0  
-**dependencies:** `07-api-module`, `07-page-wire`, `07-revalidate-paths`  
-**skills:** testing-patterns
+**API list endpoint test:**
 
-**INPUT:** ISR revalidation pipeline (feature 06 triggers + web page).
+```bash
+curl -sS "http://localhost:3001/api/articles?locale=en&limit=5"
+```
 
-**OUTPUT:**
+**Expected:** `200` with `{ items: [...], nextCursor: null }` containing only published articles.
 
-1. Trigger `WebIsrRevalidationService.revalidateAfterPublish` for an article (or manually call `POST /api/revalidate` with the article paths).
-2. Verify that:
-   - `/${locale}/articles/${slug}` is included in the revalidated paths.
-   - The web page updates within 5 seconds of revalidation trigger.
-   - If using tag-based invalidation: verify `revalidateTag('article:<id>')` is called (if implemented).
+**Lighthouse / Accessibility (requires production build):**
 
-**VERIFY:**
+```bash
+pnpm nx run web:build:production
+npx serve dist/apps/web
+# Then run Lighthouse in Chrome DevTools on /en/articles/welcome-smoke-test
+```
 
-- Log timestamp before trigger, then request page until content changes (or 304/200 with updated content).
-- Confirm elapsed time < 5 seconds.
+**Target scores:** Performance ≥ 90, SEO = 100, Accessibility ≥ 95, Best Practices ≥ 95.
 
 ---
 
-### Task 11 — Final lint, typecheck, and test run
+## Complete Environment Variable Checklist
 
-**task_id:** `07-final-check`  
-**agent:** backend-specialist + frontend-specialist  
-**priority:** P0  
-**dependencies:** all above tasks  
-**skills:** lint-and-validate
+Copy `.env.example` to `.env` and fill every row marked **Required**:
 
-**INPUT:** All code changes across `apps/api`, `apps/web`, `libs/shared-types`, `libs/seo`.
-
-**OUTPUT:**
-
-- Run the full validation matrix:
-  ```bash
-  nx run-many -t lint,typecheck,test -p api,web,shared-types,seo,db
-  ```
-  (Note: `web` may not have a `test` target; run `lint` and `build` instead.)
-- Fix any failures.
-
-**VERIFY:**
-
-- Zero failures across all projects.
-- `nx run api:build` succeeds.
-- `nx run web:build:production` succeeds.
+| Variable                       | Required For            | Notes                             |
+| ------------------------------ | ----------------------- | --------------------------------- |
+| `DATABASE_URL`                 | F02, F03, F05, F06, F07 | Pooled (6543)                     |
+| `DIRECT_DATABASE_URL`          | F02                     | Direct (5432) for migrations      |
+| `SUPABASE_URL`                 | F03, F05                | `https://<ref>.supabase.co`       |
+| `SUPABASE_SECRET_KEY`          | F03, F05                | Service role key (`sb_secret_…`)  |
+| `PORT`                         | F03                     | API port; default 3001            |
+| `NODE_ENV`                     | F03                     | `development` or `production`     |
+| `PERPLEXITY_API_KEY`           | F05                     | Real key required for generation  |
+| `RESEND_API_KEY`               | F03                     | Any non-empty string OK until F12 |
+| `CRON_SHARED_SECRET`           | F03, F05, F06           | Shared secret for internal routes |
+| `REVALIDATE_SHARED_SECRET`     | F03, F04, F06, F07      | Must match between API and web    |
+| `CORS_ORIGIN_WEB`              | F03                     | `http://localhost:3000`           |
+| `NEXT_PUBLIC_API_BASE_URL`     | F04, F07                | `http://localhost:3001/api`       |
+| `NEXT_PUBLIC_SITE_URL`         | F04, F07                | `http://localhost:3000`           |
+| `WEB_PUBLIC_ORIGIN`            | F06                     | `http://localhost:3000`           |
+| `GENERATION_DEFAULT_AUTHOR_ID` | F05, F06                | Matches seed author UUID          |
+| `INNGEST_EVENT_KEY`            | F05                     | Empty OK in dev                   |
+| `INNGEST_SIGNING_KEY`          | F05                     | Empty OK in dev                   |
 
 ---
 
-## Risks and open questions
+## Step-by-Step First-Time Setup
 
-| Risk                                                                                                                    | Impact | Mitigation                                                                                                                                                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bodyHtml` from pipeline may not contain `id` attributes on `<h2>` tags, breaking TOC extraction.                       | High   | Plan includes server-side TOC extraction via regex `<h2[^>]*id="..."`. If pipeline omits IDs, update pipeline (feature 05) or add a server-side ID injection step before rendering.                                                           |
-| `bodyHtml` may not contain inline citation anchors (`#cite-N`), breaking citation deep-links.                           | Medium | Plan includes `injectCitationLinks` utility as fallback. Verify pipeline output first; if already present, skip injection.                                                                                                                    |
-| `PublicAuthor` shape differs from mock `Author` (`fullName` vs `name`, `photoUrl` vs `avatarUrl`, no `role`/`socials`). | Medium | Task 7 explicitly updates all consuming components. Risk is missing a prop reference; caught by TypeScript build.                                                                                                                             |
-| Author social links: `sameAs` is `string[]` without platform labels.                                                    | Low    | Detect platform by URL hostname in `AuthorBox`. Fallback to generic external-link icon. Acceptable until dedicated social schema is added.                                                                                                    |
-| Next.js `fetch` cache tags with dynamic IDs (`article:<id>`) are hard to set before the fetch.                          | Medium | Primary invalidation is `revalidatePath`. If tag-based invalidation is required, use `unstable_cache` with a slug-derived tag (`article-slug:${locale}:${slug}`) and update `WebIsrRevalidationService` to invalidate both path and slug-tag. |
-| Category page URLs don't exist yet (feature 08). Breadcrumb parent href is ambiguous.                                   | Low    | Link breadcrumb parent to `/articles` (generic list) until category pages ship.                                                                                                                                                               |
-| `generateStaticParams` fetches from API at build time; if API is unavailable, build fails.                              | Medium | Wrap `listTopSlugs` call in `try/catch` and return empty array on failure, allowing build to proceed with dynamic generation.                                                                                                                 |
-| Lighthouse Performance < 90 if hero image is not optimized.                                                             | Medium | Verify `next/image` with `priority` is used for hero. Verify no layout shift from late-loaded fonts or images.                                                                                                                                |
+Run these commands **in order** from the repo root:
 
-## Final verification
+```bash
+# 1. Node & pnpm
+nvm use                          # or install Node version from .nvmrc
 
-Before marking the feature complete, run this checklist:
+# 2. Install dependencies
+pnpm install
 
-- [ ] **API endpoints**
-  - [ ] `GET /api/articles/en/test-slug` returns `PublicArticleDetail` for published article.
-  - [ ] `GET /api/articles/en/test-slug` returns 404 for draft / missing.
-  - [ ] `GET /api/articles?locale=en&limit=10` returns newest published summaries only.
-  - [ ] Response headers include `cache-control: public, s-maxage=60, stale-while-revalidate=300`.
+# 3. Environment
+#    - Copy .env.example → .env
+#    - Fill all required variables (see checklist above)
 
-- [ ] **Web page**
-  - [ ] `/en/articles/test-slug` renders without runtime errors.
-  - [ ] Mock import `getArticleBySlug` from `@/mocks/articles` is **removed** from the page.
-  - [ ] `generateStaticParams` outputs slugs at build time.
-  - [ ] `notFound()` triggers for missing slugs.
+# 4. Database
+pnpm db:migrate                  # apply schema
+pnpm db:seed                     # seed author, categories, smoke article
 
-- [ ] **SEO**
-  - [ ] `<title>` uses `metaTitle || title`.
-  - [ ] `<meta name="description">` uses `metaDescription || tldr`.
-  - [ ] Canonical URL is `<origin>/<locale>/articles/<slug>`.
-  - [ ] Hreflang alternates present for all translations.
-  - [ ] `og:type` = `article`.
-  - [ ] `article:published_time`, `article:author`, `article:section`, `article:tag` present in OpenGraph metadata.
-  - [ ] JSON-LD `Article`, `BreadcrumbList`, and `FAQPage` (when applicable) scripts present in page source.
+# 5. Verify monorepo builds
+pnpm nx run-many -t lint,build -p api,web,seo,shared-types
 
-- [ ] **UI / Components**
-  - [ ] `ArticleFaq` renders Q&A with anchor IDs.
-  - [ ] `ArticleCitations` renders numbered list with external links.
-  - [ ] `ArticleBody` renders `bodyHtml` with correct prose styling.
-  - [ ] `TableOfContents` extracts H2s from `bodyHtml` and scroll-spies correctly.
-  - [ ] `AuthorBox` uses real author photo, name, expertise, and `sameAs` links.
-  - [ ] `RelatedArticleNavigation` shows previous/next articles from API.
+# 6. Start API (terminal 1)
+pnpm nx serve api
 
-- [ ] **Accessibility & Performance**
-  - [ ] `axe-core`: zero critical/serious violations.
-  - [ ] Lighthouse mobile: Performance ≥ 90, SEO = 100, Accessibility ≥ 95, Best Practices ≥ 95.
-  - [ ] LCP ≤ 2.5 s, CLS ≤ 0.1.
+# 7. Start web (terminal 2)
+pnpm nx serve web
 
-- [ ] **Caching & Revalidation**
-  - [ ] ISR revalidation includes `/${locale}/articles/${slug}` paths.
-  - [ ] Page content updates within 5 seconds of revalidation trigger.
+# 8. (Optional) Start Inngest dev server (terminal 3)
+npx inngest-cli@latest dev
+```
 
-- [ ] **Build & CI**
-  - [ ] `nx run-many -t lint -p api,web,shared-types,seo` passes.
-  - [ ] `nx run api:test` passes.
-  - [ ] `nx run web:build:production` passes.
-  - [ ] `nx run api:build` passes.
+At this point:
+
+- Feature 01: ✅ Verified by build
+- Feature 02: ✅ Verified by `db:studio` + seed data
+- Feature 03: ✅ Verified by `/api/health`, `/api/ready`
+- Feature 04: ✅ Verified by `http://localhost:3000/`
+- Feature 07: ✅ Verified by `http://localhost:3000/en/articles/welcome-smoke-test`
+
+For features 05 and 06, trigger the pipeline via curl (see feature 05 section).
+
+---
+
+## Testing Without Real Perplexity / Inngest
+
+If you only want to test **Feature 07** (article reading) without running the full generation pipeline:
+
+1. Complete steps 1–5 above.
+2. Manually insert a published article into the DB (or rely on seed data).
+3. Start API + web.
+4. Visit `http://localhost:3000/en/articles/welcome-smoke-test`.
+
+You do **not** need Perplexity, Inngest, or Resend for this path.
+
+---
+
+## What's Missing for Full E2E Testing
+
+| Gap                                                    | Impact                                   | Workaround                                          |
+| ------------------------------------------------------ | ---------------------------------------- | --------------------------------------------------- |
+| No Playwright E2E tests written yet                    | No automated browser testing             | Manual browser verification + Lighthouse            |
+| No `pg_cron` in local Postgres (if not using Supabase) | Feature 06 scheduling untestable locally | Use Supabase dev project (free)                     |
+| No mock Perplexity server                              | Every pipeline test costs real tokens    | Use seed data for F07; test F05 sparingly           |
+| No `article_tags` seed data                            | Tags section on article page empty       | Seed script does not insert tags; F05 pipeline does |
+| `bodyHtml` from seed lacks `id` on H2s                 | TOC extraction yields empty array        | Real pipeline output has IDs; seed HTML is minimal  |
+
+---
+
+## Quick Verification Matrix
+
+Run these curls after API is up:
+
+```bash
+# F03 — API health
+curl -s http://localhost:3001/api/health | jq .
+
+# F03 — Auth guard
+curl -s http://localhost:3001/api/test/cron | jq .
+
+# F07 — Public article detail
+curl -s http://localhost:3001/api/articles/en/welcome-smoke-test | jq .
+
+# F07 — Article list
+curl -s "http://localhost:3001/api/articles?locale=en&limit=5" | jq .
+
+# F07 — 404 for missing
+curl -s -o /dev/null -w "%{http_code}" http://localhost:3001/api/articles/en/does-not-exist
+# Expected: 404
+
+# F05/F06 — Monthly spend (needs cron secret)
+curl -s -H "x-cron-secret: dev-cron-secret" http://localhost:3001/api/internal/articles/generation/monthly-spend | jq .
+
+# F05/F06 — Trigger generation (needs real Perplexity key + Inngest)
+curl -s -X POST http://localhost:3001/api/internal/articles/generate \
+  -H "Content-Type: application/json" \
+  -H "x-cron-secret: dev-cron-secret" \
+  -d '{"topicSeed":"Test topic","locales":["en"],"autoPublish":true}' | jq .
+```
+
+---
+
+## Open Questions
+
+1. **Do you have a Supabase dev project ready?** If not, that's the first blocker.
+2. **Do you have a valid Perplexity API key?** Required only for testing features 05 and 06. Feature 07 works with seed data alone.
+3. **Do you want to test ISR revalidation end-to-end?** This requires the full F05→F06 pipeline to produce a published article, then verifying the web cache invalidates within 5 seconds.
+4. **Do you want Lighthouse/axe-core scores documented?** This requires a production build (`nx run web:build:production`) and a real browser or headless Chrome.
