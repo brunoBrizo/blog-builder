@@ -15,6 +15,13 @@
       "when": 1776722405753,
       "tag": "20260420220006_post_schema_infrastructure",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1776722500000,
+      "tag": "20260425140000_scheduled_generation_topic_queue",
+      "breakpoints": true
     }
   ]
 }

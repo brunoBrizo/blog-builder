@@ -16,6 +16,8 @@ import {
 import { InngestDevKeysLogger } from './inngest-dev-keys.logger';
 import { KillSwitchService } from './kill-switch.service';
 import { PerplexityClient } from './perplexity.client';
+import { TopicQueueService } from './topic-queue.service';
+import { WebIsrRevalidationService } from './web-isr-revalidation.service';
 
 @Module({
   imports: [AppConfigModule],
@@ -23,6 +25,8 @@ import { PerplexityClient } from './perplexity.client';
   providers: [
     PerplexityClient,
     GenerationRepository,
+    WebIsrRevalidationService,
+    TopicQueueService,
     BudgetService,
     KillSwitchService,
     ArticleGenerationOrchestratorService,

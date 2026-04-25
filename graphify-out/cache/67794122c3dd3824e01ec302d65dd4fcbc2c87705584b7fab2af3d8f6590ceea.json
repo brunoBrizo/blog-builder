@@ -1,0 +1,922 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service_ts",
+      "label": "app-config.service.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_config_service_appconfigservice",
+      "label": "AppConfigService",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "app_config_service_appconfigservice_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "app_config_service_appconfigservice_nodeenv",
+      "label": ".nodeEnv()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "app_config_service_appconfigservice_port",
+      "label": ".port()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "app_config_service_appconfigservice_loglevel",
+      "label": ".logLevel()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "app_config_service_appconfigservice_databaseurl",
+      "label": ".databaseUrl()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "app_config_service_appconfigservice_databasepoolmax",
+      "label": ".databasePoolMax()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "app_config_service_appconfigservice_perplexityapikey",
+      "label": ".perplexityApiKey()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "app_config_service_appconfigservice_supabaseurl",
+      "label": ".supabaseUrl()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "app_config_service_appconfigservice_supabasesecretkey",
+      "label": ".supabaseSecretKey()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "app_config_service_appconfigservice_resendapikey",
+      "label": ".resendApiKey()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "app_config_service_appconfigservice_cronsharedsecret",
+      "label": ".cronSharedSecret()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "app_config_service_appconfigservice_revalidatesharedsecret",
+      "label": ".revalidateSharedSecret()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "app_config_service_appconfigservice_sentrydsn",
+      "label": ".sentryDsn()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "app_config_service_appconfigservice_sentrytracessamplerate",
+      "label": ".sentryTracesSampleRate()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "app_config_service_appconfigservice_corsoriginweb",
+      "label": ".corsOriginWeb()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L69"
+    },
+    {
+      "id": "app_config_service_appconfigservice_cronipallowlistraw",
+      "label": ".cronIpAllowlistRaw()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "app_config_service_appconfigservice_trustproxy",
+      "label": ".trustProxy()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L84"
+    },
+    {
+      "id": "app_config_service_appconfigservice_gitsha",
+      "label": ".gitSha()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L88"
+    },
+    {
+      "id": "app_config_service_appconfigservice_releasetag",
+      "label": ".releaseTag()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L92"
+    },
+    {
+      "id": "app_config_service_appconfigservice_builtat",
+      "label": ".builtAt()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L96"
+    },
+    {
+      "id": "app_config_service_appconfigservice_throttlerpublicread",
+      "label": ".throttlerPublicRead()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L100"
+    },
+    {
+      "id": "app_config_service_appconfigservice_throttlerpublicwrite",
+      "label": ".throttlerPublicWrite()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L107"
+    },
+    {
+      "id": "app_config_service_appconfigservice_throttleradmin",
+      "label": ".throttlerAdmin()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L114"
+    },
+    {
+      "id": "app_config_service_appconfigservice_enabletestendpoints",
+      "label": ".enableTestEndpoints()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L121"
+    },
+    {
+      "id": "app_config_service_appconfigservice_inngesteventkey",
+      "label": ".inngestEventKey()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L125"
+    },
+    {
+      "id": "app_config_service_appconfigservice_inngestsigningkey",
+      "label": ".inngestSigningKey()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L129"
+    },
+    {
+      "id": "app_config_service_appconfigservice_inngestservepath",
+      "label": ".inngestServePath()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L133"
+    },
+    {
+      "id": "app_config_service_appconfigservice_generationperruntokenbudget",
+      "label": ".generationPerRunTokenBudget()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L137"
+    },
+    {
+      "id": "app_config_service_appconfigservice_generationdailyusdceiling",
+      "label": ".generationDailyUsdCeiling()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L141"
+    },
+    {
+      "id": "app_config_service_appconfigservice_generationkillswitch",
+      "label": ".generationKillSwitch()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L145"
+    },
+    {
+      "id": "app_config_service_appconfigservice_generationdefaultauthorid",
+      "label": ".generationDefaultAuthorId()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L149"
+    },
+    {
+      "id": "app_config_service_appconfigservice_perplexitytimeoutms",
+      "label": ".perplexityTimeoutMs()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L153"
+    },
+    {
+      "id": "app_config_service_appconfigservice_perplexityusdpermtokensprompt",
+      "label": ".perplexityUsdPerMtokensPrompt()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L157"
+    },
+    {
+      "id": "app_config_service_appconfigservice_perplexityusdpermtokenscompletion",
+      "label": ".perplexityUsdPerMtokensCompletion()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L163"
+    },
+    {
+      "id": "app_config_service_appconfigservice_webpublicorigin",
+      "label": ".webPublicOrigin()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L170"
+    },
+    {
+      "id": "app_config_service_appconfigservice_generationschedulertopicseed",
+      "label": ".generationSchedulerTopicSeed()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L174"
+    },
+    {
+      "id": "app_config_service_appconfigservice_generationtopicqueuemindepth",
+      "label": ".generationTopicQueueMinDepth()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L178"
+    },
+    {
+      "id": "app_config_service_appconfigservice_inngestkeysoptional",
+      "label": ".inngestKeysOptional()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L183"
+    },
+    {
+      "id": "app_config_service_appconfigservice_supabasecorsorigin",
+      "label": ".supabaseCorsOrigin()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L191"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service_ts",
+      "target": "config",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_env_schema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service_ts",
+      "target": "app_config_service_appconfigservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_nodeenv",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_port",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_loglevel",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_databaseurl",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_databasepoolmax",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_perplexityapikey",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_supabaseurl",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_supabasesecretkey",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_resendapikey",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_cronsharedsecret",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_revalidatesharedsecret",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_sentrydsn",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_sentrytracessamplerate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_corsoriginweb",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_cronipallowlistraw",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_trustproxy",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_gitsha",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_releasetag",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_builtat",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_throttlerpublicread",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_throttlerpublicwrite",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_throttleradmin",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_enabletestendpoints",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_inngesteventkey",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_inngestsigningkey",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_inngestservepath",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_generationperruntokenbudget",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_generationdailyusdceiling",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_generationkillswitch",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_generationdefaultauthorid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_perplexitytimeoutms",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_perplexityusdpermtokensprompt",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_perplexityusdpermtokenscompletion",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_webpublicorigin",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_generationschedulertopicseed",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_generationtopicqueuemindepth",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_inngestkeysoptional",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "app_config_service_appconfigservice",
+      "target": "app_config_service_appconfigservice_supabasecorsorigin",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L191",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "app_config_service_appconfigservice_nodeenv",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_port",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_loglevel",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_databaseurl",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_databasepoolmax",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_perplexityapikey",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_supabaseurl",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_supabasesecretkey",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_resendapikey",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_cronsharedsecret",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_revalidatesharedsecret",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_sentrydsn",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_sentrytracessamplerate",
+      "callee": "effectiveSentryTracesSampleRate",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_sentrytracessamplerate",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_corsoriginweb",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_cronipallowlistraw",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_trustproxy",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_gitsha",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_releasetag",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_builtat",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_throttlerpublicread",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_throttlerpublicread",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_throttlerpublicwrite",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_throttlerpublicwrite",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_throttleradmin",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_throttleradmin",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_enabletestendpoints",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_inngesteventkey",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_inngestsigningkey",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_inngestservepath",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_generationperruntokenbudget",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_generationdailyusdceiling",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_generationkillswitch",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_generationdefaultauthorid",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L150"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_perplexitytimeoutms",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_perplexityusdpermtokensprompt",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_perplexityusdpermtokenscompletion",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L164"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_webpublicorigin",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L171"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_generationschedulertopicseed",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "app_config_service_appconfigservice_generationtopicqueuemindepth",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/core/config/app-config.service.ts",
+      "source_location": "L179"
+    }
+  ]
+}

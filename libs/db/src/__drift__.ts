@@ -31,6 +31,7 @@ import {
   contactMessages,
   generationJobs,
   generationSteps,
+  topicQueue,
   newsletterDigestArticles,
   newsletterDigests,
   newsletterSubscribers,
@@ -52,6 +53,7 @@ import {
   ContactMessageRowSchema,
   GenerationJobRowSchema,
   GenerationStepRowSchema,
+  TopicQueueRowSchema,
   NewsletterDigestArticleRowSchema,
   NewsletterDigestRowSchema,
   NewsletterSubscriberRowSchema,
@@ -123,6 +125,11 @@ export const _assertGenerationJob: StrictEqual<
 export const _assertGenerationStep: StrictEqual<
   InferSelectModel<typeof generationSteps>,
   ZodOut<typeof GenerationStepRowSchema>
+> = true;
+
+export const _assertTopicQueue: StrictEqual<
+  InferSelectModel<typeof topicQueue>,
+  ZodOut<typeof TopicQueueRowSchema>
 > = true;
 
 export const _assertNewsletterSubscriber: StrictEqual<

@@ -99,6 +99,29 @@ export const envSchema = z
       .number()
       .positive()
       .default(15),
+
+    /**
+     * Public origin of apps/web (no path), e.g. https://example.com — used by API
+     * to call POST /api/revalidate after scheduled auto-publish.
+     */
+    WEB_PUBLIC_ORIGIN: z.union([z.string().url(), z.literal('')]).default(''),
+
+    /** Broad seed for Perplexity when refilling the scheduled topic queue. */
+    GENERATION_SCHEDULER_TOPIC_SEED: z
+      .string()
+      .max(2000)
+      .optional()
+      .default(
+        'Emerging topics in software engineering, developer tools, and AI for engineering teams this week',
+      ),
+
+    /** Refill topic_queue from Perplexity when fewer than this many rows are available. */
+    GENERATION_TOPIC_QUEUE_MIN_DEPTH: z.coerce
+      .number()
+      .int()
+      .min(1)
+      .max(50)
+      .default(3),
   })
   .superRefine((data, ctx) => {
     if (data.NODE_ENV === 'production' && !data.CORS_ORIGIN_WEB) {
@@ -109,6 +132,14 @@ export const envSchema = z
       });
     }
     if (data.NODE_ENV === 'production') {
+      if (!data.WEB_PUBLIC_ORIGIN || data.WEB_PUBLIC_ORIGIN.length === 0) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message:
+            'WEB_PUBLIC_ORIGIN is required when NODE_ENV=production (ISR revalidation after publish)',
+          path: ['WEB_PUBLIC_ORIGIN'],
+        });
+      }
       if (!data.INNGEST_EVENT_KEY || data.INNGEST_EVENT_KEY.length === 0) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,

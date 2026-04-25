@@ -1,0 +1,67 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_components_news_filter_bar_tsx",
+      "label": "news-filter-bar.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "news_filter_bar_newsfilterbar",
+      "label": "NewsFilterBar()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_news_filter_bar_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_news_filter_bar_tsx",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_news",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_news_filter_bar_tsx",
+      "target": "news_filter_bar_newsfilterbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "news_filter_bar_newsfilterbar",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "news_filter_bar_newsfilterbar",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "news_filter_bar_newsfilterbar",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/news-filter-bar.tsx",
+      "source_location": "L71"
+    }
+  ]
+}

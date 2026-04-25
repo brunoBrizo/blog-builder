@@ -1,0 +1,32 @@
+-- Example: Supabase pg_cron + pg_net calling the Nest API (no secrets in repo).
+-- Replace placeholders before running in SQL editor:
+--   :api_host     — e.g. https://api.example.com
+--   :cron_secret  — value of CRON_SHARED_SECRET
+--
+-- Daily article generation (no topic body — API uses topic_queue):
+--   POST :api_host/api/internal/articles/generate
+--   Header: x-cron-secret: :cron_secret
+--   Body: {}   (empty JSON — scheduled mode, autoPublish defaults true)
+--
+-- Retry transient failures (optional second job, e.g. 03:00 UTC):
+--   POST :api_host/api/internal/articles/generation/retry
+--   Header: x-cron-secret: :cron_secret
+--   Body: {"limit":5}
+--
+-- Requires extensions: pg_cron, pg_net (see migration 20260420220006).
+-- Schedule with cron.unschedule if job names already exist.
+
+-- SELECT cron.schedule(
+--   'blog-builder-generate-daily',
+--   '0 7 * * *',
+--   $$
+--   SELECT net.http_post(
+--     url := 'https://YOUR_API_HOST/api/internal/articles/generate',
+--     headers := jsonb_build_object(
+--       'Content-Type', 'application/json',
+--       'x-cron-secret', 'YOUR_CRON_SHARED_SECRET'
+--     ),
+--     body := '{}'::jsonb
+--   );
+--   $$
+-- );

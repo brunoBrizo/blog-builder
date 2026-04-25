@@ -166,6 +166,19 @@ export class AppConfigService {
     });
   }
 
+  /** Public web origin (no path), for POST /api/revalidate after auto-publish. */
+  get webPublicOrigin(): string {
+    return this.config.get('WEB_PUBLIC_ORIGIN', { infer: true }) ?? '';
+  }
+
+  get generationSchedulerTopicSeed(): string {
+    return this.config.get('GENERATION_SCHEDULER_TOPIC_SEED', { infer: true });
+  }
+
+  get generationTopicQueueMinDepth(): number {
+    return this.config.get('GENERATION_TOPIC_QUEUE_MIN_DEPTH', { infer: true });
+  }
+
   /** True when Inngest Cloud keys are missing (development / test). */
   get inngestKeysOptional(): boolean {
     return (

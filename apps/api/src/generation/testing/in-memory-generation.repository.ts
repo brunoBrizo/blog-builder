@@ -17,6 +17,11 @@ type JobRow = {
   id: string;
   topic: string;
   targetLocales: Locale[];
+  triggerKind: 'manual' | 'scheduled';
+  autoPublish: boolean;
+  failureClass: string | null;
+  retryAfter: Date | null;
+  retryAttempt: number;
   status: 'pending' | 'running' | 'succeeded' | 'failed';
   totalTokens: number;
   totalCostUsd: string;
@@ -65,12 +70,19 @@ export class InMemoryGenerationRepository {
   async createJob(input: {
     topic: string;
     targetLocales: Locale[];
+    triggerKind?: 'manual' | 'scheduled';
+    autoPublish?: boolean;
   }): Promise<string> {
     const id = randomUUID();
     this.jobs.set(id, {
       id,
       topic: input.topic,
       targetLocales: input.targetLocales,
+      triggerKind: input.triggerKind ?? 'manual',
+      autoPublish: input.autoPublish ?? false,
+      failureClass: null,
+      retryAfter: null,
+      retryAttempt: 0,
       status: 'pending',
       totalTokens: 0,
       totalCostUsd: '0.000000',
@@ -107,9 +119,15 @@ export class InMemoryGenerationRepository {
     job.status = 'succeeded';
     job.completedAt = new Date();
     job.error = null;
+    job.failureClass = null;
+    job.retryAfter = null;
   }
 
-  async markJobFailed(jobId: string, message: string): Promise<void> {
+  async markJobFailed(
+    jobId: string,
+    message: string,
+    opts?: { failureClass?: string | null; retryAfter?: Date | null },
+  ): Promise<void> {
     const job = this.jobs.get(jobId);
     if (!job) {
       return;
@@ -117,6 +135,10 @@ export class InMemoryGenerationRepository {
     job.status = 'failed';
     job.completedAt = new Date();
     job.error = message.slice(0, 2000);
+    job.failureClass =
+      opts?.failureClass === undefined ? null : opts.failureClass;
+    job.retryAfter =
+      opts?.retryAfter === undefined ? null : (opts.retryAfter ?? null);
   }
 
   async linkJobToArticle(jobId: string, articleId: string): Promise<void> {
@@ -301,5 +323,82 @@ export class InMemoryGenerationRepository {
       }
     }
     return locales;
+  }
+
+  private readonly publishedArticles = new Set<string>();
+  private readonly consumedTopics = new Map<string, string>();
+
+  async releaseReservedTopicForJob(_jobId: string): Promise<void> {
+    void _jobId;
+  }
+
+  async markTopicQueueConsumedForJob(
+    jobId: string,
+    articleId: string,
+  ): Promise<void> {
+    this.consumedTopics.set(jobId, articleId);
+  }
+
+  async publishArticle(articleId: string): Promise<void> {
+    this.publishedArticles.add(articleId);
+  }
+
+  isArticlePublished(articleId: string): boolean {
+    return this.publishedArticles.has(articleId);
+  }
+
+  async listTranslationSlugsForArticle(
+    articleId: string,
+  ): Promise<{ locale: Locale; slug: string }[]> {
+    const out: { locale: Locale; slug: string }[] = [];
+    for (const row of this.translations.values()) {
+      if (row.articleId === articleId) {
+        out.push({ locale: row.locale, slug: row.slug });
+      }
+    }
+    return out;
+  }
+
+  async countAvailableTopics(): Promise<number> {
+    return 0;
+  }
+
+  async insertTopicQueueCandidates(): Promise<number> {
+    return 0;
+  }
+
+  async reserveScheduledTopicAndCreateJob(): Promise<string | null> {
+    return null;
+  }
+
+  async listRetryableFailedJobs(limit: number): Promise<string[]> {
+    const now = new Date();
+    const out: string[] = [];
+    for (const job of this.jobs.values()) {
+      if (out.length >= limit) break;
+      if (
+        job.status === 'failed' &&
+        job.triggerKind === 'scheduled' &&
+        job.failureClass === 'transient' &&
+        (job.retryAfter === null || job.retryAfter <= now)
+      ) {
+        out.push(job.id);
+      }
+    }
+    return out;
+  }
+
+  async resetJobToPendingForRetry(jobId: string): Promise<void> {
+    const job = this.jobs.get(jobId);
+    if (!job) {
+      return;
+    }
+    job.status = 'pending';
+    job.error = null;
+    job.startedAt = null;
+    job.completedAt = null;
+    job.failureClass = null;
+    job.retryAfter = null;
+    job.retryAttempt += 1;
   }
 }

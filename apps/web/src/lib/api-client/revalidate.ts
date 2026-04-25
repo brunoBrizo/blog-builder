@@ -1,34 +1,33 @@
 import 'server-only';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePathAllowed } from '@blog-builder/shared-types';
 
 import { ApiError, parseApiErrorBody } from './api-error';
 
-const ALLOWED_PREFIXES = ['/blog/', '/articles/', '/draft/'] as const;
-
 function assertAllowedPath(path: string): void {
-  const normalized = path.startsWith('/') ? path : `/${path}`;
-  const ok = ALLOWED_PREFIXES.some((p) => normalized.startsWith(p));
-  if (!ok) {
+  if (!revalidatePathAllowed(path)) {
     throw new Error(
-      `path must start with one of: ${ALLOWED_PREFIXES.join(', ')}`,
+      'path must match blog/draft patterns (locale-prefixed or legacy /blog/, /draft/)',
     );
   }
 }
 
-function apiBaseUrl(): string {
-  const base = process.env['NEXT_PUBLIC_API_BASE_URL'];
-  if (!base) {
-    throw new Error(
-      'NEXT_PUBLIC_API_BASE_URL is not set (e.g. http://localhost:3001/api)',
-    );
+/** Same-origin web base (no path) for POST /api/revalidate. */
+function webOrigin(): string {
+  const vercel = process.env['VERCEL_URL'];
+  if (vercel && vercel.length > 0) {
+    return `https://${vercel.replace(/\/$/, '')}`;
   }
-  return base.replace(/\/$/, '');
+  const site = process.env['NEXT_PUBLIC_SITE_URL'];
+  if (site && site.length > 0) {
+    return site.replace(/\/$/, '');
+  }
+  return 'http://localhost:3000';
 }
 
 /**
- * Authorizes revalidation with the Nest API, then refreshes the Next.js cache
- * for `path`. Server-only; do not import from client components.
+ * Authorizes with shared secret and triggers ISR via this app’s
+ * `POST /api/revalidate` route (server-only).
  */
 export async function revalidateOnServer(path: string): Promise<void> {
   assertAllowedPath(path);
@@ -38,14 +37,14 @@ export async function revalidateOnServer(path: string): Promise<void> {
     throw new Error('REVALIDATE_SHARED_SECRET is not set on the server');
   }
 
-  const url = `${apiBaseUrl()}/revalidate`;
+  const url = `${webOrigin()}/api/revalidate`;
   const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'x-revalidate-secret': secret,
     },
-    body: JSON.stringify({ path }),
+    body: JSON.stringify({ paths: [path] }),
   });
 
   const contentType = res.headers.get('content-type') ?? '';
@@ -60,6 +59,4 @@ export async function revalidateOnServer(path: string): Promise<void> {
     }
     throw new ApiError(String(parsed), res.status, parsed);
   }
-
-  await revalidatePath(path);
 }

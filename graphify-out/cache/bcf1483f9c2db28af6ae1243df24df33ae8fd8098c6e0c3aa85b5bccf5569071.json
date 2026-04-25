@@ -1,0 +1,1348 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository_ts",
+      "label": "generation.repository.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "generation_repository_normalizetopicqueuekey",
+      "label": "normalizeTopicQueueKey()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "generation_repository_generationrepository",
+      "label": "GenerationRepository",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "generation_repository_generationrepository_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L51"
+    },
+    {
+      "id": "generation_repository_generationrepository_createjob",
+      "label": ".createJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L53"
+    },
+    {
+      "id": "generation_repository_generationrepository_requirejob",
+      "label": ".requireJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L75"
+    },
+    {
+      "id": "generation_repository_generationrepository_markjobrunning",
+      "label": ".markJobRunning()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L87"
+    },
+    {
+      "id": "generation_repository_generationrepository_markjobsucceeded",
+      "label": ".markJobSucceeded()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L97"
+    },
+    {
+      "id": "generation_repository_generationrepository_markjobfailed",
+      "label": ".markJobFailed()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L110"
+    },
+    {
+      "id": "generation_repository_generationrepository_linkjobtoarticle",
+      "label": ".linkJobToArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L128"
+    },
+    {
+      "id": "generation_repository_generationrepository_completestep",
+      "label": ".completeStep()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L135"
+    },
+    {
+      "id": "generation_repository_generationrepository_createdraftarticle",
+      "label": ".createDraftArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L207"
+    },
+    {
+      "id": "generation_repository_generationrepository_upserttranslation",
+      "label": ".upsertTranslation()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L273"
+    },
+    {
+      "id": "generation_repository_generationrepository_replacecitations",
+      "label": ".replaceCitations()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L347"
+    },
+    {
+      "id": "generation_repository_generationrepository_updatearticletokentotal",
+      "label": ".updateArticleTokenTotal()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L370"
+    },
+    {
+      "id": "generation_repository_generationrepository_monthlyspendutc",
+      "label": ".monthlySpendUtc()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L380"
+    },
+    {
+      "id": "generation_repository_generationrepository_countsucceededsteps",
+      "label": ".countSucceededSteps()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L409"
+    },
+    {
+      "id": "generation_repository_generationrepository_getstepoutput",
+      "label": ".getStepOutput()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L422"
+    },
+    {
+      "id": "generation_repository_generationrepository_findtranslationid",
+      "label": ".findTranslationId()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L440"
+    },
+    {
+      "id": "generation_repository_generationrepository_listcitationpayloads",
+      "label": ".listCitationPayloads()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L457"
+    },
+    {
+      "id": "generation_repository_generationrepository_countavailabletopics",
+      "label": ".countAvailableTopics()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L482"
+    },
+    {
+      "id": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "label": ".insertTopicQueueCandidates()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L490"
+    },
+    {
+      "id": "generation_repository_generationrepository_reservescheduledtopicandcreatejob",
+      "label": ".reserveScheduledTopicAndCreateJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L525"
+    },
+    {
+      "id": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "label": ".releaseReservedTopicForJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L601"
+    },
+    {
+      "id": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "label": ".markTopicQueueConsumedForJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L617"
+    },
+    {
+      "id": "generation_repository_generationrepository_publisharticle",
+      "label": ".publishArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L636"
+    },
+    {
+      "id": "generation_repository_generationrepository_listtranslationslugsforarticle",
+      "label": ".listTranslationSlugsForArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L647"
+    },
+    {
+      "id": "generation_repository_generationrepository_listretryablefailedjobs",
+      "label": ".listRetryableFailedJobs()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L659"
+    },
+    {
+      "id": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "label": ".resetJobToPendingForRetry()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L680"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository_ts",
+      "target": "drizzle_orm",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository_ts",
+      "target": "db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository_ts",
+      "target": "generation_repository_normalizetopicqueuekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository_ts",
+      "target": "generation_repository_generationrepository",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_createjob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_requirejob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_markjobrunning",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_markjobsucceeded",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_markjobfailed",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_linkjobtoarticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_completestep",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_createdraftarticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_upserttranslation",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_replacecitations",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L347",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_updatearticletokentotal",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_monthlyspendutc",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L380",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_countsucceededsteps",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L409",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_getstepoutput",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L422",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_findtranslationid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L440",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_listcitationpayloads",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L457",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_countavailabletopics",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L482",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L490",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_reservescheduledtopicandcreatejob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L601",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L617",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_publisharticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L636",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_listtranslationslugsforarticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L647",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_listretryablefailedjobs",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L659",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository",
+      "target": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L680",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "target": "generation_repository_normalizetopicqueuekey",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L499",
+      "weight": 1.0
+    },
+    {
+      "source": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "target": "generation_repository_generationrepository_requirejob",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L681",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "generation_repository_normalizetopicqueuekey",
+      "callee": "slice",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "generation_repository_normalizetopicqueuekey",
+      "callee": "replace",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "generation_repository_normalizetopicqueuekey",
+      "callee": "trim",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "generation_repository_normalizetopicqueuekey",
+      "callee": "toLowerCase",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_createjob",
+      "callee": "returning",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_createjob",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_createjob",
+      "callee": "insert",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_requirejob",
+      "callee": "limit",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_requirejob",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_requirejob",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_requirejob",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_requirejob",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobrunning",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobrunning",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobrunning",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobrunning",
+      "callee": "sql",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobrunning",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobsucceeded",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobsucceeded",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobsucceeded",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobsucceeded",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobfailed",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobfailed",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobfailed",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobfailed",
+      "callee": "slice",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_markjobfailed",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_linkjobtoarticle",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_linkjobtoarticle",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_linkjobtoarticle",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_linkjobtoarticle",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_completestep",
+      "callee": "transaction",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_createdraftarticle",
+      "callee": "transaction",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "limit",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L290"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L290"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L290"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L290"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L295"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L296"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L301"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L301"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L301"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L318"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "returning",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L321"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L321"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_upserttranslation",
+      "callee": "insert",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L321"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_replacecitations",
+      "callee": "transaction",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L351"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_updatearticletokentotal",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L374"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_updatearticletokentotal",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L374"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_updatearticletokentotal",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L374"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_updatearticletokentotal",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L377"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "UTC",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L387"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "UTC",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L388"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L396"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "isNotNull",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L397"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "gte",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L398"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "lt",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L399"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L400"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_monthlyspendutc",
+      "callee": "Number",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L410"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L410"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L410"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L414"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L415"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L416"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countsucceededsteps",
+      "callee": "Number",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L419"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "limit",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L426"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L426"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L426"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L426"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L430"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L431"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L432"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_getstepoutput",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L433"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "limit",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L448"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L449"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_findtranslationid",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listcitationpayloads",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L460"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listcitationpayloads",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L460"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listcitationpayloads",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L460"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listcitationpayloads",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L467"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listcitationpayloads",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L468"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countavailabletopics",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countavailabletopics",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countavailabletopics",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countavailabletopics",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_countavailabletopics",
+      "callee": "Number",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L487"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "slice",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L500"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "trim",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L500"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "String",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L501"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "returning",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "onConflictDoNothing",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_inserttopicqueuecandidates",
+      "callee": "insert",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_reservescheduledtopicandcreatejob",
+      "callee": "transaction",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L529"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L602"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L602"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L602"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L610"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L611"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_releasereservedtopicforjob",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L612"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L621"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L621"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L621"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L629"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L630"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_marktopicqueueconsumedforjob",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L631"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_publisharticle",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L637"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_publisharticle",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L637"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_publisharticle",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L637"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_publisharticle",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L644"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listtranslationslugsforarticle",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L650"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listtranslationslugsforarticle",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L650"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listtranslationslugsforarticle",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L650"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listtranslationslugsforarticle",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L656"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "limit",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "orderBy",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "from",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "select",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "and",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L665"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L666"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L667"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L668"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "or",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L669"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "isNull",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L670"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "lte",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L671"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "asc",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L675"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_listretryablefailedjobs",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L677"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "callee": "where",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L682"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L682"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "callee": "update",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L682"
+    },
+    {
+      "caller_nid": "generation_repository_generationrepository_resetjobtopendingforretry",
+      "callee": "eq",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/generation.repository.ts",
+      "source_location": "L693"
+    }
+  ]
+}

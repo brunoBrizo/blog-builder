@@ -1,5 +1,17 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { and, eq, gte, isNotNull, lt, sql } from 'drizzle-orm';
+import {
+  and,
+  asc,
+  desc,
+  eq,
+  gte,
+  isNotNull,
+  isNull,
+  lt,
+  lte,
+  or,
+  sql,
+} from 'drizzle-orm';
 
 import {
   DRIZZLE,
@@ -9,6 +21,7 @@ import {
   articleTranslations,
   generationJobs,
   generationSteps,
+  topicQueue,
 } from '@blog-builder/db';
 
 type Locale = 'en' | 'pt-BR' | 'es';
@@ -22,6 +35,13 @@ type StepName =
   | 'seo_meta'
   | 'translation';
 
+/** Advisory lock key for scheduled dequeue (must not collide with other app locks). */
+export const SCHEDULED_GENERATION_ADVISORY_LOCK_KEY = 923_814_201;
+
+export function normalizeTopicQueueKey(raw: string): string {
+  return raw.toLowerCase().trim().replace(/\s+/g, ' ').slice(0, 500);
+}
+
 @Injectable()
 export class GenerationRepository {
   constructor(@Inject(DRIZZLE) private readonly db: Database) {}
@@ -29,6 +49,8 @@ export class GenerationRepository {
   async createJob(input: {
     topic: string;
     targetLocales: Locale[];
+    triggerKind?: 'manual' | 'scheduled';
+    autoPublish?: boolean;
   }): Promise<string> {
     const [row] = await this.db
       .insert(generationJobs)
@@ -36,6 +58,8 @@ export class GenerationRepository {
         topic: input.topic,
         targetLocales: input.targetLocales,
         status: 'pending',
+        triggerKind: input.triggerKind ?? 'manual',
+        autoPublish: input.autoPublish ?? false,
       })
       .returning({ id: generationJobs.id });
     if (!row) {
@@ -73,17 +97,26 @@ export class GenerationRepository {
         status: 'succeeded',
         completedAt: new Date(),
         error: null,
+        failureClass: null,
+        retryAfter: null,
       })
       .where(eq(generationJobs.id, jobId));
   }
 
-  async markJobFailed(jobId: string, message: string): Promise<void> {
+  async markJobFailed(
+    jobId: string,
+    message: string,
+    opts?: { failureClass?: string | null; retryAfter?: Date | null },
+  ): Promise<void> {
     await this.db
       .update(generationJobs)
       .set({
         status: 'failed',
         completedAt: new Date(),
         error: message.slice(0, 2000),
+        failureClass:
+          opts?.failureClass === undefined ? null : opts.failureClass,
+        retryAfter: opts?.retryAfter === undefined ? null : opts.retryAfter,
       })
       .where(eq(generationJobs.id, jobId));
   }
@@ -440,5 +473,214 @@ export class GenerationRepository {
       }
       return row;
     });
+  }
+
+  async countAvailableTopics(): Promise<number> {
+    const row = await this.db
+      .select({ n: sql<string>`count(*)::text` })
+      .from(topicQueue)
+      .where(eq(topicQueue.status, 'available'));
+    return Number(row[0]?.n ?? 0);
+  }
+
+  async insertTopicQueueCandidates(
+    topics: {
+      primaryLongTailKeyword: string;
+      suggestedTitle: string;
+      score?: number;
+    }[],
+  ): Promise<number> {
+    let inserted = 0;
+    for (const t of topics) {
+      const normalizedTopic = normalizeTopicQueueKey(t.primaryLongTailKeyword);
+      const displayTitle = t.suggestedTitle.trim().slice(0, 500);
+      const scoreVal = String(t.score ?? 0);
+      const rows = await this.db
+        .insert(topicQueue)
+        .values({
+          normalizedTopic,
+          displayTitle,
+          score: scoreVal,
+          source: 'research',
+          status: 'available',
+        })
+        .onConflictDoNothing({ target: topicQueue.normalizedTopic })
+        .returning({ id: topicQueue.id });
+      if (rows.length > 0) {
+        inserted += 1;
+      }
+    }
+    return inserted;
+  }
+
+  /**
+   * Picks next available topic under advisory lock and creates a scheduled job.
+   * Excludes topics matching existing article slugs or recently failed (90d).
+   * Returns null when queue is empty (caller should refill and retry).
+   */
+  async reserveScheduledTopicAndCreateJob(input: {
+    targetLocales: Locale[];
+    autoPublish: boolean;
+  }): Promise<string | null> {
+    return this.db.transaction(async (tx) => {
+      await tx.execute(
+        sql`select pg_advisory_xact_lock(${SCHEDULED_GENERATION_ADVISORY_LOCK_KEY})`,
+      );
+
+      // Build exclusion sets: existing slugs and recently-failed topics
+      const slugRows = await tx
+        .select({ slug: articleTranslations.slug })
+        .from(articleTranslations);
+      const existingSlugSet = new Set(
+        slugRows.map((r) => normalizeTopicQueueKey(r.slug.replace(/-/g, ' '))),
+      );
+
+      const failedJobRows = await tx
+        .select({ topic: generationJobs.topic })
+        .from(generationJobs)
+        .where(
+          and(
+            eq(generationJobs.status, 'failed'),
+            gte(generationJobs.completedAt, sql`now() - interval '90 days'`),
+          ),
+        );
+      const failedTopicSet = new Set(
+        failedJobRows.map((j) => normalizeTopicQueueKey(j.topic)),
+      );
+
+      const candidates = await tx
+        .select()
+        .from(topicQueue)
+        .where(eq(topicQueue.status, 'available'))
+        .orderBy(desc(topicQueue.score), asc(topicQueue.createdAt))
+        .for('update', { skipLocked: true });
+
+      const row = candidates.find(
+        (c) =>
+          !existingSlugSet.has(c.normalizedTopic) &&
+          !failedTopicSet.has(c.normalizedTopic),
+      );
+      if (!row) {
+        return null;
+      }
+
+      const [job] = await tx
+        .insert(generationJobs)
+        .values({
+          topic: row.displayTitle,
+          targetLocales: input.targetLocales,
+          status: 'pending',
+          triggerKind: 'scheduled',
+          autoPublish: input.autoPublish,
+        })
+        .returning({ id: generationJobs.id });
+      if (!job) {
+        throw new Error('Failed to insert generation job');
+      }
+      await tx
+        .update(topicQueue)
+        .set({
+          status: 'reserved',
+          generationJobId: job.id,
+          updatedAt: new Date(),
+        })
+        .where(eq(topicQueue.id, row.id));
+      return job.id;
+    });
+  }
+
+  async releaseReservedTopicForJob(jobId: string): Promise<void> {
+    await this.db
+      .update(topicQueue)
+      .set({
+        status: 'available',
+        generationJobId: null,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(
+          eq(topicQueue.generationJobId, jobId),
+          eq(topicQueue.status, 'reserved'),
+        ),
+      );
+  }
+
+  async markTopicQueueConsumedForJob(
+    jobId: string,
+    articleId: string,
+  ): Promise<void> {
+    await this.db
+      .update(topicQueue)
+      .set({
+        status: 'consumed',
+        articleId,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(
+          eq(topicQueue.generationJobId, jobId),
+          eq(topicQueue.status, 'reserved'),
+        ),
+      );
+  }
+
+  async publishArticle(articleId: string): Promise<void> {
+    await this.db
+      .update(articles)
+      .set({
+        status: 'published',
+        publishedAt: new Date(),
+        updatedAt: new Date(),
+      })
+      .where(eq(articles.id, articleId));
+  }
+
+  async listTranslationSlugsForArticle(
+    articleId: string,
+  ): Promise<{ locale: Locale; slug: string }[]> {
+    return this.db
+      .select({
+        locale: articleTranslations.locale,
+        slug: articleTranslations.slug,
+      })
+      .from(articleTranslations)
+      .where(eq(articleTranslations.articleId, articleId));
+  }
+
+  async listRetryableFailedJobs(limit: number): Promise<string[]> {
+    const now = new Date();
+    const rows = await this.db
+      .select({ id: generationJobs.id })
+      .from(generationJobs)
+      .where(
+        and(
+          eq(generationJobs.status, 'failed'),
+          eq(generationJobs.triggerKind, 'scheduled'),
+          eq(generationJobs.failureClass, 'transient'),
+          or(
+            isNull(generationJobs.retryAfter),
+            lte(generationJobs.retryAfter, now),
+          ),
+        ),
+      )
+      .orderBy(asc(generationJobs.completedAt))
+      .limit(limit);
+    return rows.map((r) => r.id);
+  }
+
+  async resetJobToPendingForRetry(jobId: string): Promise<void> {
+    const job = await this.requireJob(jobId);
+    await this.db
+      .update(generationJobs)
+      .set({
+        status: 'pending',
+        error: null,
+        startedAt: null,
+        completedAt: null,
+        failureClass: null,
+        retryAfter: null,
+        retryAttempt: job.retryAttempt + 1,
+      })
+      .where(eq(generationJobs.id, jobId));
   }
 }

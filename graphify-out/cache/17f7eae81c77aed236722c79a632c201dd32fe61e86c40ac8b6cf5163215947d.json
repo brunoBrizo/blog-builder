@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "label": "topic-queue.service.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "topic_queue_service_topicqueueservice",
+      "label": "TopicQueueService",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "topic_queue_service_topicqueueservice_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "label": ".ensureMinDepth()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L27"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "prompts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_budget_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_kill_switch_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_perplexity_client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_topic_queue_service_ts",
+      "target": "topic_queue_service_topicqueueservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "topic_queue_service_topicqueueservice",
+      "target": "topic_queue_service_topicqueueservice_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "topic_queue_service_topicqueueservice",
+      "target": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "countAvailableTopics",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "assertOpen",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "assertWithinDailyCeiling",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "buildStep1Research",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "chat",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "insertTopicQueueCandidates",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "topic_queue_service_topicqueueservice_ensuremindepth",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/topic-queue.service.ts",
+      "source_location": "L42"
+    }
+  ]
+}

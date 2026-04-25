@@ -5,6 +5,7 @@ import {
   type InferSelectModel,
 } from 'drizzle-orm';
 import {
+  boolean,
   index,
   integer,
   jsonb,
@@ -21,6 +22,7 @@ import {
   generationJobStatusEnum,
   generationStepNameEnum,
   generationStepStatusEnum,
+  generationTriggerKindEnum,
   localeEnum,
 } from './enums';
 
@@ -36,6 +38,16 @@ export const generationJobs = pgTable(
       .$type<Array<'en' | 'pt-BR' | 'es'>>()
       .notNull()
       .default(sql`'["en"]'::jsonb`),
+    triggerKind: generationTriggerKindEnum('trigger_kind')
+      .notNull()
+      .default('manual'),
+    autoPublish: boolean('auto_publish').notNull().default(false),
+    failureClass: text('failure_class'),
+    retryAfter: timestamp('retry_after', {
+      withTimezone: true,
+      mode: 'date',
+    }),
+    retryAttempt: integer('retry_attempt').notNull().default(0),
     status: generationJobStatusEnum('status').notNull().default('pending'),
     startedAt: timestamp('started_at', {
       withTimezone: true,
@@ -62,6 +74,11 @@ export const generationJobs = pgTable(
     ),
     generationJobsCreatedAtIdx: index('generation_jobs_created_at_idx').on(
       table.createdAt,
+    ),
+    generationJobsRetryIdx: index('generation_jobs_retry_idx').on(
+      table.status,
+      table.failureClass,
+      table.retryAfter,
     ),
   }),
 );

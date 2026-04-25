@@ -17,6 +17,8 @@ export const Step1ResearchResponseSchema = z.object({
         secondaryKeywords: z.array(z.string()),
         searchIntent: z.enum(['informational', 'commercial', 'transactional']),
         suggestedTitle: z.string(),
+        /** Optional ranking hint (higher = more valuable for scheduling). */
+        score: z.number().min(0).max(100).optional(),
       }),
     )
     .min(1),
@@ -32,7 +34,7 @@ export function buildStep1Research(input: { topicSeed: string }): {
   return {
     system:
       'You are an SEO keyword researcher for an AI and technology blog. Reply with valid JSON only matching the schema.',
-    user: `Find 3 trending AI/tech topics aligned with this seed: "${input.topicSeed}". For each topic return primaryLongTailKeyword, secondaryKeywords (3 items), searchIntent, suggestedTitle. Target an international English-speaking audience.`,
+    user: `Find 3 trending AI/tech topics aligned with this seed: "${input.topicSeed}". For each topic return primaryLongTailKeyword, secondaryKeywords (3 items), searchIntent, suggestedTitle, and an optional numeric score from 0-100 indicating editorial strength (timeliness + search demand). Target an international English-speaking audience.`,
     params: {
       temperature: 0.7,
       max_tokens: 2000,

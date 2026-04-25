@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_dto_post_internal_articles_retry_dto_ts",
+      "label": "post-internal-articles-retry.dto.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/dto/post-internal-articles-retry.dto.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "post_internal_articles_retry_dto_postinternalarticlesretrydto",
+      "label": "PostInternalArticlesRetryDto",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/dto/post-internal-articles-retry.dto.ts",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_dto_post_internal_articles_retry_dto_ts",
+      "target": "nestjs_zod",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/dto/post-internal-articles-retry.dto.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_dto_post_internal_articles_retry_dto_ts",
+      "target": "zod",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/dto/post-internal-articles-retry.dto.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_dto_post_internal_articles_retry_dto_ts",
+      "target": "post_internal_articles_retry_dto_postinternalarticlesretrydto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/dto/post-internal-articles-retry.dto.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

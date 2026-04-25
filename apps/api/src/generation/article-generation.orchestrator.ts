@@ -36,6 +36,19 @@ import {
   wordCountFromMarkdown,
 } from './markdown.util';
 import { PerplexityClient } from './perplexity.client';
+import { WebIsrRevalidationService } from './web-isr-revalidation.service';
+
+function pickBestResearchTopic(
+  research: Step1ResearchResponse,
+): Step1ResearchResponse['topics'][number] {
+  const topics = [...research.topics];
+  topics.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+  const best = topics[0];
+  if (!best) {
+    throw new PerplexityValidationError('No topics in research output');
+  }
+  return best;
+}
 
 function slugify(raw: string): string {
   const s = raw
@@ -136,6 +149,7 @@ export class ArticleGenerationOrchestratorService {
     private readonly repo: GenerationRepository,
     private readonly budget: BudgetService,
     private readonly killSwitch: KillSwitchService,
+    private readonly webIsr: WebIsrRevalidationService,
   ) {}
 
   private logStep(meta: {
@@ -239,10 +253,7 @@ export class ArticleGenerationOrchestratorService {
   ): Promise<Step2CompetitorResponse> {
     const started = Date.now();
     this.killSwitch.assertOpen();
-    const pick = research.topics[0];
-    if (!pick) {
-      throw new PerplexityValidationError('No topics in research output');
-    }
+    const pick = pickBestResearchTopic(research);
     const built = buildStep2Competitor({
       primaryKeyword: pick.primaryLongTailKeyword,
       title: pick.suggestedTitle,
@@ -278,10 +289,7 @@ export class ArticleGenerationOrchestratorService {
   ): Promise<Step3OutlineResponse> {
     const started = Date.now();
     this.killSwitch.assertOpen();
-    const pick = research.topics[0];
-    if (!pick) {
-      throw new PerplexityValidationError('No topics in research output');
-    }
+    const pick = pickBestResearchTopic(research);
     const built = buildStep3Outline({
       title: pick.suggestedTitle,
       primaryKeyword: pick.primaryLongTailKeyword,
@@ -403,10 +411,7 @@ export class ArticleGenerationOrchestratorService {
   }> {
     const started = Date.now();
     this.killSwitch.assertOpen();
-    const pick = research.topics[0];
-    if (!pick) {
-      throw new PerplexityValidationError('No topics in research output');
-    }
+    const pick = pickBestResearchTopic(research);
     const excerpt = humanizedMarkdown.slice(0, 500);
     const built = buildStep6Seo({
       title: pick.suggestedTitle,
@@ -615,7 +620,10 @@ export class ArticleGenerationOrchestratorService {
         : typeof err === 'string'
           ? err
           : 'unknown';
-    await this.repo.markJobFailed(jobId, message);
+    await this.repo.markJobFailed(jobId, message, {
+      failureClass: 'non_retriable',
+    });
+    await this.repo.releaseReservedTopicForJob(jobId);
     if (err instanceof Error) {
       Sentry.captureException(err, {
         tags: {
@@ -631,6 +639,36 @@ export class ArticleGenerationOrchestratorService {
     const job = await this.repo.requireJob(jobId);
     if (job.articleId) {
       await this.repo.updateArticleTokenTotal(job.articleId, job.totalTokens);
+    }
+    if (job.autoPublish && job.articleId) {
+      await this.repo.publishArticle(job.articleId);
+      await this.repo.markTopicQueueConsumedForJob(jobId, job.articleId);
+      await this.webIsr.revalidateAfterPublish(job.articleId);
+    }
+  }
+
+  /** After Inngest exhausts retries for a retriable pipeline error. */
+  async recordInngestExhaustedFailure(
+    jobId: string,
+    err: unknown,
+  ): Promise<void> {
+    const message =
+      err instanceof Error
+        ? err.message
+        : typeof err === 'string'
+          ? err
+          : 'unknown';
+    const job = await this.repo.requireJob(jobId);
+    const isScheduled = job.triggerKind === 'scheduled';
+    await this.repo.markJobFailed(jobId, message.slice(0, 2000), {
+      failureClass: isScheduled ? 'transient' : 'non_retriable',
+      retryAfter: isScheduled ? new Date(Date.now() + 86_400_000) : null,
+    });
+    await this.repo.releaseReservedTopicForJob(jobId);
+    if (err instanceof Error) {
+      Sentry.captureException(err, {
+        tags: { jobId, source: 'inngest_onFailure' },
+      });
     }
   }
 

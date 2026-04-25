@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "label": "tutorials.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tutorials_getcategory",
+      "label": "getCategory()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "tutorials_makegridtutorialdetail",
+      "label": "makeGridTutorialDetail()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L357"
+    },
+    {
+      "id": "tutorials_gettutorialbyslug",
+      "label": "getTutorialBySlug()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L651"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_authors",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_categories",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_articles",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "target": "tutorials_getcategory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "target": "tutorials_makegridtutorialdetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L357",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials_ts",
+      "target": "tutorials_gettutorialbyslug",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L651",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "tutorials_getcategory",
+      "callee": "find",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "tutorials_gettutorialbyslug",
+      "callee": "find",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/mocks/tutorials.ts",
+      "source_location": "L652"
+    }
+  ]
+}

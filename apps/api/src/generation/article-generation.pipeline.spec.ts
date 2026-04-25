@@ -20,6 +20,7 @@ import { GenerationRepository } from './generation.repository';
 import { BudgetService } from './budget.service';
 import { KillSwitchService } from './kill-switch.service';
 import { PerplexityClient } from './perplexity.client';
+import { WebIsrRevalidationService } from './web-isr-revalidation.service';
 import { InMemoryGenerationRepository } from './testing/in-memory-generation.repository';
 import {
   createCrashResumePerplexityStub,
@@ -83,6 +84,10 @@ function killSwitchOpen(): KillSwitchService {
   return { assertOpen: jest.fn() } as unknown as KillSwitchService;
 }
 
+const webIsrStub = {
+  revalidateAfterPublish: jest.fn().mockResolvedValue(undefined),
+} as unknown as WebIsrRevalidationService;
+
 async function createOrchestrator(
   repo: InMemoryGenerationRepository,
   perplexity: PerplexityClient,
@@ -99,6 +104,7 @@ async function createOrchestrator(
       { provide: PerplexityClient, useValue: perplexity },
       { provide: BudgetService, useValue: budget },
       { provide: KillSwitchService, useValue: kill },
+      { provide: WebIsrRevalidationService, useValue: webIsrStub },
       ArticleGenerationOrchestratorService,
     ],
   }).compile();
@@ -213,5 +219,53 @@ describe('executeArticleGenerationPipeline', () => {
     expect(chat.mock.calls.length).toBe(0);
     const job = await repo.requireJob(jobId);
     expect(job.status).toBe('failed');
+  });
+
+  it('auto-publish: scheduled job publishes article and revalidates on success', async () => {
+    const repo = new InMemoryGenerationRepository();
+    const chat = createStubPerplexityChat();
+    const perplexity = { chat } as unknown as PerplexityClient;
+    const orchestrator = await createOrchestrator(repo, perplexity);
+    const jobId = await repo.createJob({
+      topic: 'AI tools',
+      targetLocales: ['en', 'pt-BR', 'es'],
+      triggerKind: 'scheduled',
+      autoPublish: true,
+    });
+
+    const out = await executeArticleGenerationPipeline(
+      { jobId, step: createMemoizingStep() },
+      orchestrator,
+    );
+
+    expect(out.ok).toBe(true);
+    expect(repo.isArticlePublished(out.articleId)).toBe(true);
+    expect(webIsrStub.revalidateAfterPublish).toHaveBeenCalledWith(
+      out.articleId,
+    );
+  });
+
+  it('manual job does not auto-publish on success', async () => {
+    const repo = new InMemoryGenerationRepository();
+    const chat = createStubPerplexityChat();
+    const perplexity = { chat } as unknown as PerplexityClient;
+    const orchestrator = await createOrchestrator(repo, perplexity);
+    const jobId = await repo.createJob({
+      topic: 'AI tools',
+      targetLocales: ['en', 'pt-BR', 'es'],
+      triggerKind: 'manual',
+      autoPublish: false,
+    });
+
+    const out = await executeArticleGenerationPipeline(
+      { jobId, step: createMemoizingStep() },
+      orchestrator,
+    );
+
+    expect(out.ok).toBe(true);
+    expect(repo.isArticlePublished(out.articleId)).toBe(false);
+    expect(webIsrStub.revalidateAfterPublish).not.toHaveBeenCalledWith(
+      out.articleId,
+    );
   });
 });

@@ -4,6 +4,7 @@ export * from './categories';
 export * from './tags';
 export * from './articles';
 export * from './generation-jobs';
+export * from './topic-queue';
 export * from './newsletter';
 export * from './contact-messages';
 export * from './admin-users';

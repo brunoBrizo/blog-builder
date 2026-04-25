@@ -1,0 +1,156 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_web_isr_revalidation_service_ts",
+      "label": "web-isr-revalidation.service.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "web_isr_revalidation_service_webisrrevalidationservice",
+      "label": "WebIsrRevalidationService",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "web_isr_revalidation_service_webisrrevalidationservice_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "label": ".revalidateAfterPublish()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L18"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_web_isr_revalidation_service_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_web_isr_revalidation_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_core_config_app_config_service",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_web_isr_revalidation_service_ts",
+      "target": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_generation_repository",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_web_isr_revalidation_service_ts",
+      "target": "web_isr_revalidation_service_webisrrevalidationservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "web_isr_revalidation_service_webisrrevalidationservice",
+      "target": "web_isr_revalidation_service_webisrrevalidationservice_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "web_isr_revalidation_service_webisrrevalidationservice",
+      "target": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "replace",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "trim",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "warn",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "listTranslationSlugsForArticle",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "add",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "add",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "fetch",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "stringify",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "catch",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "text",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "web_isr_revalidation_service_webisrrevalidationservice_revalidateafterpublish",
+      "callee": "slice",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/web-isr-revalidation.service.ts",
+      "source_location": "L51"
+    }
+  ]
+}

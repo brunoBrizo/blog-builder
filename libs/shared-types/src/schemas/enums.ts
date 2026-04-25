@@ -25,6 +25,9 @@ export const GenerationJobStatusSchema = z.enum([
 ]);
 export type GenerationJobStatus = z.infer<typeof GenerationJobStatusSchema>;
 
+export const GenerationTriggerKindSchema = z.enum(['manual', 'scheduled']);
+export type GenerationTriggerKind = z.infer<typeof GenerationTriggerKindSchema>;
+
 export const GenerationStepNameSchema = z.enum([
   'topic_research',
   'outline',

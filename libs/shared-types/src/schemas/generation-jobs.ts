@@ -4,6 +4,7 @@ import {
   GenerationJobStatusSchema,
   GenerationStepNameSchema,
   GenerationStepStatusSchema,
+  GenerationTriggerKindSchema,
 } from './enums';
 import {
   LocaleSchema,
@@ -22,6 +23,11 @@ export const GenerationJobRowSchema = z.object({
   articleId: z.string().uuid().nullable(),
   topic: z.string(),
   targetLocales: z.array(LocaleSchema),
+  triggerKind: GenerationTriggerKindSchema,
+  autoPublish: z.boolean(),
+  failureClass: z.string().nullable(),
+  retryAfter: TimestampSchema.nullable(),
+  retryAttempt: z.number().int(),
   status: GenerationJobStatusSchema,
   startedAt: TimestampSchema.nullable(),
   completedAt: TimestampSchema.nullable(),

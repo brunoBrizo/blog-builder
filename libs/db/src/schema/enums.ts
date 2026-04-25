@@ -17,6 +17,11 @@ export const generationJobStatusEnum = pgEnum('generation_job_status', [
   'cancelled',
 ]);
 
+export const generationTriggerKindEnum = pgEnum('generation_trigger_kind', [
+  'manual',
+  'scheduled',
+]);
+
 export const generationStepNameEnum = pgEnum('generation_step_name', [
   'topic_research',
   'outline',

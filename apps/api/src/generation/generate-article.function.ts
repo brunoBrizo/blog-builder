@@ -15,6 +15,13 @@ export function createGenerateArticleFunction(
       concurrency: { limit: 3 },
       throttle: { limit: 10, period: '1m' },
       triggers: [{ event: 'article/generation.requested' }],
+      onFailure: async ({ event, error }) => {
+        const data = event.data as { jobId?: string } | undefined;
+        const jobId = data?.jobId;
+        if (jobId) {
+          await orchestrator.recordInngestExhaustedFailure(jobId, error);
+        }
+      },
     },
     async ({ event, step, runId }) => {
       const { jobId } = event.data as {
