@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 import { ArticleDetailView } from '@/components/article-detail-view';
+import { getArticleBySlug } from '@/mocks/articles';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -9,15 +10,23 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const t = await getTranslations('placeholders');
+  const article = getArticleBySlug(slug);
+  if (!article) {
+    return { title: 'Not found' };
+  }
 
   return {
-    title: t('metadataArticle', { slug }),
+    title: article.title,
+    description: article.excerpt,
   };
 }
 
 export default async function ArticleBySlugPage({ params }: Props) {
   const { slug } = await params;
+  const article = getArticleBySlug(slug);
+  if (!article) {
+    notFound();
+  }
 
-  return <ArticleDetailView slug={slug} variant="article" />;
+  return <ArticleDetailView article={article} />;
 }

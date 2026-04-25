@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Crown, Book, PlayCircle, Server, Code2 } from 'lucide-react';
 import type { Article } from '../mocks/articles';
 import { cn } from '@blog-builder/ui';
@@ -48,7 +48,7 @@ export function ArticleCard({ article, variant, className }: ArticleCardProps) {
       )}
     >
       <Link
-        href={`/blog/${article.slug}`}
+        href={`/articles/${article.slug}`}
         className="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/30 rounded-2xl"
       >
         <span className="sr-only">Read article: {article.title}</span>

@@ -11,6 +11,7 @@ import type { ReactNode } from 'react';
 import { AnalyticsPlaceholder } from '@/components/analytics-placeholder';
 import { ConsentPlaceholder } from '@/components/consent-placeholder';
 import { RootJsonLd } from '@/components/root-json-ld';
+import { DecorativeGridBackground } from '@/components/decorative-grid-background';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { SkipToContent } from '@/components/skip-to-content';
@@ -62,6 +63,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const h = await headers();
+  const canonicalPath = h.get('x-pathname') ?? '/';
+  /** Locale-stripped path; `/articles` list uses longer solid band before mask fade (leaderboard). */
+  const isArticlesList = canonicalPath === '/articles';
+
   const cookieStore = await cookies();
   const themeRaw = cookieStore.get('bb_theme')?.value;
   const themeCookie =
@@ -70,7 +76,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       <AppToastProvider>
-        <div className="absolute inset-0 z-0 bg-grid-pattern mask-radial-fade h-[600px] pointer-events-none"></div>
+        <DecorativeGridBackground
+          fadeClassName={
+            isArticlesList ? 'mask-radial-fade-ad' : 'mask-radial-fade'
+          }
+          {...(isArticlesList ? { heightClassName: 'h-[720px]' as const } : {})}
+        />
         <SkipToContent />
         <SiteHeader themeCookie={themeCookie} />
         <main id="main" tabIndex={-1} className="outline-none relative z-10">

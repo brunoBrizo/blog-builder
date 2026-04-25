@@ -59,6 +59,19 @@ body {
       transparent 100%
     );
   }
+  /* Stronger top band before fade — e.g. articles list so fade starts near leaderboard ad */
+  .mask-radial-fade-ad {
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      black 72%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      black 72%,
+      transparent 100%
+    );
+  }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
