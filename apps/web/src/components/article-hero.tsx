@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Book, Clock, Newspaper } from 'lucide-react';
+import { Book, BookOpen, Clock, Newspaper } from 'lucide-react';
 import { ShareButtons } from './share-buttons';
 import { cn } from '@blog-builder/ui';
 import type { Author } from '../mocks/authors';
@@ -9,6 +9,8 @@ type ArticleHeroProps = {
   subhead: string;
   /** Category pill label (e.g. Tech News) */
   categoryPillLabel: string;
+  /** Icon in the category pill (overrides `showNewspaperIcon` when set) */
+  categoryPillIcon?: 'book' | 'bookOpen' | 'newspaper';
   showNewspaperIcon: boolean;
   author: Author;
   publishedAt: string;
@@ -17,15 +19,20 @@ type ArticleHeroProps = {
 
 function CategoryPill({
   label,
+  categoryPillIcon,
   showNewspaperIcon = false,
 }: {
   label: string;
+  categoryPillIcon?: 'book' | 'bookOpen' | 'newspaper';
   showNewspaperIcon?: boolean;
 }) {
+  const icon = categoryPillIcon ?? (showNewspaperIcon ? 'newspaper' : 'book');
   return (
     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-600 text-xs font-medium border border-indigo-100/50">
-      {showNewspaperIcon ? (
+      {icon === 'newspaper' ? (
         <Newspaper className="w-3.5 h-3.5 shrink-0" strokeWidth={2} />
+      ) : icon === 'bookOpen' ? (
+        <BookOpen className="w-3.5 h-3.5 shrink-0" strokeWidth={2} />
       ) : (
         <Book className="w-3.5 h-3.5 shrink-0" strokeWidth={2} />
       )}
@@ -38,6 +45,7 @@ export function ArticleHero({
   title,
   subhead,
   categoryPillLabel,
+  categoryPillIcon,
   showNewspaperIcon,
   author,
   publishedAt,
@@ -49,6 +57,7 @@ export function ArticleHero({
         <CategoryPill
           label={categoryPillLabel}
           showNewspaperIcon={showNewspaperIcon}
+          {...(categoryPillIcon != null ? { categoryPillIcon } : {})}
         />
       </div>
 

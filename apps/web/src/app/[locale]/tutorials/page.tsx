@@ -1,25 +1,40 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+
+import { AdPlaceholder } from '@/components/ad-placeholder';
+import { FeaturedTutorialListCard } from '@/components/featured-tutorial-list-card';
+import { TutorialFilterBar } from '@/components/tutorial-filter-bar';
+import { TutorialMasterclassCard } from '@/components/tutorial-masterclass-card';
+import { TutorialsListBottomSection } from '@/components/tutorials-list-bottom-section';
+import { TutorialsListHero } from '@/components/tutorials-list-hero';
+import { TutorialsListPagination } from '@/components/tutorials-list-pagination';
+import {
+  tutorialListFeatured,
+  tutorialMasterclassList,
+  tutorialsListPageHero,
+} from '@/mocks/tutorials';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('placeholders');
-
   return {
-    title: t('tutorialsListTitle'),
+    title: 'Tutorials & Masterclasses',
+    description:
+      'Discover our latest deep-dives, tutorials, and reviews on AI tools, development frameworks, and tech trends.',
   };
 }
 
-export default async function TutorialsListPage() {
-  const t = await getTranslations('placeholders');
-
+export default function TutorialsListPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 pb-16">
-      <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-zinc-900 mb-4">
-        {t('tutorialsHeading')}
-      </h1>
-      <p className="text-base font-light text-zinc-500 max-w-2xl">
-        {t('listDescription')}
-      </p>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
+      <TutorialsListHero {...tutorialsListPageHero} />
+      <FeaturedTutorialListCard featured={tutorialListFeatured} />
+      <AdPlaceholder type="leaderboard" articleStyle className="mb-12" />
+      <TutorialFilterBar />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {tutorialMasterclassList.map((item) => (
+          <TutorialMasterclassCard key={item.slug} item={item} />
+        ))}
+      </div>
+      <TutorialsListPagination />
+      <TutorialsListBottomSection />
     </div>
   );
 }

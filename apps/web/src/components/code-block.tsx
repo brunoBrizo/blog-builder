@@ -1,21 +1,31 @@
 'use client';
 
 import { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, FileCode2 } from 'lucide-react';
 import { cn } from '@blog-builder/ui';
 
 interface CodeBlockProps {
   language: string;
   code: string;
+  /** When `code` is HTML, copy this plain string instead */
+  copyText?: string;
+  variant?: 'default' | 'editorial';
   className?: string;
 }
 
-export function CodeBlock({ language, code, className }: CodeBlockProps) {
+export function CodeBlock({
+  language,
+  code,
+  copyText,
+  variant = 'default',
+  className,
+}: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
+  const textToCopy = copyText ?? code;
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -23,42 +33,62 @@ export function CodeBlock({ language, code, className }: CodeBlockProps) {
     }
   };
 
+  const isEditorial = variant === 'editorial';
+
   return (
     <div
       className={cn(
-        'my-6 rounded-lg overflow-hidden border border-zinc-800 bg-[#18181b]',
+        isEditorial
+          ? 'my-8 rounded-2xl overflow-hidden border border-zinc-800 bg-[#18181b] shadow-lg'
+          : 'my-6 rounded-lg overflow-hidden border border-zinc-800 bg-[#18181b]',
         className,
       )}
     >
-      <div className="flex items-center justify-between px-4 py-2 bg-zinc-900 border-b border-zinc-800">
-        <span className="text-xs font-medium text-zinc-400">{language}</span>
+      <div
+        className={cn(
+          'flex items-center justify-between border-b border-zinc-800 bg-zinc-900',
+          isEditorial ? 'px-4 py-3' : 'px-4 py-2',
+        )}
+      >
+        <span
+          className={cn(
+            'text-xs font-medium text-zinc-400',
+            isEditorial && 'flex items-center gap-2',
+          )}
+        >
+          {isEditorial && <FileCode2 className="w-3.5 h-3.5 shrink-0" />}
+          {language}
+        </span>
         <button
+          type="button"
           onClick={handleCopy}
-          className="text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1 text-xs"
+          className={cn(
+            'text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1.5 text-xs',
+            isEditorial && 'font-medium hover:text-white',
+          )}
           aria-label="Copy code"
         >
           {copied ? (
             <>
-              <Check className="w-3 h-3 text-emerald-400" />
+              <Check className="w-3.5 h-3.5 text-emerald-400" />
               <span className="text-emerald-400">Copied</span>
             </>
           ) : (
             <>
-              <Copy className="w-3 h-3" />
+              <Copy className="w-3.5 h-3.5" />
               <span>Copy</span>
             </>
           )}
         </button>
       </div>
-      <div className="p-4 overflow-x-auto custom-scrollbar">
+      <div
+        className={cn(
+          'overflow-x-auto custom-scrollbar',
+          isEditorial ? 'p-5' : 'p-4',
+        )}
+      >
         <pre className="font-mono text-sm leading-relaxed text-zinc-300">
           <code>
-            {/* 
-              In a real application, you would use a syntax highlighter here 
-              like PrismJS, Highlight.js, or Shiki. 
-              For this mockup, we are just rendering the raw string, 
-              but allowing for simple HTML injection if the code string contains it.
-            */}
             <span dangerouslySetInnerHTML={{ __html: code }} />
           </code>
         </pre>

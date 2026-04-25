@@ -4,7 +4,7 @@ import { hasLocale } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { cookies, headers } from 'next/headers';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 
@@ -14,6 +14,7 @@ import { RootJsonLd } from '@/components/root-json-ld';
 import { DecorativeGridBackground } from '@/components/decorative-grid-background';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { ScrollToTop } from '@/components/scroll-to-top';
 import { SkipToContent } from '@/components/skip-to-content';
 import { isAppLocale } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
@@ -65,25 +66,32 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
   const h = await headers();
   const canonicalPath = h.get('x-pathname') ?? '/';
-  /** Locale-stripped path; `/articles` list uses longer solid band before mask fade (leaderboard). */
-  const isArticlesList = canonicalPath === '/articles';
+  /** Locale-stripped path; `/articles` and `/tutorials` list use longer solid band before mask fade (leaderboard). */
+  const isListWithLeaderboardAd =
+    canonicalPath === '/articles' ||
+    canonicalPath === '/tutorials' ||
+    canonicalPath === '/news';
 
-  const cookieStore = await cookies();
-  const themeRaw = cookieStore.get('bb_theme')?.value;
-  const themeCookie =
-    themeRaw === 'dark' || themeRaw === 'light' ? themeRaw : null;
+  const isHome = canonicalPath === '/';
 
   return (
     <NextIntlClientProvider messages={messages}>
       <AppToastProvider>
-        <DecorativeGridBackground
-          fadeClassName={
-            isArticlesList ? 'mask-radial-fade-ad' : 'mask-radial-fade'
-          }
-          {...(isArticlesList ? { heightClassName: 'h-[720px]' as const } : {})}
-        />
+        <ScrollToTop />
+        {!isHome && (
+          <DecorativeGridBackground
+            fadeClassName={
+              isListWithLeaderboardAd
+                ? 'mask-radial-fade-ad'
+                : 'mask-radial-fade'
+            }
+            {...(isListWithLeaderboardAd
+              ? { heightClassName: 'h-[720px]' as const }
+              : {})}
+          />
+        )}
         <SkipToContent />
-        <SiteHeader themeCookie={themeCookie} />
+        <SiteHeader />
         <main id="main" tabIndex={-1} className="outline-none relative z-10">
           {children}
         </main>

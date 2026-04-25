@@ -16,10 +16,6 @@ import {
 
 import { routes } from '@/lib/routes';
 
-import { ThemeToggle } from './theme-toggle';
-
-type ThemeCookie = 'light' | 'dark' | null;
-
 function navItemActive(pathname: string, href: string) {
   if (href === routes.home) {
     return pathname === '/';
@@ -27,7 +23,7 @@ function navItemActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function SiteHeader({ themeCookie }: { themeCookie: ThemeCookie }) {
+export function SiteHeader() {
   const t = useTranslations('common');
   const th = useTranslations('layout.header');
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -96,8 +92,6 @@ export function SiteHeader({ themeCookie }: { themeCookie: ThemeCookie }) {
                 <ChevronDown className="size-4" strokeWidth={1.5} />
               </button>
             </div>
-
-            <ThemeToggle initialCookie={themeCookie} />
 
             <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
               <DialogTrigger asChild>

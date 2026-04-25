@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Newspaper } from 'lucide-react';
+import { ArrowRight, Mail, Newspaper } from 'lucide-react';
 import { cn } from '@blog-builder/ui';
 
 interface NewsletterCardProps {
@@ -50,11 +50,15 @@ export function NewsletterCard({
             </div>
             <button
               type="submit"
-              className="w-full bg-white text-zinc-900 text-sm font-medium py-3 rounded-xl hover:bg-zinc-100 hover:scale-[0.98] active:scale-[0.96] transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+              className="w-full bg-white text-zinc-900 text-sm font-medium py-3 rounded-xl hover:bg-zinc-100 hover:scale-[0.98] active:scale-[0.96] transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 flex items-center justify-center gap-2"
             >
               Subscribe Now
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </button>
           </form>
+          <p className="text-[11px] font-light text-zinc-500 mt-4 text-center">
+            Zero spam. 1-click unsubscribe anytime.
+          </p>
         </div>
       </div>
     );

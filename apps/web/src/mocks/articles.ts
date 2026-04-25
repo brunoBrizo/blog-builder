@@ -33,10 +33,23 @@ export type ArticleBodyBlock =
       type: 'ol';
       items: { label: string; description: string }[];
     }
-  | { type: 'blockquote'; text: string; attribution?: string }
+  | {
+      type: 'blockquote';
+      text: string;
+      attribution?: string;
+      /** When no `attribution`: inset (default) vs gradient callout (tutorial design) */
+      quoteStyle?: 'inset' | 'gradient';
+    }
   | { type: 'inContentAd' }
   | { type: 'stats'; items: { value: string; label: string }[] }
-  | { type: 'code'; language: string; code: string };
+  | {
+      type: 'code';
+      language: string;
+      code: string;
+      /** Clipboard text when `code` is HTML; defaults to `code` */
+      plainText?: string;
+      displayVariant?: 'default' | 'editorial';
+    };
 
 export type ArticleDetail = {
   /** e.g. Home / News / … */
@@ -56,6 +69,12 @@ export type ArticleDetail = {
   /** E-E-A-T author box (article page) */
   authorRoleInArticle?: string;
   authorBioInArticle?: string;
+  /** Breadcrumb last segment; defaults to truncated `title` */
+  breadcrumbCurrentLabel?: string;
+  /** When set, overrides `showCategoryNewspaperIcon` for hero pill */
+  categoryPillIcon?: 'book' | 'bookOpen' | 'newspaper';
+  /** Base path for related prev/next links (default: articles) */
+  relatedPath?: 'articles' | 'tutorials' | 'news';
 };
 
 export type Article = {
@@ -67,6 +86,8 @@ export type Article = {
   publishedAt: string;
   readTimeMin: number;
   featuredImageUrl: string;
+  /** Featured image `alt` (defaults to `title` in the detail view) */
+  featuredImageAlt?: string;
   author: Author;
   category: Category;
   variant: 'cornerstone' | 'standard';
@@ -554,6 +575,307 @@ export const articles: Article[] = [
           title:
             "Google's Gemini Integration: What Enterprise Users Need to Know",
         },
+      },
+    },
+  },
+  {
+    id: '6',
+    slug: 'openai-gpt-5-announcement',
+    title: 'OpenAI Unveils GPT-5: A New Era of Reasoning',
+    excerpt:
+      'The next-generation model introduces unprecedented logical reasoning, real-time multimodal processing, and a reinforced alignment protocol that sets a new industry benchmark.',
+    publishedAt: 'Apr 24, 2026',
+    readTimeMin: 7,
+    featuredImageUrl:
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    featuredImageAlt: 'Abstract representation of a neural network',
+    author: marcus,
+    category: getCategory('tech-news-trends'),
+    variant: 'cornerstone',
+    detail: {
+      breadcrumb: { parentHref: '/news', parentLabel: 'News' },
+      subhead:
+        'The next-generation model introduces unprecedented logical reasoning capabilities, real-time multimodal processing, and a heavily reinforced alignment protocol that sets a new industry standard.',
+      featuredImageCaption:
+        'OpenAI’s latest flagship emphasizes long-horizon reasoning and safer refusal behavior in production settings.',
+      leadParagraph: '',
+      categoryPillLabel: 'Tech News',
+      showCategoryNewspaperIcon: true,
+      relatedPath: 'news',
+      toc: [
+        { id: 'overview', title: 'What changed' },
+        { id: 'takeaways', title: 'What to watch' },
+      ],
+      blocks: [
+        {
+          type: 'lead',
+          text: 'OpenAI’s GPT-5 announcement focuses on reliable reasoning, tighter alignment, and multimodal throughput suitable for production assistants.',
+        },
+        {
+          type: 'h2',
+          id: 'overview',
+          text: '1. What changed',
+        },
+        {
+          type: 'p',
+          text: 'The release highlights stronger chain-of-thought style answers, better tool use, and improved latency for vision plus text bundles—details will firm up as the API and policy docs stabilize.',
+        },
+        {
+          type: 'h2',
+          id: 'takeaways',
+          text: '2. What to watch',
+        },
+        {
+          type: 'p',
+          text: 'Enterprises should validate safety policies, log retention, and data residency requirements before wide rollout, especially for customer-facing automations.',
+        },
+      ],
+      topicTags: [
+        { label: 'OpenAI' },
+        { label: 'Foundation models' },
+        { label: 'Industry News' },
+      ],
+      related: {
+        previous: null,
+        next: {
+          slug: 'apple-intelligence-rollout',
+          title:
+            'Apple Intelligence Begins Global Rollout: What You Need to Know',
+        },
+      },
+    },
+  },
+  {
+    id: '7',
+    slug: 'apple-intelligence-rollout',
+    title: 'Apple Intelligence Begins Global Rollout: What You Need to Know',
+    excerpt:
+      'Following months of beta testing, Apple is finally releasing its deeply integrated AI features to iOS 18 users worldwide, bringing local on-device processing to the masses.',
+    publishedAt: 'Apr 24, 2026',
+    readTimeMin: 6,
+    featuredImageUrl:
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200',
+    author: marcus,
+    category: getCategory('tech-news-trends'),
+    variant: 'standard',
+    detail: {
+      breadcrumb: { parentHref: '/news', parentLabel: 'News' },
+      subhead:
+        'Following months of beta testing, Apple is finally releasing its deeply integrated AI features to iOS 18 users worldwide, bringing local on-device processing to the masses.',
+      featuredImageCaption:
+        'On-device models aim to keep sensitive prompts and media processing closer to the user’s hardware.',
+      leadParagraph: '',
+      showCategoryNewspaperIcon: true,
+      relatedPath: 'news',
+      toc: [
+        { id: 'rollout', title: 'Rollout scope' },
+        { id: 'privacy', title: 'Privacy posture' },
+      ],
+      blocks: [
+        {
+          type: 'lead',
+          text: 'Apple is expanding its AI feature set to more regions with an emphasis on on-device processing and system-level integrations.',
+        },
+        { type: 'h2', id: 'rollout', text: '1. Rollout scope' },
+        {
+          type: 'p',
+          text: 'Expect staged availability by region, device, and language pack. Verify feature flags in Settings before publishing guides that assume uniform behavior.',
+        },
+        { type: 'h2', id: 'privacy', text: '2. Privacy posture' },
+        {
+          type: 'p',
+          text: 'Private Cloud Compute and on-device models remain central to Apple’s story—treat any third-party data flows as a separate review step.',
+        },
+      ],
+      topicTags: [
+        { label: 'Apple' },
+        { label: 'On-device AI' },
+        { label: 'Consumer' },
+      ],
+      related: {
+        previous: {
+          slug: 'openai-gpt-5-announcement',
+          title: 'OpenAI Unveils GPT-5: A New Era of Reasoning',
+        },
+        next: {
+          slug: 'mistral-large-3',
+          title: 'Mistral Open-Sources Large 3 Model',
+        },
+      },
+    },
+  },
+  {
+    id: '8',
+    slug: 'mistral-large-3',
+    title: 'Mistral Open-Sources Large 3 Model',
+    excerpt:
+      'The European AI champion drops its most powerful open-weight model yet, matching GPT-4 class performance on most benchmarks.',
+    publishedAt: 'Apr 24, 2026',
+    readTimeMin: 5,
+    featuredImageUrl:
+      'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80&w=800',
+    author: marcus,
+    category: getCategory('tech-news-trends'),
+    variant: 'standard',
+    detail: {
+      breadcrumb: { parentHref: '/news', parentLabel: 'News' },
+      subhead:
+        'The European AI champion drops its most powerful open-weight model yet, matching GPT-4 class performance on most benchmarks.',
+      featuredImageCaption:
+        'Open-weight models continue to close the gap on closed API leaders for many retrieval and coding tasks.',
+      leadParagraph: '',
+      showCategoryNewspaperIcon: true,
+      relatedPath: 'news',
+      toc: [
+        { id: 'license', title: 'Licensing' },
+        { id: 'adoption', title: 'Adoption notes' },
+      ],
+      blocks: [
+        {
+          type: 'lead',
+          text: 'A new open-weights release from Mistral targets production deployments that need self-hosting and verifiable supply chains.',
+        },
+        { type: 'h2', id: 'license', text: '1. Licensing' },
+        {
+          type: 'p',
+          text: 'Confirm the exact license and acceptable use for your org before you fork fine-tunes or redistribute weights internally.',
+        },
+        { type: 'h2', id: 'adoption', text: '2. Adoption notes' },
+        {
+          type: 'p',
+          text: 'You will still need an inference stack, evaluation harness, and update policy that matches your security requirements.',
+        },
+      ],
+      topicTags: [
+        { label: 'Mistral' },
+        { label: 'Open source' },
+        { label: 'EU' },
+      ],
+      related: {
+        previous: {
+          slug: 'apple-intelligence-rollout',
+          title:
+            'Apple Intelligence Begins Global Rollout: What You Need to Know',
+        },
+        next: {
+          slug: 'eu-ai-act-updates',
+          title: 'EU AI Act Enters Final Implementation Phase',
+        },
+      },
+    },
+  },
+  {
+    id: '9',
+    slug: 'eu-ai-act-updates',
+    title: 'EU AI Act Enters Final Implementation Phase',
+    excerpt:
+      'Companies face new compliance deadlines as the European Union finalizes technical standards for high-risk AI systems.',
+    publishedAt: 'Apr 24, 2026',
+    readTimeMin: 6,
+    featuredImageUrl:
+      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5bab247f-35d9-400d-a82b-fd87cfe913d2_1600w.webp',
+    author: marcus,
+    category: getCategory('tech-news-trends'),
+    variant: 'standard',
+    detail: {
+      breadcrumb: { parentHref: '/news', parentLabel: 'News' },
+      subhead:
+        'Companies face new compliance deadlines as the European Union finalizes technical standards for high-risk AI systems.',
+      featuredImageCaption:
+        'Regulatory text is only part of the story; harmonized standards and market surveillance will shape day-to-day obligations.',
+      leadParagraph: '',
+      showCategoryNewspaperIcon: true,
+      relatedPath: 'news',
+      toc: [
+        { id: 'timeline', title: 'Timelines' },
+        { id: 'risk', title: 'High-risk systems' },
+      ],
+      blocks: [
+        {
+          type: 'lead',
+          text: 'EU AI Act implementation is converging on concrete deadlines for high-risk use cases, documentation, and post-market monitoring.',
+        },
+        { type: 'h2', id: 'timeline', text: '1. Timelines' },
+        {
+          type: 'p',
+          text: 'Check official texts and your legal counsel for the exact effective dates and sector-specific requirements that apply to you.',
+        },
+        { type: 'h2', id: 'risk', text: '2. High-risk systems' },
+        {
+          type: 'p',
+          text: 'If your system is classified as high risk, start mapping data lineage, model validation evidence, and human oversight workflows now.',
+        },
+      ],
+      topicTags: [
+        { label: 'Policy' },
+        { label: 'EU' },
+        { label: 'Compliance' },
+      ],
+      related: {
+        previous: {
+          slug: 'mistral-large-3',
+          title: 'Mistral Open-Sources Large 3 Model',
+        },
+        next: {
+          slug: 'robotics-breakthrough',
+          title: 'Figure 02 Demonstrates Autonomous Manufacturing Capabilities',
+        },
+      },
+    },
+  },
+  {
+    id: '10',
+    slug: 'robotics-breakthrough',
+    title: 'Figure 02 Demonstrates Autonomous Manufacturing Capabilities',
+    excerpt:
+      "In a massive leap for humanoid robotics, Figure's latest iteration successfully performed complex, multi-step automotive assembly tasks autonomously.",
+    publishedAt: 'Apr 24, 2026',
+    readTimeMin: 8,
+    featuredImageUrl:
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200',
+    author: marcus,
+    category: getCategory('tech-news-trends'),
+    variant: 'standard',
+    detail: {
+      breadcrumb: { parentHref: '/news', parentLabel: 'News' },
+      subhead:
+        "In a massive leap for humanoid robotics, Figure's latest iteration successfully performed complex, multi-step automotive assembly tasks completely autonomously, powered by an end-to-end neural network.",
+      featuredImageCaption:
+        'Field demos highlight long-horizon physical tasks with less teleoperation than prior generations.',
+      leadParagraph: '',
+      showCategoryNewspaperIcon: true,
+      relatedPath: 'news',
+      toc: [
+        { id: 'task', title: 'Task scope' },
+        { id: 'safety', title: 'Deployment caveats' },
+      ],
+      blocks: [
+        {
+          type: 'lead',
+          text: 'A humanoid platform reaching reliable multi-minute manipulation loops is a notable milestone for applied robotics teams.',
+        },
+        { type: 'h2', id: 'task', text: '1. Task scope' },
+        {
+          type: 'p',
+          text: 'Automotive sub-assemblies are structured environments; generalization to new lines and error recovery remain open engineering problems.',
+        },
+        { type: 'h2', id: 'safety', text: '2. Deployment caveats' },
+        {
+          type: 'p',
+          text: 'Safety interlocks, training data consent, and union workflows will influence how quickly similar systems appear beyond pilots.',
+        },
+      ],
+      topicTags: [
+        { label: 'Robotics' },
+        { label: 'Manufacturing' },
+        { label: 'Embodied AI' },
+      ],
+      related: {
+        previous: {
+          slug: 'eu-ai-act-updates',
+          title: 'EU AI Act Enters Final Implementation Phase',
+        },
+        next: null,
       },
     },
   },

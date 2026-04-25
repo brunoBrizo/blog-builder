@@ -5,16 +5,21 @@ import type { ArticleRelatedNav } from '../mocks/articles';
 
 type RelatedArticleNavigationProps = {
   related: ArticleRelatedNav;
+  /** URL segment under locale: `articles` (default), `tutorials`, or `news` */
+  linkBase?: 'articles' | 'tutorials' | 'news';
   className?: string;
 };
 
 export function RelatedArticleNavigation({
   related,
+  linkBase = 'articles',
   className,
 }: RelatedArticleNavigationProps) {
   if (!related.previous && !related.next) {
     return null;
   }
+
+  const path = (slug: string) => `/${linkBase}/${slug}`;
 
   return (
     <div
@@ -22,7 +27,7 @@ export function RelatedArticleNavigation({
     >
       {related.previous && (
         <Link
-          href={`/articles/${related.previous.slug}`}
+          href={path(related.previous.slug)}
           className="group p-6 bg-white border border-zinc-200/80 rounded-2xl hover:border-zinc-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left"
         >
           <span className="text-xs font-medium text-zinc-400 mb-3 flex items-center gap-1.5 uppercase tracking-wider">
@@ -36,7 +41,7 @@ export function RelatedArticleNavigation({
       )}
       {related.next && (
         <Link
-          href={`/articles/${related.next.slug}`}
+          href={path(related.next.slug)}
           className="group p-6 bg-white border border-zinc-200/80 rounded-2xl hover:border-zinc-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between text-right sm:col-start-2"
         >
           <span className="text-xs font-medium text-zinc-400 mb-3 flex items-center justify-end gap-1.5 uppercase tracking-wider">

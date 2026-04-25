@@ -20,13 +20,17 @@ export function ArticleDetailView({ article }: ArticleDetailViewProps) {
 
   const shortTitle =
     title.length > 42 ? `${title.slice(0, 40).trim()}\u2026` : title;
+  const breadcrumbEnd =
+    detail.breadcrumbCurrentLabel != null
+      ? detail.breadcrumbCurrentLabel
+      : shortTitle;
 
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
       <ArticleBreadcrumbs
         parentHref={detail.breadcrumb.parentHref}
         parentLabel={detail.breadcrumb.parentLabel}
-        currentTitle={shortTitle}
+        currentTitle={breadcrumbEnd}
       />
 
       <div className="hidden sm:block mb-10">
@@ -45,11 +49,14 @@ export function ArticleDetailView({ article }: ArticleDetailViewProps) {
             author={author}
             publishedAt={publishedAt}
             readTimeMin={readTimeMin}
+            {...(detail.categoryPillIcon != null
+              ? { categoryPillIcon: detail.categoryPillIcon }
+              : {})}
           />
 
           <ArticleFeaturedImage
             imageUrl={featuredImageUrl}
-            imageAlt={title}
+            imageAlt={article.featuredImageAlt ?? title}
             caption={detail.featuredImageCaption}
           />
 
@@ -68,7 +75,10 @@ export function ArticleDetailView({ article }: ArticleDetailViewProps) {
               : {})}
           />
 
-          <RelatedArticleNavigation related={detail.related} />
+          <RelatedArticleNavigation
+            related={detail.related}
+            linkBase={detail.relatedPath ?? 'articles'}
+          />
         </article>
 
         <aside className="lg:col-span-4">

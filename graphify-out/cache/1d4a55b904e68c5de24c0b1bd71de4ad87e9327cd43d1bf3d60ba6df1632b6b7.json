@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_components_tutorials_list_pagination_tsx",
+      "label": "tutorials-list-pagination.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/tutorials-list-pagination.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "tutorials_list_pagination_tutorialslistpagination",
+      "label": "TutorialsListPagination()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/tutorials-list-pagination.tsx",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_tutorials_list_pagination_tsx",
+      "target": "lucide_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/tutorials-list-pagination.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_tutorials_list_pagination_tsx",
+      "target": "users_brunobrizolara_src_blog_builder_apps_web_src_mocks_tutorials",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/tutorials-list-pagination.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_components_tutorials_list_pagination_tsx",
+      "target": "tutorials_list_pagination_tutorialslistpagination",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/components/tutorials-list-pagination.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

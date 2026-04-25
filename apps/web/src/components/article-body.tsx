@@ -62,7 +62,7 @@ export function ArticleBody({ blocks, className }: ArticleBodyProps) {
             return (
               <h3
                 key={i}
-                className="text-xl font-medium tracking-tight text-zinc-900 mt-8 mb-4"
+                className="font-display text-xl font-medium tracking-tight text-zinc-900 mt-8 mb-4"
               >
                 {b.text}
               </h3>
@@ -71,7 +71,7 @@ export function ArticleBody({ blocks, className }: ArticleBodyProps) {
             return (
               <ul
                 key={i}
-                className="list-disc pl-5 space-y-2 mb-6 not-prose text-zinc-600"
+                className="list-disc pl-5 space-y-2 mb-6 not-prose text-zinc-600 marker:text-zinc-400"
               >
                 {b.items.map((row, j) => (
                   <li key={j} className="pl-0.5">
@@ -87,7 +87,7 @@ export function ArticleBody({ blocks, className }: ArticleBodyProps) {
             return (
               <ol
                 key={i}
-                className="list-decimal pl-5 space-y-2 mb-6 not-prose text-zinc-600"
+                className="list-decimal pl-5 space-y-2 mb-6 not-prose text-zinc-600 marker:text-zinc-400"
               >
                 {b.items.map((row, j) => (
                   <li key={j} className="pl-0.5">
@@ -113,6 +113,16 @@ export function ArticleBody({ blocks, className }: ArticleBodyProps) {
                       — {b.attribution}
                     </span>
                   )}
+                </blockquote>
+              );
+            }
+            if (b.quoteStyle === 'gradient') {
+              return (
+                <blockquote
+                  key={i}
+                  className="not-prose border-l-2 border-indigo-500 pl-6 my-8 text-zinc-700 italic text-lg font-medium bg-gradient-to-r from-indigo-50/50 to-transparent pr-4 py-3 rounded-r-lg"
+                >
+                  {b.text}
                 </blockquote>
               );
             }
@@ -159,7 +169,12 @@ export function ArticleBody({ blocks, className }: ArticleBodyProps) {
           case 'code':
             return (
               <div key={i} className="not-prose">
-                <CodeBlock language={b.language} code={b.code} />
+                <CodeBlock
+                  language={b.language}
+                  code={b.code}
+                  variant={b.displayVariant ?? 'default'}
+                  {...(b.plainText != null ? { copyText: b.plainText } : {})}
+                />
               </div>
             );
           default:

@@ -1,25 +1,35 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+
+import { AdPlaceholder } from '@/components/ad-placeholder';
+import { FeaturedNewsListCard } from '@/components/featured-news-list-card';
+import { NewsFilterBar } from '@/components/news-filter-bar';
+import { NewsListBottomSection } from '@/components/news-list-bottom-section';
+import { NewsListHero } from '@/components/news-list-hero';
+import { NewsListPagination } from '@/components/news-list-pagination';
+import { NewsStoryCard } from '@/components/news-story-card';
+import { newsListFeatured, newsListHero, newsListStories } from '@/mocks/news';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('placeholders');
-
   return {
-    title: t('newsListTitle'),
+    title: newsListHero.title,
+    description: newsListHero.description,
   };
 }
 
-export default async function NewsListPage() {
-  const t = await getTranslations('placeholders');
-
+export default function NewsListPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 pb-16">
-      <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-zinc-900 mb-4">
-        {t('newsHeading')}
-      </h1>
-      <p className="text-base font-light text-zinc-500 max-w-2xl">
-        {t('listDescription')}
-      </p>
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
+      <NewsListHero />
+      <FeaturedNewsListCard featured={newsListFeatured} />
+      <AdPlaceholder type="leaderboard" articleStyle className="mb-12" />
+      <NewsFilterBar />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {newsListStories.map((story) => (
+          <NewsStoryCard key={story.slug} story={story} />
+        ))}
+      </div>
+      <NewsListPagination />
+      <NewsListBottomSection />
     </div>
   );
 }
