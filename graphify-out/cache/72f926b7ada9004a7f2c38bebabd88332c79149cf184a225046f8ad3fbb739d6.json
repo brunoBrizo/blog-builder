@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_json_ld_breadcrumb_list_ts",
+      "label": "breadcrumb-list.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/json-ld/breadcrumb-list.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "breadcrumb_list_buildbreadcrumblistjsonld",
+      "label": "buildBreadcrumbListJsonLd()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/json-ld/breadcrumb-list.ts",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_libs_seo_src_lib_json_ld_breadcrumb_list_ts",
+      "target": "breadcrumb_list_buildbreadcrumblistjsonld",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/json-ld/breadcrumb-list.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "breadcrumb_list_buildbreadcrumblistjsonld",
+      "callee": "map",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/libs/seo/src/lib/json-ld/breadcrumb-list.ts",
+      "source_location": "L11"
+    }
+  ]
+}

@@ -1,0 +1,728 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_testing_in_memory_generation_repository_ts",
+      "label": "in-memory-generation.repository.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository",
+      "label": "InMemoryGenerationRepository",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_createjob",
+      "label": ".createJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_requirejob",
+      "label": ".requireJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L97"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_markjobrunning",
+      "label": ".markJobRunning()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L105"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_markjobsucceeded",
+      "label": ".markJobSucceeded()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L114"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_markjobfailed",
+      "label": ".markJobFailed()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L126"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_linkjobtoarticle",
+      "label": ".linkJobToArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L144"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_completestep",
+      "label": ".completeStep()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L151"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "label": ".recomputeJobTotals()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L178"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "label": ".createDraftArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L196"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_upserttranslation",
+      "label": ".upsertTranslation()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L231"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_replacecitations",
+      "label": ".replaceCitations()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L260"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_updatearticletokentotal",
+      "label": ".updateArticleTokenTotal()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L267"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_monthlyspendutc",
+      "label": ".monthlySpendUtc()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L277"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_countsucceededsteps",
+      "label": ".countSucceededSteps()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L286"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_getstepoutput",
+      "label": ".getStepOutput()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L296"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_findtranslationid",
+      "label": ".findTranslationId()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L304"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_listcitationpayloads",
+      "label": ".listCitationPayloads()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L311"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationlocales",
+      "label": ".listTranslationLocales()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L318"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_releasereservedtopicforjob",
+      "label": ".releaseReservedTopicForJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L331"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_marktopicqueueconsumedforjob",
+      "label": ".markTopicQueueConsumedForJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L335"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_publisharticle",
+      "label": ".publishArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L342"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_isarticlepublished",
+      "label": ".isArticlePublished()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L346"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationslugsforarticle",
+      "label": ".listTranslationSlugsForArticle()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L350"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_countavailabletopics",
+      "label": ".countAvailableTopics()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L362"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_inserttopicqueuecandidates",
+      "label": ".insertTopicQueueCandidates()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L366"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_reservescheduledtopicandcreatejob",
+      "label": ".reserveScheduledTopicAndCreateJob()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L370"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_listretryablefailedjobs",
+      "label": ".listRetryableFailedJobs()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L374"
+    },
+    {
+      "id": "in_memory_generation_repository_inmemorygenerationrepository_resetjobtopendingforretry",
+      "label": ".resetJobToPendingForRetry()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L391"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_testing_in_memory_generation_repository_ts",
+      "target": "node_crypto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_testing_in_memory_generation_repository_ts",
+      "target": "common",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_api_src_generation_testing_in_memory_generation_repository_ts",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_createjob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_requirejob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_markjobrunning",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_markjobsucceeded",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_markjobfailed",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_linkjobtoarticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_completestep",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_upserttranslation",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_replacecitations",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_updatearticletokentotal",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_monthlyspendutc",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L277",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_countsucceededsteps",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L286",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_getstepoutput",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_findtranslationid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L304",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_listcitationpayloads",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationlocales",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L318",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_releasereservedtopicforjob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L331",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_marktopicqueueconsumedforjob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L335",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_publisharticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L342",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_isarticlepublished",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationslugsforarticle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_countavailabletopics",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_inserttopicqueuecandidates",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L366",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_reservescheduledtopicandcreatejob",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_listretryablefailedjobs",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L374",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_resetjobtopendingforretry",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L391",
+      "weight": 1.0
+    },
+    {
+      "source": "in_memory_generation_repository_inmemorygenerationrepository_completestep",
+      "target": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L175",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createjob",
+      "callee": "randomUUID",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createjob",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_requirejob",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_markjobrunning",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_markjobsucceeded",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_markjobfailed",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_markjobfailed",
+      "callee": "slice",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_linkjobtoarticle",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L145"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_completestep",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L164"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "callee": "Number",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_recomputejobtotals",
+      "callee": "toFixed",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "callee": "randomUUID",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L215"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "callee": "randomUUID",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L216"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L217"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_createdraftarticle",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L224"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_upserttranslation",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L249"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_upserttranslation",
+      "callee": "randomUUID",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L250"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_upserttranslation",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L251"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_replacecitations",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_updatearticletokentotal",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_countsucceededsteps",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L288"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_getstepoutput",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L300"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_findtranslationid",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L308"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listcitationpayloads",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L314"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationlocales",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L320"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationlocales",
+      "callee": "push",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L322"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_marktopicqueueconsumedforjob",
+      "callee": "set",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_publisharticle",
+      "callee": "add",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L343"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_isarticlepublished",
+      "callee": "has",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L347"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationslugsforarticle",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listtranslationslugsforarticle",
+      "callee": "push",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L356"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listretryablefailedjobs",
+      "callee": "values",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L377"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_listretryablefailedjobs",
+      "callee": "push",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L385"
+    },
+    {
+      "caller_nid": "in_memory_generation_repository_inmemorygenerationrepository_resetjobtopendingforretry",
+      "callee": "get",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/api/src/generation/testing/in-memory-generation.repository.ts",
+      "source_location": "L392"
+    }
+  ]
+}

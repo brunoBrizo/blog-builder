@@ -2,13 +2,13 @@
 
 ## Corpus Check
 
-- 291 files · ~137,100 words
+- 306 files · ~141,166 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 
-- 730 nodes · 728 edges · 36 communities detected
-- Extraction: 83% EXTRACTED · 17% INFERRED · 0% AMBIGUOUS · INFERRED: 122 edges (avg confidence: 0.8)
+- 775 nodes · 783 edges · 38 communities detected
+- Extraction: 82% EXTRACTED · 18% INFERRED · 0% AMBIGUOUS · INFERRED: 143 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -24,10 +24,10 @@
 - [[_COMMUNITY_Community 8|Community 8]]
 - [[_COMMUNITY_Community 9|Community 9]]
 - [[_COMMUNITY_Community 10|Community 10]]
-- [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 14|Community 14]]
-- [[_COMMUNITY_Community 16|Community 16]]
-- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 21|Community 21]]
@@ -35,20 +35,22 @@
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_Community 25|Community 25]]
-- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 33|Community 33]]
 - [[_COMMUNITY_Community 34|Community 34]]
-- [[_COMMUNITY_Community 72|Community 72]]
-- [[_COMMUNITY_Community 73|Community 73]]
-- [[_COMMUNITY_Community 74|Community 74]]
-- [[_COMMUNITY_Community 75|Community 75]]
-- [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 77|Community 77]]
 - [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 79|Community 79]]
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
-- [[_COMMUNITY_Community 82|Community 82]]
 - [[_COMMUNITY_Community 83|Community 83]]
+- [[_COMMUNITY_Community 84|Community 84]]
+- [[_COMMUNITY_Community 85|Community 85]]
+- [[_COMMUNITY_Community 86|Community 86]]
+- [[_COMMUNITY_Community 87|Community 87]]
+- [[_COMMUNITY_Community 88|Community 88]]
+- [[_COMMUNITY_Community 89|Community 89]]
 
 ## God Nodes (most connected - your core abstractions)
 
@@ -56,25 +58,25 @@
 2. `InMemoryGenerationRepository` - 29 edges
 3. `GenerationRepository` - 27 edges
 4. `AdSense Submission Readiness` - 21 edges
-5. `Drizzle ORM` - 19 edges
+5. `Drizzle ORM` - 20 edges
 6. `ArticleGenerationOrchestratorService` - 16 edges
-7. `Web Foundation` - 14 edges
-8. `Database & Data Layer` - 12 edges
-9. `API Foundation` - 12 edges
-10. `Perplexity Article Pipeline` - 12 edges
+7. `generateMetadata()` - 14 edges
+8. `Web Foundation` - 14 edges
+9. `Database & Data Layer` - 12 edges
+10. `API Foundation` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 
 - `Database & Data Layer` --implements_in--> `libs/db Drizzle schema and client` [INFERRED]
   features/02-database-and-data-layer.md → README.md
+- `ArticleBySlugPage()` --calls--> `buildArticleJsonLd()` [INFERRED]
+  apps/web/src/app/[locale]/articles/[slug]/page.tsx → libs/seo/src/lib/json-ld/article.ts
+- `ArticleBySlugPage()` --calls--> `buildFaqPageJsonLd()` [INFERRED]
+  apps/web/src/app/[locale]/articles/[slug]/page.tsx → libs/seo/src/lib/json-ld/faq-page.ts
+- `ArticleBySlugPage()` --calls--> `buildBreadcrumbListJsonLd()` [INFERRED]
+  apps/web/src/app/[locale]/articles/[slug]/page.tsx → libs/seo/src/lib/json-ld/breadcrumb-list.ts
 - `Foundation — Monorepo & Tooling` --establishes--> `Nx monorepo` [EXTRACTED]
   features/01-foundation-monorepo-tooling.md → README.md
-- `revalidatePathAllowed()` --calls--> `assertAllowedPath()` [INFERRED]
-  libs/shared-types/src/schemas/revalidate.ts → apps/web/src/lib/api-client/revalidate.ts
-- `buildMetadata()` --calls--> `generateMetadata()` [INFERRED]
-  libs/seo/src/lib/build-metadata.ts → apps/web/src/app/[locale]/layout.tsx
-- `getSiteUrl()` --calls--> `generateMetadata()` [INFERRED]
-  libs/seo/src/lib/site-url.ts → apps/web/src/app/[locale]/layout.tsx
 
 ## Communities
 
@@ -86,17 +88,17 @@ Nodes (23): ArticleGenerationController, ArticleGenerationOrchestratorService, n
 ### Community 1 - "Community 1"
 
 Cohesion: 0.04
-Nodes (9): AppConfigService, applySecurityMiddleware(), effectiveSentryTracesSampleRate(), parseEnv(), bootstrap(), initSentry(), getEnv(), ThrottleAdmin() (+1 more)
+Nodes (30): buildArticleJsonLd(), injectCitationLinks(), extractTocFromHtml(), getArticleBySlug(), listArticleSummaries(), listTopSlugs(), buildBreadcrumbListJsonLd(), buildMetadata() (+22 more)
 
 ### Community 2 - "Community 2"
 
-Cohesion: 0.09
-Nodes (48): Google AdSense, Eight-step article generation pipeline, Google Consent Mode v2, Article generation pipeline steps, docs/accessibility.md (referenced), docs/product_idea.md (referenced), docs/seo-geo.md (referenced), docs/tech-stack.md (referenced) (+40 more)
+Cohesion: 0.04
+Nodes (9): AppConfigService, applySecurityMiddleware(), effectiveSentryTracesSampleRate(), parseEnv(), bootstrap(), initSentry(), getEnv(), ThrottleAdmin() (+1 more)
 
 ### Community 3 - "Community 3"
 
-Cohesion: 0.05
-Nodes (16): buildMetadata(), buildOpenGraph(), buildTwitter(), canonicalUrl(), normalizePath(), buildHreflangMap(), LanguageSwitcher(), generateMetadata() (+8 more)
+Cohesion: 0.09
+Nodes (48): Google AdSense, Eight-step article generation pipeline, Google Consent Mode v2, Article generation pipeline steps, docs/accessibility.md (referenced), docs/product_idea.md (referenced), docs/seo-geo.md (referenced), docs/tech-stack.md (referenced) (+40 more)
 
 ### Community 4 - "Community 4"
 
@@ -126,134 +128,144 @@ Nodes (12): ApiError, parseApiErrorBody(), apiFetch(), getBaseUrl(), HttpExcepti
 ### Community 9 - "Community 9"
 
 Cohesion: 0.12
-Nodes (6): getArticleBySlug(), ArticleBySlugPage(), generateMetadata(), NewsBySlugPage(), TutorialBySlugPage(), getTutorialBySlug()
+Nodes (3): ArticlesController, ArticlesRepository, ArticlesService
 
 ### Community 10 - "Community 10"
+
+Cohesion: 0.15
+Nodes (1): next-intl i18n
+
+### Community 11 - "Community 11"
 
 Cohesion: 0.27
 Nodes (9): anonConnectionUrl(), quoteIdent(), resolveMigrationsFolder(), setup(), connectionOptions(), main(), resolveMigrationsFolder(), ensureMigrationPrerequisites() (+1 more)
 
-### Community 13 - "Community 13"
+### Community 14 - "Community 14"
 
 Cohesion: 0.29
 Nodes (3): BudgetExceededError, KillSwitchError, PerplexityValidationError
 
-### Community 14 - "Community 14"
+### Community 15 - "Community 15"
 
 Cohesion: 0.33
 Nodes (1): DrizzleModule
 
-### Community 16 - "Community 16"
+### Community 17 - "Community 17"
 
 Cohesion: 0.4
 Nodes (1): TestEndpointsController
 
-### Community 18 - "Community 18"
+### Community 19 - "Community 19"
 
 Cohesion: 0.5
 Nodes (1): RevalidateAuthGuard
 
-### Community 19 - "Community 19"
+### Community 20 - "Community 20"
 
 Cohesion: 0.5
 Nodes (1): CronAuthGuard
 
-### Community 20 - "Community 20"
+### Community 21 - "Community 21"
 
 Cohesion: 0.5
 Nodes (1): TestEndpointsGuard
 
-### Community 21 - "Community 21"
+### Community 22 - "Community 22"
 
 Cohesion: 0.5
 Nodes (1): AppController
 
-### Community 22 - "Community 22"
+### Community 23 - "Community 23"
 
 Cohesion: 0.5
 Nodes (1): InngestDevKeysLogger
 
-### Community 23 - "Community 23"
+### Community 24 - "Community 24"
 
 Cohesion: 0.83
 Nodes (3): createOrchestrator(), killSwitchOpen(), noopBudget()
 
-### Community 24 - "Community 24"
+### Community 25 - "Community 25"
 
 Cohesion: 1.0
 Nodes (2): connectionOptions(), main()
 
-### Community 25 - "Community 25"
+### Community 26 - "Community 26"
 
 Cohesion: 1.0
 Nodes (2): middleware(), stripLocalePrefix()
 
-### Community 32 - "Community 32"
+### Community 33 - "Community 33"
 
 Cohesion: 0.67
 Nodes (1): SentryHttpBreadcrumbInterceptor
 
-### Community 33 - "Community 33"
+### Community 34 - "Community 34"
 
 Cohesion: 0.67
 Nodes (1): AppService
 
-### Community 34 - "Community 34"
+### Community 35 - "Community 35"
 
 Cohesion: 0.67
 Nodes (1): RevalidateController
 
-### Community 72 - "Community 72"
+### Community 77 - "Community 77"
 
 Cohesion: 1.0
 Nodes (1): CoreModule
 
-### Community 73 - "Community 73"
+### Community 78 - "Community 78"
 
 Cohesion: 1.0
 Nodes (1): AppConfigModule
 
-### Community 74 - "Community 74"
+### Community 79 - "Community 79"
 
 Cohesion: 1.0
 Nodes (1): ApiAuthModule
 
-### Community 75 - "Community 75"
+### Community 80 - "Community 80"
 
 Cohesion: 1.0
 Nodes (1): ApiThrottlerModule
 
-### Community 76 - "Community 76"
+### Community 81 - "Community 81"
 
 Cohesion: 1.0
 Nodes (1): ApiObservabilityModule
 
-### Community 78 - "Community 78"
+### Community 83 - "Community 83"
 
 Cohesion: 1.0
 Nodes (1): ApiLoggingModule
 
-### Community 79 - "Community 79"
+### Community 84 - "Community 84"
 
 Cohesion: 1.0
 Nodes (1): AppModule
 
-### Community 80 - "Community 80"
+### Community 85 - "Community 85"
 
 Cohesion: 1.0
 Nodes (1): RevalidatePathDto
 
-### Community 81 - "Community 81"
+### Community 86 - "Community 86"
 
 Cohesion: 1.0
 Nodes (1): NewsletterSubscribeDto
 
-### Community 82 - "Community 82"
+### Community 87 - "Community 87"
+
+Cohesion: 1.0
+Nodes (1): ArticlesModule
+
+### Community 88 - "Community 88"
 
 Cohesion: 1.0
 Nodes (1): PostInternalArticlesRetryDto
 
-### Community 83 - "Community 83"
+### Community 89 - "Community 89"
 
 Cohesion: 1.0
 Nodes (1): PostInternalArticlesGenerateDto
@@ -265,55 +277,59 @@ Nodes (1): PostInternalArticlesGenerateDto
 
 ## Knowledge Gaps
 
-- **43 isolated node(s):** `CoreModule`, `AppConfigModule`, `ApiAuthModule`, `ApiThrottlerModule`, `ApiObservabilityModule` (+38 more)
+- **44 isolated node(s):** `CoreModule`, `AppConfigModule`, `ApiAuthModule`, `ApiThrottlerModule`, `ApiObservabilityModule` (+39 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Community 5`** (29 nodes): `generation.repository.ts`, `GenerationRepository`, `.completeStep()`, `.constructor()`, `.countAvailableTopics()`, `.countSucceededSteps()`, `.createDraftArticle()`, `.createJob()`, `.findTranslationId()`, `.getStepOutput()`, `.insertTopicQueueCandidates()`, `.linkJobToArticle()`, `.listCitationPayloads()`, `.listRetryableFailedJobs()`, `.listTranslationSlugsForArticle()`, `.markJobFailed()`, `.markJobRunning()`, `.markJobSucceeded()`, `.markTopicQueueConsumedForJob()`, `.monthlySpendUtc()`, `.publishArticle()`, `.releaseReservedTopicForJob()`, `.replaceCitations()`, `.requireJob()`, `.reserveScheduledTopicAndCreateJob()`, `.resetJobToPendingForRetry()`, `.updateArticleTokenTotal()`, `.upsertTranslation()`, `normalizeTopicQueueKey()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (6 nodes): `DrizzleModule`, `.constructor()`, `.forRoot()`, `.forRootAsync()`, `.onModuleDestroy()`, `drizzle.module.ts`
+- **Thin community `Community 10`** (13 nodes): `error.tsx`, `newsletter-sticky.tsx`, `privacy-policy-dialog.tsx`, `site-header.tsx`, `skip-to-content.tsx`, `theme-toggle.tsx`, `request.ts`, `next-intl i18n`, `navItemActive()`, `SkipToContent()`, `applyForcedClass()`, `setCookie()`, `ThemeToggle()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 16`** (5 nodes): `test-endpoints.controller.ts`, `TestEndpointsController`, `.cronOk()`, `.rateLimitProbe()`, `.validateNewsletter()`
+- **Thin community `Community 15`** (6 nodes): `DrizzleModule`, `.constructor()`, `.forRoot()`, `.forRootAsync()`, `.onModuleDestroy()`, `drizzle.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 18`** (4 nodes): `revalidate-auth.guard.ts`, `RevalidateAuthGuard`, `.canActivate()`, `.constructor()`
+- **Thin community `Community 17`** (5 nodes): `test-endpoints.controller.ts`, `TestEndpointsController`, `.cronOk()`, `.rateLimitProbe()`, `.validateNewsletter()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 19`** (4 nodes): `cron-auth.guard.ts`, `CronAuthGuard`, `.canActivate()`, `.constructor()`
+- **Thin community `Community 19`** (4 nodes): `revalidate-auth.guard.ts`, `RevalidateAuthGuard`, `.canActivate()`, `.constructor()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (4 nodes): `test-endpoints.guard.ts`, `TestEndpointsGuard`, `.canActivate()`, `.constructor()`
+- **Thin community `Community 20`** (4 nodes): `cron-auth.guard.ts`, `CronAuthGuard`, `.canActivate()`, `.constructor()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (4 nodes): `AppController`, `.constructor()`, `.getData()`, `app.controller.ts`
+- **Thin community `Community 21`** (4 nodes): `test-endpoints.guard.ts`, `TestEndpointsGuard`, `.canActivate()`, `.constructor()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (4 nodes): `inngest-dev-keys.logger.ts`, `InngestDevKeysLogger`, `.constructor()`, `.onModuleInit()`
+- **Thin community `Community 22`** (4 nodes): `AppController`, `.constructor()`, `.getData()`, `app.controller.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (3 nodes): `reset.ts`, `connectionOptions()`, `main()`
+- **Thin community `Community 23`** (4 nodes): `inngest-dev-keys.logger.ts`, `InngestDevKeysLogger`, `.constructor()`, `.onModuleInit()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (3 nodes): `middleware.ts`, `middleware()`, `stripLocalePrefix()`
+- **Thin community `Community 25`** (3 nodes): `reset.ts`, `connectionOptions()`, `main()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (3 nodes): `sentry-breadcrumb.interceptor.ts`, `SentryHttpBreadcrumbInterceptor`, `.intercept()`
+- **Thin community `Community 26`** (3 nodes): `middleware.ts`, `middleware()`, `stripLocalePrefix()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (3 nodes): `AppService`, `.getData()`, `app.service.ts`
+- **Thin community `Community 33`** (3 nodes): `sentry-breadcrumb.interceptor.ts`, `SentryHttpBreadcrumbInterceptor`, `.intercept()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (3 nodes): `revalidate.controller.ts`, `RevalidateController`, `.trigger()`
+- **Thin community `Community 34`** (3 nodes): `AppService`, `.getData()`, `app.service.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 72`** (2 nodes): `core.module.ts`, `CoreModule`
+- **Thin community `Community 35`** (3 nodes): `revalidate.controller.ts`, `RevalidateController`, `.trigger()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 73`** (2 nodes): `AppConfigModule`, `app-config.module.ts`
+- **Thin community `Community 77`** (2 nodes): `core.module.ts`, `CoreModule`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 74`** (2 nodes): `ApiAuthModule`, `api-auth.module.ts`
+- **Thin community `Community 78`** (2 nodes): `AppConfigModule`, `app-config.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 75`** (2 nodes): `ApiThrottlerModule`, `api-throttler.module.ts`
+- **Thin community `Community 79`** (2 nodes): `ApiAuthModule`, `api-auth.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 76`** (2 nodes): `ApiObservabilityModule`, `api-observability.module.ts`
+- **Thin community `Community 80`** (2 nodes): `ApiThrottlerModule`, `api-throttler.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 78`** (2 nodes): `ApiLoggingModule`, `api-logging.module.ts`
+- **Thin community `Community 81`** (2 nodes): `ApiObservabilityModule`, `api-observability.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 79`** (2 nodes): `AppModule`, `app.module.ts`
+- **Thin community `Community 83`** (2 nodes): `ApiLoggingModule`, `api-logging.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 80`** (2 nodes): `revalidate-path.dto.ts`, `RevalidatePathDto`
+- **Thin community `Community 84`** (2 nodes): `AppModule`, `app.module.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 81`** (2 nodes): `newsletter-subscribe.dto.ts`, `NewsletterSubscribeDto`
+- **Thin community `Community 85`** (2 nodes): `revalidate-path.dto.ts`, `RevalidatePathDto`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 82`** (2 nodes): `post-internal-articles-retry.dto.ts`, `PostInternalArticlesRetryDto`
+- **Thin community `Community 86`** (2 nodes): `newsletter-subscribe.dto.ts`, `NewsletterSubscribeDto`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 83`** (2 nodes): `post-internal-articles-generate.dto.ts`, `PostInternalArticlesGenerateDto`
+- **Thin community `Community 87`** (2 nodes): `articles.module.ts`, `ArticlesModule`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 88`** (2 nodes): `post-internal-articles-retry.dto.ts`, `PostInternalArticlesRetryDto`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 89`** (2 nodes): `post-internal-articles-generate.dto.ts`, `PostInternalArticlesGenerateDto`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
@@ -322,14 +338,14 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `Homepage & Blog Navigation` and `Mandatory AdSense Pages`?**
   _Edge tagged AMBIGUOUS (relation: cross_cutting_homepage_signals) - confidence is low._
-- **Why does `Drizzle ORM` connect `Community 4` to `Community 2`, `Community 5`?**
-  _High betweenness centrality (0.066) - this node is a cross-community bridge._
-- **Why does `Inngest workflow orchestration` connect `Community 6` to `Community 0`, `Community 2`?**
-  _High betweenness centrality (0.048) - this node is a cross-community bridge._
-- **Why does `Database & Data Layer` connect `Community 2` to `Community 4`, `Community 6`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+- **Why does `Drizzle ORM` connect `Community 4` to `Community 9`, `Community 3`, `Community 5`?**
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `next-intl i18n` connect `Community 10` to `Community 1`, `Community 3`?**
+  _High betweenness centrality (0.069) - this node is a cross-community bridge._
+- **Why does `Web Foundation` connect `Community 3` to `Community 10`?**
+  _High betweenness centrality (0.069) - this node is a cross-community bridge._
 - **What connects `CoreModule`, `AppConfigModule`, `ApiAuthModule` to the rest of the system?**
-  _43 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _44 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

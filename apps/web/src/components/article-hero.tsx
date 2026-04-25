@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Book, BookOpen, Clock, Newspaper } from 'lucide-react';
 import { ShareButtons } from './share-buttons';
 import { cn } from '@blog-builder/ui';
-import type { Author } from '../mocks/authors';
+import type { PublicAuthor } from '@blog-builder/shared-types';
 
 type ArticleHeroProps = {
   title: string;
@@ -12,7 +12,7 @@ type ArticleHeroProps = {
   /** Icon in the category pill (overrides `showNewspaperIcon` when set) */
   categoryPillIcon?: 'book' | 'bookOpen' | 'newspaper';
   showNewspaperIcon: boolean;
-  author: Author;
+  author: PublicAuthor;
   publishedAt: string;
   readTimeMin: number;
 };
@@ -72,8 +72,8 @@ export function ArticleHero({
       <div className="flex flex-wrap items-center justify-between gap-4 py-6 border-y border-zinc-200/80">
         <div className="flex items-center gap-3 min-w-0">
           <Image
-            src={author.avatarUrl}
-            alt={author.name}
+            src={author.photoUrl ?? ''}
+            alt={author.fullName}
             width={40}
             height={40}
             className={cn(
@@ -83,7 +83,7 @@ export function ArticleHero({
           />
           <div className="min-w-0">
             <div className="text-sm font-medium text-zinc-900">
-              {author.name}
+              {author.fullName}
             </div>
             <div className="flex items-center gap-2 text-xs font-light text-zinc-500 mt-0.5">
               <span className="truncate">{publishedAt}</span>

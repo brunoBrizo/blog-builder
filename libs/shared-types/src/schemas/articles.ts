@@ -211,6 +211,28 @@ export const PublicArticleSchema = z.object({
 });
 export type PublicArticle = z.infer<typeof PublicArticleSchema>;
 
+/** Previous / next article in the same category. */
+export const PublicArticleNeighborSchema = z.object({
+  slug: SlugSchema,
+  title: z.string(),
+});
+export type PublicArticleNeighbor = z.infer<typeof PublicArticleNeighborSchema>;
+
+/** Full detail returned by the single-article endpoint (includes alternates + neighbors). */
+export const PublicArticleDetailSchema = PublicArticleSchema.extend({
+  translations: z.array(
+    z.object({
+      locale: LocaleSchema,
+      slug: SlugSchema,
+    }),
+  ),
+  neighbors: z.object({
+    previous: PublicArticleNeighborSchema.nullable(),
+    next: PublicArticleNeighborSchema.nullable(),
+  }),
+});
+export type PublicArticleDetail = z.infer<typeof PublicArticleDetailSchema>;
+
 /** Lightweight card shape for listing pages. */
 export const PublicArticleSummarySchema = z.object({
   id: UuidSchema,
@@ -227,3 +249,17 @@ export const PublicArticleSummarySchema = z.object({
   tags: z.array(PublicTagSchema),
 });
 export type PublicArticleSummary = z.infer<typeof PublicArticleSummarySchema>;
+
+/** Cursor-paginated list response. */
+export const PublicArticleListResponseSchema = z.object({
+  items: z.array(PublicArticleSummarySchema),
+  nextCursor: z
+    .object({
+      publishedAt: TimestampSchema,
+      id: UuidSchema,
+    })
+    .nullable(),
+});
+export type PublicArticleListResponse = z.infer<
+  typeof PublicArticleListResponseSchema
+>;

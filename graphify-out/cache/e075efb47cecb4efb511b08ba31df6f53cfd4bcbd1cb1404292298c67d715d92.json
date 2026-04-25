@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "page_generatemetadata",
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "page_tutorialbyslugpage",
+      "label": "TutorialBySlugPage()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "next",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "navigation",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "article_detail_view",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "articles",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "article_toc",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "article_citations",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "page_generatemetadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_app_locale_tutorials_slug_page_tsx",
+      "target": "page_tutorialbyslugpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "page_generatemetadata",
+      "callee": "getArticleBySlug",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "page_tutorialbyslugpage",
+      "callee": "getArticleBySlug",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "page_tutorialbyslugpage",
+      "callee": "notFound",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "page_tutorialbyslugpage",
+      "callee": "extractTocFromHtml",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "page_tutorialbyslugpage",
+      "callee": "injectCitationLinks",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/app/[locale]/tutorials/[slug]/page.tsx",
+      "source_location": "L34"
+    }
+  ]
+}

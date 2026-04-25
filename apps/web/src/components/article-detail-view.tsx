@@ -8,29 +8,41 @@ import { AuthorBox } from './author-box';
 import { TableOfContents } from './table-of-contents';
 import { NewsletterCard } from './newsletter-card';
 import { AdPlaceholder } from './ad-placeholder';
-import type { Article } from '../mocks/articles';
+import { ArticleFaq } from './article-faq';
+import { ArticleCitations } from './article-citations';
+import type { PublicArticleDetail } from '@blog-builder/shared-types';
 
 type ArticleDetailViewProps = {
-  article: Article;
+  article: PublicArticleDetail;
+  toc: { id: string; title: string }[];
+  bodyHtml: string;
 };
 
-export function ArticleDetailView({ article }: ArticleDetailViewProps) {
-  const { detail, title, author, publishedAt, readTimeMin, featuredImageUrl } =
-    article;
+function formatDate(date: Date | null): string {
+  if (!date) return '';
+  return new Date(date).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
 
+export function ArticleDetailView({
+  article,
+  toc,
+  bodyHtml,
+}: ArticleDetailViewProps) {
   const shortTitle =
-    title.length > 42 ? `${title.slice(0, 40).trim()}\u2026` : title;
-  const breadcrumbEnd =
-    detail.breadcrumbCurrentLabel != null
-      ? detail.breadcrumbCurrentLabel
-      : shortTitle;
+    article.title.length > 42
+      ? `${article.title.slice(0, 40).trim()}\u2026`
+      : article.title;
 
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-20 relative z-10">
       <ArticleBreadcrumbs
-        parentHref={detail.breadcrumb.parentHref}
-        parentLabel={detail.breadcrumb.parentLabel}
-        currentTitle={breadcrumbEnd}
+        parentHref="/articles"
+        parentLabel={article.category?.name ?? 'Articles'}
+        currentTitle={shortTitle}
       />
 
       <div className="hidden sm:block mb-10">
@@ -40,50 +52,55 @@ export function ArticleDetailView({ article }: ArticleDetailViewProps) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-20">
         <article className="lg:col-span-8 flex flex-col min-w-0">
           <ArticleHero
-            title={title}
-            subhead={detail.subhead}
-            categoryPillLabel={
-              detail.categoryPillLabel ?? article.category.name
-            }
-            showNewspaperIcon={Boolean(detail.showCategoryNewspaperIcon)}
-            author={author}
-            publishedAt={publishedAt}
-            readTimeMin={readTimeMin}
-            {...(detail.categoryPillIcon != null
-              ? { categoryPillIcon: detail.categoryPillIcon }
-              : {})}
+            title={article.title}
+            subhead={article.subtitle ?? article.tldr}
+            categoryPillLabel={article.category?.name ?? 'Article'}
+            showNewspaperIcon={false}
+            author={article.author}
+            publishedAt={formatDate(article.publishedAt)}
+            readTimeMin={article.readingTimeMinutes}
           />
 
           <ArticleFeaturedImage
-            imageUrl={featuredImageUrl}
-            imageAlt={article.featuredImageAlt ?? title}
-            caption={detail.featuredImageCaption}
+            imageUrl={article.coverImageUrl ?? ''}
+            imageAlt={article.title}
+            caption=""
           />
 
-          <ArticleBody blocks={detail.blocks} />
+          {article.keyTakeaways.length > 0 && (
+            <div className="my-8 p-6 bg-indigo-50/50 border border-indigo-100/50 rounded-2xl">
+              <h3 className="font-display text-lg font-medium text-zinc-900 mb-4">
+                Key Takeaways
+              </h3>
+              <ul className="list-disc pl-5 space-y-2 text-zinc-600 marker:text-indigo-400">
+                {article.keyTakeaways.map((item, i) => (
+                  <li key={i} className="pl-0.5">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-          <ArticleTopics tags={detail.topicTags} />
+          <ArticleBody html={bodyHtml} />
 
-          <AuthorBox
-            variant="articleEeat"
-            author={author}
-            {...(detail.authorRoleInArticle != null
-              ? { roleOverride: detail.authorRoleInArticle }
-              : {})}
-            {...(detail.authorBioInArticle != null
-              ? { bioOverride: detail.authorBioInArticle }
-              : {})}
-          />
+          <ArticleFaq faq={article.faq} />
+
+          <ArticleCitations citations={article.citations} />
+
+          <ArticleTopics tags={article.tags} />
+
+          <AuthorBox variant="articleEeat" author={article.author} />
 
           <RelatedArticleNavigation
-            related={detail.related}
-            linkBase={detail.relatedPath ?? 'articles'}
+            related={article.neighbors}
+            linkBase="articles"
           />
         </article>
 
         <aside className="lg:col-span-4">
           <div className="sticky top-24 space-y-8">
-            <TableOfContents items={detail.toc} variant="article" />
+            <TableOfContents items={toc} variant="article" />
             <AdPlaceholder type="sidebar" articleStyle />
             <NewsletterCard variant="article" />
           </div>

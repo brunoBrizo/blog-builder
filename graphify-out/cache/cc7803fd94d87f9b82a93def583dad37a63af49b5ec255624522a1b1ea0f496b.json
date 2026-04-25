@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "users_brunobrizolara_src_blog_builder_apps_web_src_lib_article_citations_ts",
+      "label": "article-citations.ts",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-citations.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "article_citations_injectcitationlinks",
+      "label": "injectCitationLinks()",
+      "file_type": "code",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-citations.ts",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "users_brunobrizolara_src_blog_builder_apps_web_src_lib_article_citations_ts",
+      "target": "article_citations_injectcitationlinks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-citations.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "article_citations_injectcitationlinks",
+      "callee": "replace",
+      "source_file": "/Users/brunobrizolara/src/blog-builder/apps/web/src/lib/article-citations.ts",
+      "source_location": "L9"
+    }
+  ]
+}

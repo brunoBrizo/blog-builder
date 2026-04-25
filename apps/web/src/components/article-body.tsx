@@ -21,11 +21,24 @@ function renderInlineSegs(segments: { t: 'text' | 'strong'; v: string }[]) {
 }
 
 type ArticleBodyProps = {
-  blocks: ArticleBodyBlock[];
+  blocks?: ArticleBodyBlock[];
+  html?: string;
   className?: string;
 };
 
-export function ArticleBody({ blocks, className }: ArticleBodyProps) {
+export function ArticleBody({ blocks, html, className }: ArticleBodyProps) {
+  if (html) {
+    return (
+      <div
+        className={cn(
+          'prose prose-zinc max-w-none text-base text-zinc-600 font-light leading-relaxed space-y-6 article-body',
+          className,
+        )}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    );
+  }
+
   return (
     <div
       className={cn(
@@ -33,7 +46,7 @@ export function ArticleBody({ blocks, className }: ArticleBodyProps) {
         className,
       )}
     >
-      {blocks.map((b, i) => {
+      {(blocks ?? []).map((b, i) => {
         switch (b.type) {
           case 'lead':
             return (

@@ -36,6 +36,7 @@ export class WebIsrRevalidationService {
     }
     for (const r of rows) {
       paths.add(`/${r.locale}/blog/${r.slug}`);
+      paths.add(`/${r.locale}/articles/${r.slug}`);
     }
     paths.add('/sitemap.xml');
 

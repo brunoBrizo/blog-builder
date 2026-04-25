@@ -1,6 +1,7 @@
 import { DrizzleModule } from '@blog-builder/db';
 import { Module } from '@nestjs/common';
 
+import { ArticlesModule } from '../articles/articles.module';
 import { AppConfigModule } from '../core/config/app-config.module';
 import { AppConfigService } from '../core/config/app-config.service';
 import { CoreModule } from '../core/core.module';
@@ -16,6 +17,7 @@ import { TestEndpointsGuard } from './test-endpoints.guard';
   imports: [
     CoreModule,
     GenerationModule,
+    ArticlesModule,
     DrizzleModule.forRootAsync({
       imports: [AppConfigModule],
       inject: [AppConfigService],

@@ -8,9 +8,18 @@
     "ses_23a6ce6ecffe3HXXBc9ucdAxn3": {
       "worktreeId": null,
       "createdAt": "2026-04-25T16:57:25.036Z"
+    },
+    "ses_239ec1e2bffekzvEmldr8IEK0X": {
+      "worktreeId": null,
+      "createdAt": "2026-04-25T19:18:05.033Z"
+    },
+    "ses_239eaa3afffers5ROiib0kLzfJ": {
+      "worktreeId": null,
+      "createdAt": "2026-04-25T19:19:41.929Z"
     }
   },
   "tabOrder": {
     "local": ["pending:1"]
-  }
+  },
+  "sessionsCollapsed": true
 }

@@ -1,7 +1,11 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { cn } from '@blog-builder/ui';
-import type { ArticleRelatedNav } from '../mocks/articles';
+
+type ArticleRelatedNav = {
+  previous: { slug: string; title: string } | null;
+  next: { slug: string; title: string } | null;
+};
 
 type RelatedArticleNavigationProps = {
   related: ArticleRelatedNav;

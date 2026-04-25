@@ -9,6 +9,8 @@ import { NewsletterCard } from '../../../components/newsletter-card';
 import { Pagination } from '../../../components/pagination';
 import { AuthorBox } from '../../../components/author-box';
 
+import type { PublicAuthor } from '@blog-builder/shared-types';
+
 import { articles } from '../../../mocks/articles';
 import { categories } from '../../../mocks/categories';
 import { authors } from '../../../mocks/authors';
@@ -25,6 +27,20 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ArticlesListPage() {
   const t = await getTranslations('placeholders');
   const marcus = authors[0];
+
+  const sidebarAuthor: PublicAuthor | null = marcus
+    ? {
+        id: marcus.id,
+        slug: marcus.slug,
+        fullName: marcus.name,
+        bio: marcus.bio,
+        photoUrl: marcus.avatarUrl,
+        expertise: [marcus.role],
+        sameAs: Object.values(marcus.socials).filter(
+          (v): v is string => typeof v === 'string' && v.length > 0,
+        ),
+      }
+    : null;
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 pb-16 relative z-10">
@@ -68,7 +84,9 @@ export default async function ArticlesListPage() {
           aria-label={t('articlesListTitle')}
         >
           <div className="sticky top-24 space-y-8">
-            {marcus ? <AuthorBox author={marcus} variant="sidebar" /> : null}
+            {sidebarAuthor ? (
+              <AuthorBox author={sidebarAuthor} variant="sidebar" />
+            ) : null}
             <AdPlaceholder type="sidebar" />
             <NewsletterCard />
             <SidebarCategories categories={categories} />
